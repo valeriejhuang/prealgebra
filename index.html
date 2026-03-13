@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prealgebra 10-Day Crash Course</title>
+<title>Prealgebra 30-Day Crash Course</title>
 <style>
 /* ── Reset & Base ───────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -632,6 +632,40 @@ body {
   .sidebar-overlay.open { display: block; }
   .main-content { padding: 24px 16px; }
 }
+
+/* ── Graph / SVG Styles ───────────────────────────── */
+.graph-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  padding: 16px;
+  margin: 18px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+.graph-container svg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.graph-container .graph-caption {
+  font-size: 0.82rem;
+  color: #718096;
+  margin-top: 8px;
+  font-style: italic;
+}
+.graph-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 18px 0;
+}
+.graph-row .graph-container {
+  flex: 1 1 260px;
+  max-width: 360px;
+  margin: 0;
+}
 </style>
 </head>
 <body>
@@ -647,7 +681,7 @@ body {
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
       Mindmap &amp; Cheatsheet
     </button>
-    <div class="progress-summary" id="progressSummary">Day 0 / 10</div>
+    <div class="progress-summary" id="progressSummary">0 / 30 days completed</div>
   </div>
 </header>
 
@@ -659,7 +693,7 @@ body {
   <div class="mindmap-overlay-header">
     <div>
       <h2>Course Mindmap &amp; Cheatsheet</h2>
-      <p>Visual overview of all 10 days of prealgebra topics with key formulas and concepts.</p>
+      <p>Visual overview of all 30 days of prealgebra topics with key formulas and concepts.</p>
     </div>
     <button class="mindmap-overlay-close" onclick="closeMindmapOverlay()">&#10005; Close</button>
   </div>
@@ -680,7 +714,7 @@ body {
     <!-- Welcome Screen (default) -->
     <div class="welcome" id="welcomeScreen">
       <h2>Welcome to Prealgebra!</h2>
-      <p>A 10-day crash course covering whole numbers through introductory algebra. Designed for grades 5&ndash;6 with step-up quizzes and progress tracking.</p>
+      <p>A 30-day crash course covering the complete AoPS Prealgebra curriculum &mdash; from arithmetic through geometry, statistics, and probability. Designed for grades 5&ndash;7 with step-up quizzes and progress tracking.</p>
       <button class="btn-primary" onclick="goToDay(1)">Start Day 1</button>
     </div>
   </main>
@@ -690,14 +724,352 @@ body {
 <script type="module">
 import { DAYS_1_5 } from './prealgebra-days1-5.js';
 import { DAYS_6_10 } from './prealgebra-days6-10.js';
+import { DAYS_11_15 } from './prealgebra-days11-15.js';
+import { DAYS_16_20 } from './prealgebra-days16-20.js';
+import { DAYS_21_25 } from './prealgebra-days21-25.js';
+import { DAYS_26_30 } from './prealgebra-days26-30.js';
 
 // ─── Merge all days into one object ───────────────
 const ALL_DAYS = {};
 for (let i = 1; i <= 5; i++) ALL_DAYS[i] = DAYS_1_5[`day${i}`];
 for (let i = 6; i <= 10; i++) ALL_DAYS[i] = DAYS_6_10[`day${i}`];
+for (let i = 11; i <= 15; i++) ALL_DAYS[i] = DAYS_11_15[`day${i}`];
+for (let i = 16; i <= 20; i++) ALL_DAYS[i] = DAYS_16_20[`day${i}`];
+for (let i = 21; i <= 25; i++) ALL_DAYS[i] = DAYS_21_25[`day${i}`];
+for (let i = 26; i <= 30; i++) ALL_DAYS[i] = DAYS_26_30[`day${i}`];
 
-const TOTAL_DAYS = 10;
+const TOTAL_DAYS = 30;
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+// ═══════════════════════════════════════════════════
+// SVG Graph Helper Library
+// ═══════════════════════════════════════════════════
+const G = {};
+
+// ── Number Line ────────────────────────────────────
+G.numberLine = function(opts = {}) {
+  const W = opts.width || 480, H = opts.height || 70;
+  const min = opts.min ?? -6, max = opts.max ?? 6, step = opts.step || 1;
+  const pad = 40, lineY = H / 2;
+  const usable = W - 2 * pad;
+  const scale = usable / (max - min);
+  const toX = v => pad + (v - min) * scale;
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+  svg += `<line x1="${pad - 14}" y1="${lineY}" x2="${W - pad + 14}" y2="${lineY}" stroke="#4a5568" stroke-width="1.5"/>`;
+  svg += `<polygon points="${pad - 16},${lineY} ${pad - 8},${lineY - 4} ${pad - 8},${lineY + 4}" fill="#4a5568"/>`;
+  svg += `<polygon points="${W - pad + 16},${lineY} ${W - pad + 8},${lineY - 4} ${W - pad + 8},${lineY + 4}" fill="#4a5568"/>`;
+
+  for (let v = min; v <= max; v += step) {
+    const x = toX(v);
+    svg += `<line x1="${x}" y1="${lineY - 5}" x2="${x}" y2="${lineY + 5}" stroke="#4a5568" stroke-width="1.2"/>`;
+    svg += `<text x="${x}" y="${lineY + 18}" text-anchor="middle" font-size="11" fill="#4a5568">${v}</text>`;
+  }
+
+  if (opts.intervals) {
+    opts.intervals.forEach(iv => {
+      const c = iv.color || '#667eea';
+      const x1 = iv.fromInf ? pad - 14 : toX(iv.from);
+      const x2 = iv.toInf ? W - pad + 14 : toX(iv.to);
+      svg += `<rect x="${x1}" y="${lineY - 4}" width="${x2 - x1}" height="8" fill="${c}" opacity="0.25" rx="2"/>`;
+      svg += `<line x1="${x1}" y1="${lineY}" x2="${x2}" y2="${lineY}" stroke="${c}" stroke-width="3" opacity="0.6"/>`;
+      if (!iv.fromInf) {
+        svg += iv.fromOpen
+          ? `<circle cx="${x1}" cy="${lineY}" r="5" fill="#fff" stroke="${c}" stroke-width="2"/>`
+          : `<circle cx="${x1}" cy="${lineY}" r="5" fill="${c}"/>`;
+      }
+      if (!iv.toInf) {
+        svg += iv.toOpen
+          ? `<circle cx="${x2}" cy="${lineY}" r="5" fill="#fff" stroke="${c}" stroke-width="2"/>`
+          : `<circle cx="${x2}" cy="${lineY}" r="5" fill="${c}"/>`;
+      }
+    });
+  }
+
+  if (opts.points) {
+    opts.points.forEach(p => {
+      const x = toX(p.x);
+      const c = p.color || '#e53e3e';
+      svg += p.open
+        ? `<circle cx="${x}" cy="${lineY}" r="5" fill="#fff" stroke="${c}" stroke-width="2"/>`
+        : `<circle cx="${x}" cy="${lineY}" r="5" fill="${c}"/>`;
+      if (p.label) {
+        svg += `<text x="${x}" y="${lineY - 10}" text-anchor="middle" font-size="10" font-weight="600" fill="${c}">${p.label}</text>`;
+      }
+    });
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Coordinate Plane ──────────────────────────────
+G._clipId = 0;
+G.coordPlane = function(opts = {}) {
+  const W = opts.width || 360, H = opts.height || 360;
+  const xMin = opts.xMin ?? -6, xMax = opts.xMax ?? 6;
+  const yMin = opts.yMin ?? -6, yMax = opts.yMax ?? 6;
+  const gs = opts.gridStep || 1;
+  const pad = 30;
+  const plotW = W - 2 * pad, plotH = H - 2 * pad;
+  const sX = plotW / (xMax - xMin), sY = plotH / (yMax - yMin);
+  const toSX = v => pad + (v - xMin) * sX;
+  const toSY = v => pad + (yMax - v) * sY;
+  const clipId = `plotClip${G._clipId++}`;
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+  svg += `<defs><clipPath id="${clipId}"><rect x="${pad}" y="${pad}" width="${plotW}" height="${plotH}"/></clipPath></defs>`;
+
+  for (let v = Math.ceil(xMin); v <= Math.floor(xMax); v += gs) {
+    const x = toSX(v);
+    svg += `<line x1="${x}" y1="${pad}" x2="${x}" y2="${pad + plotH}" stroke="${v === 0 ? '#4a5568' : '#e2e8f0'}" stroke-width="${v === 0 ? 1.5 : 0.7}"/>`;
+    if (v !== 0) svg += `<text x="${x}" y="${toSY(0) + 14}" text-anchor="middle" font-size="9" fill="#a0aec0">${v}</text>`;
+  }
+  for (let v = Math.ceil(yMin); v <= Math.floor(yMax); v += gs) {
+    const y = toSY(v);
+    svg += `<line x1="${pad}" y1="${y}" x2="${pad + plotW}" y2="${y}" stroke="${v === 0 ? '#4a5568' : '#e2e8f0'}" stroke-width="${v === 0 ? 1.5 : 0.7}"/>`;
+    if (v !== 0) svg += `<text x="${toSX(0) - 8}" y="${y + 3}" text-anchor="end" font-size="9" fill="#a0aec0">${v}</text>`;
+  }
+
+  const ox = toSX(0), oy = toSY(0);
+  svg += `<polygon points="${pad + plotW + 4},${oy} ${pad + plotW - 2},${oy - 3} ${pad + plotW - 2},${oy + 3}" fill="#4a5568"/>`;
+  svg += `<polygon points="${ox},${pad - 4} ${ox - 3},${pad + 2} ${ox + 3},${pad + 2}" fill="#4a5568"/>`;
+  svg += `<text x="${pad + plotW + 6}" y="${oy + 4}" font-size="11" fill="#4a5568">x</text>`;
+  svg += `<text x="${ox + 6}" y="${pad - 2}" font-size="11" fill="#4a5568">y</text>`;
+
+  if (opts.lines) {
+    opts.lines.forEach(ln => {
+      const lxMin = ln.xMin ?? xMin - 1;
+      const lxMax = ln.xMax ?? xMax + 1;
+      if (ln.vertical) {
+        const x = toSX(ln.x);
+        svg += `<line x1="${x}" y1="${pad}" x2="${x}" y2="${pad + plotH}" stroke="${ln.color || '#e53e3e'}" stroke-width="2" ${ln.dashed ? 'stroke-dasharray="6,3"' : ''} clip-path="url(#${clipId})"/>`;
+      } else {
+        const y1 = ln.m * lxMin + ln.b;
+        const y2 = ln.m * lxMax + ln.b;
+        svg += `<line x1="${toSX(lxMin)}" y1="${toSY(y1)}" x2="${toSX(lxMax)}" y2="${toSY(y2)}" stroke="${ln.color || '#e53e3e'}" stroke-width="2" ${ln.dashed ? 'stroke-dasharray="6,3"' : ''} clip-path="url(#${clipId})"/>`;
+      }
+      if (ln.label) {
+        const lx = (lxMin + lxMax) / 2;
+        const ly = ln.vertical ? yMax - 0.5 : ln.m * lx + ln.b;
+        const sx = toSX(lx) + (ln.labelDx || 8);
+        const sy = toSY(ly) + (ln.labelDy || -8);
+        svg += `<text x="${sx}" y="${sy}" font-size="11" font-weight="600" fill="${ln.color || '#e53e3e'}">${ln.label}</text>`;
+      }
+    });
+  }
+
+  if (opts.parabolas) {
+    opts.parabolas.forEach(p => {
+      const c = p.color || '#7c3aed';
+      const steps = 200;
+      const dx = (xMax - xMin) / steps;
+      let pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const x = xMin + i * dx;
+        const y = p.a * x * x + (p.b || 0) * x + (p.c || 0);
+        pts.push(`${toSX(x).toFixed(1)},${toSY(y).toFixed(1)}`);
+      }
+      if (pts.length > 1) {
+        svg += `<polyline points="${pts.join(' ')}" fill="none" stroke="${c}" stroke-width="2" ${p.dashed ? 'stroke-dasharray="6,3"' : ''} clip-path="url(#${clipId})"/>`;
+      }
+      if (p.label) {
+        const vx = -(p.b || 0) / (2 * p.a);
+        const vy = p.a * vx * vx + (p.b || 0) * vx + (p.c || 0);
+        svg += `<text x="${toSX(vx) + (p.labelDx || 8)}" y="${toSY(vy) + (p.labelDy || -8)}" font-size="11" font-weight="600" fill="${c}">${p.label}</text>`;
+      }
+    });
+  }
+
+  if (opts.points) {
+    opts.points.forEach(p => {
+      const c = p.color || '#e53e3e';
+      const sx = toSX(p.x), sy = toSY(p.y);
+      svg += `<circle cx="${sx}" cy="${sy}" r="4" fill="${c}"/>`;
+      if (p.label) {
+        const pos = p.labelPos || 'tr';
+        const dx = pos.includes('l') ? -8 : 8;
+        const dy = pos.includes('b') ? 16 : -8;
+        const anchor = pos.includes('l') ? 'end' : 'start';
+        svg += `<text x="${sx + dx}" y="${sy + dy}" text-anchor="${anchor}" font-size="10" font-weight="600" fill="${c}">${p.label}</text>`;
+      }
+    });
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Triangle ──────────────────────────────────────
+G.triangle = function(opts = {}) {
+  const W = opts.width || 220, H = opts.height || 200;
+  const verts = opts.vertices || [[30, H - 20], [W - 30, H - 20], [W / 2, 20]];
+  const c = opts.color || '#667eea';
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+  const pts = verts.map(v => v.join(',')).join(' ');
+  svg += `<polygon points="${pts}" fill="${c}" fill-opacity="0.08" stroke="${c}" stroke-width="2"/>`;
+
+  if (opts.rightAngle !== undefined) {
+    const ri = opts.rightAngle;
+    const [cx, cy] = verts[ri];
+    const [ax, ay] = verts[(ri + 1) % 3];
+    const [bx, by] = verts[(ri + 2) % 3];
+    const sz = 12;
+    const d1x = (ax - cx), d1y = (ay - cy);
+    const d2x = (bx - cx), d2y = (by - cy);
+    const l1 = Math.sqrt(d1x * d1x + d1y * d1y);
+    const l2 = Math.sqrt(d2x * d2x + d2y * d2y);
+    const u1x = d1x / l1 * sz, u1y = d1y / l1 * sz;
+    const u2x = d2x / l2 * sz, u2y = d2y / l2 * sz;
+    svg += `<polyline points="${cx + u1x},${cy + u1y} ${cx + u1x + u2x},${cy + u1y + u2y} ${cx + u2x},${cy + u2y}" fill="none" stroke="${c}" stroke-width="1.2"/>`;
+  }
+
+  if (opts.labels) {
+    opts.labels.forEach((lb, i) => {
+      if (!lb) return;
+      const [x, y] = verts[i];
+      const dx = lb.dx || 0, dy = lb.dy || 0;
+      svg += `<text x="${x + dx}" y="${y + dy}" text-anchor="middle" font-size="12" font-weight="600" fill="#2d3748">${lb.text}</text>`;
+    });
+  }
+
+  if (opts.sides) {
+    opts.sides.forEach((s, i) => {
+      if (!s || !s.label) return;
+      const [x1, y1] = verts[i];
+      const [x2, y2] = verts[(i + 1) % verts.length];
+      const mx = (x1 + x2) / 2 + (s.dx || 0);
+      const my = (y1 + y2) / 2 + (s.dy || 0);
+      svg += `<text x="${mx}" y="${my}" text-anchor="middle" font-size="11" font-weight="600" fill="${c}">${s.label}</text>`;
+    });
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Rectangle helper ──────────────────────────────
+G.rectangle = function(opts = {}) {
+  const W = opts.width || 220, H = opts.height || 160;
+  const c = opts.color || '#667eea';
+  const rw = opts.rectWidth || W - 60, rh = opts.rectHeight || H - 60;
+  const rx = (W - rw) / 2, ry = (H - rh) / 2;
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+  svg += `<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="${c}" fill-opacity="0.08" stroke="${c}" stroke-width="2"/>`;
+
+  if (opts.labels) {
+    opts.labels.forEach(lb => {
+      svg += `<text x="${lb.x}" y="${lb.y}" text-anchor="middle" font-size="11" font-weight="600" fill="${c}">${lb.text}</text>`;
+    });
+  }
+
+  if (opts.rightAngle) {
+    svg += `<polyline points="${rx + 12},${ry + rh} ${rx + 12},${ry + rh - 12} ${rx},${ry + rh - 12}" fill="none" stroke="${c}" stroke-width="1.2"/>`;
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Circle helper ─────────────────────────────────
+G.circle = function(opts = {}) {
+  const W = opts.width || 200, H = opts.height || 200;
+  const c = opts.color || '#667eea';
+  const cx = W / 2, cy = H / 2, r = opts.radius || Math.min(W, H) / 2 - 20;
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+  svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c}" fill-opacity="0.08" stroke="${c}" stroke-width="2"/>`;
+
+  if (opts.showRadius) {
+    svg += `<line x1="${cx}" y1="${cy}" x2="${cx + r}" y2="${cy}" stroke="${c}" stroke-width="1.5" stroke-dasharray="4,2"/>`;
+    svg += `<text x="${cx + r / 2}" y="${cy - 6}" text-anchor="middle" font-size="11" font-weight="600" fill="${c}">${opts.radiusLabel || 'r'}</text>`;
+  }
+
+  if (opts.labels) {
+    opts.labels.forEach(lb => {
+      svg += `<text x="${lb.x}" y="${lb.y}" text-anchor="middle" font-size="11" font-weight="600" fill="${c}">${lb.text}</text>`;
+    });
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Angle diagram helper ──────────────────────────
+G.angle = function(opts = {}) {
+  const W = opts.width || 240, H = opts.height || 180;
+  const c = opts.color || '#667eea';
+  const vx = opts.vertex?.[0] ?? W * 0.35, vy = opts.vertex?.[1] ?? H * 0.7;
+
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="font-family:'Segoe UI',system-ui,sans-serif;">`;
+
+  // rays
+  if (opts.rays) {
+    opts.rays.forEach(ray => {
+      svg += `<line x1="${vx}" y1="${vy}" x2="${ray[0]}" y2="${ray[1]}" stroke="${ray[2] || c}" stroke-width="2"/>`;
+    });
+  }
+
+  // arc
+  if (opts.arc) {
+    const r = opts.arc.radius || 30;
+    const a1 = opts.arc.startAngle ?? 0;
+    const a2 = opts.arc.endAngle ?? 90;
+    const x1 = vx + r * Math.cos(-a1 * Math.PI / 180);
+    const y1 = vy + r * Math.sin(-a1 * Math.PI / 180);
+    const x2 = vx + r * Math.cos(-a2 * Math.PI / 180);
+    const y2 = vy + r * Math.sin(-a2 * Math.PI / 180);
+    const large = (a2 - a1) > 180 ? 1 : 0;
+    svg += `<path d="M${x1},${y1} A${r},${r} 0 ${large} 0 ${x2},${y2}" fill="none" stroke="${opts.arc.color || c}" stroke-width="1.5"/>`;
+    if (opts.arc.label) {
+      const mid = (a1 + a2) / 2;
+      const lr = r + 12;
+      const lx = vx + lr * Math.cos(-mid * Math.PI / 180);
+      const ly = vy + lr * Math.sin(-mid * Math.PI / 180);
+      svg += `<text x="${lx}" y="${ly}" text-anchor="middle" font-size="11" font-weight="600" fill="${opts.arc.color || c}">${opts.arc.label}</text>`;
+    }
+  }
+
+  if (opts.labels) {
+    opts.labels.forEach(lb => {
+      svg += `<text x="${lb.x}" y="${lb.y}" text-anchor="${lb.anchor || 'middle'}" font-size="${lb.fontSize || 11}" font-weight="600" fill="${lb.color || '#2d3748'}">${lb.text}</text>`;
+    });
+  }
+
+  svg += `</svg>`;
+  return svg;
+};
+
+// ── Convenience wrappers ──────────────────────────
+G.wrap = function(svgHtml, caption) {
+  let html = `<div class="graph-container">${svgHtml}`;
+  if (caption) html += `<div class="graph-caption">${caption}</div>`;
+  html += `</div>`;
+  return html;
+};
+G.wrapRow = function(...items) {
+  return `<div class="graph-row">${items.join('')}</div>`;
+};
+
+window.G = G;
+
+// ─── Graph Renderer ───────────────────────────────
+function renderGraph(g) {
+  if (!g) return '';
+  if (g.type === 'numberLine') return G.wrap(G.numberLine(g), g.caption);
+  if (g.type === 'coordPlane') return G.wrap(G.coordPlane(g), g.caption);
+  if (g.type === 'triangle') return G.wrap(G.triangle(g), g.caption);
+  if (g.type === 'rectangle') return G.wrap(G.rectangle(g), g.caption);
+  if (g.type === 'circle') return G.wrap(G.circle(g), g.caption);
+  if (g.type === 'angle') return G.wrap(G.angle(g), g.caption);
+  if (g.type === 'row') {
+    const items = (g.items || []).map(item => renderGraph(item));
+    return G.wrapRow(...items);
+  }
+  return '';
+}
 
 // ─── State ────────────────────────────────────────
 let state = {
@@ -712,7 +1084,13 @@ let state = {
 function loadProgress() {
   try {
     const saved = localStorage.getItem('prealgebra-progress');
-    return saved ? JSON.parse(saved) : initProgress();
+    if (!saved) return initProgress();
+    const p = JSON.parse(saved);
+    // Migrate: fill in any missing day entries (e.g., old 10-day data)
+    for (let i = 1; i <= TOTAL_DAYS; i++) {
+      if (!p[`day${i}`]) p[`day${i}`] = { lessonRead: false, quizScore: null, quizCompleted: false };
+    }
+    return p;
   } catch { return initProgress(); }
 }
 function initProgress() {
@@ -722,6 +1100,49 @@ function initProgress() {
 }
 function saveProgress() {
   try { localStorage.setItem('prealgebra-progress', JSON.stringify(state.progress)); } catch {}
+}
+
+// ─── Cheatsheet Cards (shared between inline and overlay) ──
+const CHEAT_COLORS = ['blue','green','amber','red','purple'];
+function getCheatsheetCardsHTML() {
+  const cards = [
+    { day:1,  title:'Whole Numbers &amp; PEMDAS', items:['Place value: ones &rarr; billions','Rounding: look one place right; &ge; 5 round up','<span class="formula">P &rarr; E &rarr; MD &rarr; AS</span> (left to right)','Commutative: a+b = b+a; Associative: (a+b)+c = a+(b+c)'] },
+    { day:2,  title:'Integers &amp; Number Line', items:['Integers: &hellip; &minus;3, &minus;2, &minus;1, 0, 1, 2, 3 &hellip;','Right on number line = greater','<span class="formula">|a|</span> = distance from 0 (always &ge; 0)'] },
+    { day:3,  title:'Adding &amp; Subtracting Integers', items:['Same sign: add absolutes, keep sign','Different signs: subtract, take larger&rsquo;s sign','Subtract = add opposite: <span class="formula">a &minus; b = a + (&minus;b)</span>'] },
+    { day:4,  title:'Multiplying &amp; Dividing Integers', items:['Same signs &rarr; positive result','Different signs &rarr; negative result','Even # of negatives &rarr; +; odd &rarr; &minus;','<span class="formula">&minus;3<sup>2</sup> = &minus;9</span> but <span class="formula">(&minus;3)<sup>2</sup> = 9</span>'] },
+    { day:5,  title:'Squares &amp; Higher Exponents', items:['<span class="formula">a<sup>n</sup></span> = a multiplied n times','Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144','<span class="formula">a<sup>m</sup> &times; a<sup>n</sup> = a<sup>m+n</sup></span>','<span class="formula">(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></span>'] },
+    { day:6,  title:'Zero &amp; Negative Exponents', items:['<span class="formula">a<sup>0</sup> = 1</span> (a &ne; 0)','<span class="formula">a<sup>&minus;n</sup> = 1/a<sup>n</sup></span>','Quotient rule: <span class="formula">a<sup>m</sup> &divide; a<sup>n</sup> = a<sup>m&minus;n</sup></span>'] },
+    { day:7,  title:'Multiples, Divisibility &amp; Primes', items:['Divisibility: 2 (even), 3 (digit sum), 5 (ends 0/5), 9 (digit sum)','Prime: exactly 2 factors (1 and itself)','First primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29'] },
+    { day:8,  title:'Prime Factorization &amp; LCM', items:['Factor tree &rarr; product of primes','LCM: take highest power of each prime','LCM by listing: find first shared multiple'] },
+    { day:9,  title:'Divisors &amp; GCD', items:['GCD: take lowest power of each shared prime','<span class="formula">GCD(a,b) &times; LCM(a,b) = a &times; b</span>','Counting divisors: multiply (exponent+1) values'] },
+    { day:10, title:'Fractions &mdash; Simplifying', items:['Fraction = numerator / denominator','Equivalent: multiply top &amp; bottom by same #','Simplify by dividing both by GCD'] },
+    { day:11, title:'Comparing &amp; Mixed Numbers', items:['Compare: common denominator or cross-multiply','Mixed &harr; Improper: <span class="formula">a b/c = (ac+b)/c</span>','Divide to convert improper &rarr; mixed'] },
+    { day:12, title:'Adding &amp; Subtracting Fractions', items:['Like denom: add/sub numerators','Unlike: find LCD (= LCM of denoms)','Always simplify the result'] },
+    { day:13, title:'Multiplying &amp; Dividing Fractions', items:['Multiply: <span class="formula">a/b &times; c/d = ac/bd</span>','Divide: Keep-Change-Flip','Cross-cancel before multiplying','<span class="formula">(a/b)<sup>n</sup> = a<sup>n</sup>/b<sup>n</sup></span>'] },
+    { day:14, title:'Variables &amp; Expressions', items:['Variable = letter for unknown number','Coefficient &times; variable + constant','Evaluate: substitute then PEMDAS','Distributive: <span class="formula">a(b+c) = ab + ac</span>'] },
+    { day:15, title:'One- &amp; Two-Step Equations', items:['Equation = balance scale','Inverse ops: +&harr;&minus;, &times;&harr;&divide;','Two-step: undo outer op first','Always check your answer!'] },
+    { day:16, title:'Multi-Step Equations &amp; Inequalities', items:['Variables on both sides: collect on one side','Distributive property in equations','Inequalities: flip sign when &times;/&divide; by negative','Graph solutions on number line'] },
+    { day:17, title:'Decimal Operations', items:['Add/Sub: line up decimal points','Multiply: count total decimal places','Divide: make divisor whole, shift both','Round: look one place right'] },
+    { day:18, title:'Decimals &harr; Fractions', items:['Fraction &rarr; decimal: divide','Decimal &rarr; fraction: read place value, simplify','Repeating: <span class="formula">0.333&hellip; = 1/3</span>','Algebraic method: 10x &minus; x to clear repeats'] },
+    { day:19, title:'Ratios &amp; Proportions', items:['Ratio: a:b (order matters!)','Multi-way: match shared quantity','Proportion: <span class="formula">a/b = c/d &rArr; ad = bc</span>'] },
+    { day:20, title:'Conversions, Speed &amp; Rates', items:['Unit rate: denominator = 1','Convert: multiply by conversion factors','<span class="formula">d = r &times; t</span> (distance = rate &times; time)'] },
+    { day:21, title:'Percents &amp; Conversions', items:['Percent = per hundred','% &rarr; decimal: &divide; 100; decimal &rarr; %: &times; 100','<span class="formula">Part = Percent &times; Whole</span>'] },
+    { day:22, title:'Percent Increase/Decrease', items:['Change = <span class="formula">(new &minus; old)/old &times; 100%</span>','Discount then tax (order matters)','Two 10% increases &ne; 20% increase'] },
+    { day:23, title:'Square Roots', items:['<span class="formula">&radic;n</span>: what squared gives n?','Perfect squares: 1, 4, 9, 16 &hellip; 144','<span class="formula">&radic;(ab) = &radic;a &times; &radic;b</span>','<span class="formula">&radic;2 + &radic;3 &ne; &radic;5</span>'] },
+    { day:24, title:'Simplifying Radicals', items:['Factor out largest perfect square','<span class="formula">&radic;50 = 5&radic;2</span>','Add like radicals: <span class="formula">3&radic;5 + 2&radic;5 = 5&radic;5</span>','Rationalize: <span class="formula">1/&radic;3 = &radic;3/3</span>'] },
+    { day:25, title:'Angles &amp; Polygons', items:['Right = 90&deg;, Straight = 180&deg;, Full = 360&deg;','Complementary = 90&deg;; Supplementary = 180&deg;','Parallel lines: corresp. &amp; alt. interior angles equal','Polygon: <span class="formula">(n&minus;2) &times; 180&deg;</span>'] },
+    { day:26, title:'Perimeter &amp; Area', items:['P<sub>rect</sub> = 2l + 2w','A<sub>rect</sub> = lw; A<sub>tri</sub> = &frac12;bh','Circle: <span class="formula">C = 2&pi;r</span>, <span class="formula">A = &pi;r<sup>2</sup></span>'] },
+    { day:27, title:'Pythagorean Theorem &amp; Quads', items:['<span class="formula">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span> (right triangles)','Triples: 3-4-5, 5-12-13, 8-15-17','Trapezoid: <span class="formula">A = &frac12;(b<sub>1</sub>+b<sub>2</sub>)h</span>'] },
+    { day:28, title:'Data &amp; Statistics', items:['Mean = sum &divide; count','Median = middle value (sorted)','Mode = most frequent; Range = max &minus; min','Outliers affect mean more than median'] },
+    { day:29, title:'Counting Principles', items:['Addition: non-overlapping choices &rarr; add','Multiplication: sequential stages &rarr; multiply','Casework: break into non-overlapping cases'] },
+    { day:30, title:'Probability &amp; Review', items:['<span class="formula">P = favorable / total</span>','0 &le; P &le; 1; <span class="formula">P(not A) = 1 &minus; P(A)</span>','Strategies: pattern, list, picture, work backwards'] },
+  ];
+  return cards.map((c, i) => `
+    <div class="cheat-card ${CHEAT_COLORS[i % 5]}">
+      <div class="cheat-day">Day ${c.day}</div>
+      <h3>${c.title}</h3>
+      <ul>${c.items.map(item => `<li>${item}</li>`).join('')}</ul>
+    </div>`).join('');
 }
 
 // ─── Sidebar Rendering ────────────────────────────
@@ -744,7 +1165,7 @@ function renderSidebar() {
       <div class="day-info">
         <div class="day-title">${dayTitles[i]}</div>
         <div class="day-status">${
-          isCompleted ? `Score: ${prog.quizScore}/10` :
+          isCompleted ? `Score: ${prog.quizScore}/${ALL_DAYS[i].quiz.length}` :
           prog.lessonRead ? 'Lesson read' :
           'Not started'
         }</div>
@@ -787,7 +1208,7 @@ function renderMain() {
     main.innerHTML = `
       <div class="welcome" id="welcomeScreen">
         <h2>Welcome to Prealgebra!</h2>
-        <p>A 10-day crash course covering whole numbers through introductory algebra. Designed for grades 5&ndash;6 with step-up quizzes and progress tracking.</p>
+        <p>A 30-day crash course covering the complete AoPS Prealgebra curriculum &mdash; from arithmetic through geometry, statistics, and probability. Designed for grades 5&ndash;7 with step-up quizzes and progress tracking.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
           <button class="btn-primary" onclick="goToDay(1)">Start Day 1</button>
         </div>
@@ -801,7 +1222,7 @@ function renderMain() {
   let html = `
     <div class="tab-bar">
       <button class="tab-btn ${state.currentTab === 'lesson' ? 'active' : ''}" onclick="switchTab('lesson')">Lesson</button>
-      <button class="tab-btn ${state.currentTab === 'quiz' ? 'active' : ''}" onclick="switchTab('quiz')">Quiz${prog.quizCompleted ? ' (' + prog.quizScore + '/10)' : ''}</button>
+      <button class="tab-btn ${state.currentTab === 'quiz' ? 'active' : ''}" onclick="switchTab('quiz')">Quiz${prog.quizCompleted ? ' (' + prog.quizScore + '/' + day.quiz.length + ')' : ''}</button>
     </div>`;
 
   // Fall back to lesson if tab was 'mindmap' (removed per-day mindmap tab)
@@ -845,13 +1266,19 @@ function renderLesson(day) {
   lesson.sections.forEach(sec => {
     html += `<div class="section"><h3>${sec.heading}</h3>`;
     sec.paragraphs.forEach(p => { html += `<p>${p}</p>`; });
+    if (sec.graphs) {
+      sec.graphs.forEach(g => { html += renderGraph(g); });
+    }
     if (sec.example) {
       html += `
         <div class="example-box">
           <h4>${sec.example.title}</h4>
           <div class="problem">${sec.example.problem}</div>
-          <ol>${sec.example.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-        </div>`;
+          <ol>${sec.example.steps.map(s => `<li>${s}</li>`).join('')}</ol>`;
+      if (sec.example.graphs) {
+        sec.example.graphs.forEach(g => { html += renderGraph(g); });
+      }
+      html += `</div>`;
     }
     html += `</div>`;
   });
@@ -909,6 +1336,7 @@ function renderQuiz(day) {
         ${q.category === 'review' ? '<span class="q-badge review">review</span>' : ''}
       </div>
       <div class="question-text">${q.question}</div>
+      ${q.graph ? renderGraph(q.graph) : ''}
       <ul class="options-list">`;
 
   q.options.forEach((opt, idx) => {
@@ -1014,7 +1442,7 @@ function renderMindmap() {
   let html = `
     <div class="mindmap-header">
       <h2>Course Mindmap &amp; Cheatsheet</h2>
-      <p>Visual overview of all 10 days of prealgebra topics with key formulas and concepts.</p>
+       <p>Visual overview of all 30 days of prealgebra topics with key formulas and concepts.</p>
     </div>
     <div class="mindmap-section-toggle">
       <button id="toggleMap" class="active" onclick="showMindmapSection('map')">Mindmap</button>
@@ -1044,121 +1472,7 @@ function renderMindmap() {
   html += `
     <div id="cheatsheetSection" style="display:none;">
       <div class="cheatsheet">
-
-        <div class="cheat-card blue">
-          <div class="cheat-day">Day 1</div>
-          <h3>Whole Numbers &amp; PEMDAS</h3>
-          <ul>
-            <li>Place value: ones, tens, hundreds ... billions</li>
-            <li>Rounding: look one place right; &ge; 5 rounds up</li>
-            <li><span class="formula">P &rarr; E &rarr; MD &rarr; AS</span> (left to right)</li>
-            <li>Nested parentheses: innermost first</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card green">
-          <div class="cheat-day">Day 2</div>
-          <h3>Integers &amp; Number Line</h3>
-          <ul>
-            <li>Integers: ..., &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, ...</li>
-            <li>Right on number line = greater</li>
-            <li><span class="formula">|a|</span> = distance from 0 (always &ge; 0)</li>
-            <li>Real life: temperature, elevation, debt</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card amber">
-          <div class="cheat-day">Day 3</div>
-          <h3>Integer Operations</h3>
-          <ul>
-            <li>Same sign: add magnitudes, keep sign</li>
-            <li>Different signs: subtract, take larger sign</li>
-            <li>Subtract = add the opposite: <span class="formula">a &minus; b = a + (&minus;b)</span></li>
-            <li>Multiply/Divide: same signs &rarr; +, different &rarr; &minus;</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card red">
-          <div class="cheat-day">Day 4</div>
-          <h3>Fractions Basics</h3>
-          <ul>
-            <li>Fraction = numerator / denominator</li>
-            <li>Equivalent: multiply/divide top &amp; bottom by same #</li>
-            <li>Simplify using GCF</li>
-            <li>Compare: common denominator or cross-multiply</li>
-            <li>Mixed &harr; Improper: <span class="formula">a b/c = (ac+b)/c</span></li>
-          </ul>
-        </div>
-
-        <div class="cheat-card purple">
-          <div class="cheat-day">Day 5</div>
-          <h3>Fraction Operations</h3>
-          <ul>
-            <li>Add/Sub: find LCD, combine numerators</li>
-            <li>Multiply: <span class="formula">a/b &times; c/d = ac/bd</span></li>
-            <li>Divide: Keep-Change-Flip <span class="formula">a/b &divide; c/d = a/b &times; d/c</span></li>
-            <li>Mixed numbers: convert to improper first</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card blue">
-          <div class="cheat-day">Day 6</div>
-          <h3>Decimals</h3>
-          <ul>
-            <li>Places: tenths, hundredths, thousandths</li>
-            <li>Fraction &rarr; Decimal: divide numerator by denominator</li>
-            <li>Add/Sub: line up decimal points</li>
-            <li>Multiply: count total decimal places</li>
-            <li>Divide: make divisor whole, shift both</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card green">
-          <div class="cheat-day">Day 7</div>
-          <h3>Ratios, Rates &amp; Proportions</h3>
-          <ul>
-            <li>Ratio: a:b, a/b, or "a to b"</li>
-            <li>Unit rate: denominator = 1</li>
-            <li>Proportion: <span class="formula">a/b = c/d</span></li>
-            <li>Cross-multiply: <span class="formula">ad = bc</span></li>
-          </ul>
-        </div>
-
-        <div class="cheat-card amber">
-          <div class="cheat-day">Day 8</div>
-          <h3>Percents</h3>
-          <ul>
-            <li>Percent = "per hundred"</li>
-            <li>To decimal: <span class="formula">&divide; 100</span> &nbsp; To percent: <span class="formula">&times; 100</span></li>
-            <li><span class="formula">Part = Percent &times; Whole</span></li>
-            <li>Discount: price &times; (1 &minus; rate)</li>
-            <li>Tax/Tip: price &times; (1 + rate)</li>
-          </ul>
-        </div>
-
-        <div class="cheat-card red">
-          <div class="cheat-day">Day 9</div>
-          <h3>Variables &amp; Expressions</h3>
-          <ul>
-            <li>Variable = letter placeholder for a number</li>
-            <li>Coefficient: the number before a variable (3x &rarr; 3)</li>
-            <li>Evaluate: substitute values, then compute</li>
-            <li>Like terms: same variable &amp; exponent</li>
-            <li>Distributive: <span class="formula">a(b + c) = ab + ac</span></li>
-          </ul>
-        </div>
-
-        <div class="cheat-card purple">
-          <div class="cheat-day">Day 10</div>
-          <h3>Equations &amp; Problem Solving</h3>
-          <ul>
-            <li>Equation: expression = expression (balance)</li>
-            <li>Solve with inverse operations</li>
-            <li>Add/Sub to isolate; Multiply/Div to isolate</li>
-            <li>Word problems: define variable &rarr; write equation &rarr; solve &rarr; check</li>
-          </ul>
-        </div>
-
+      ${getCheatsheetCardsHTML()}
       </div>
     </div>`;
 
@@ -1239,28 +1553,10 @@ function renderOverlayContent() {
       </div>
     </div>
     <div id="ovCheatsheetSection" style="display:none;">
-      <div class="cheatsheet">`;
-  // Reuse the same cheatsheet card data
-  const cards = [
-    { day:1,  cls:'blue',   title:'Whole Numbers &amp; PEMDAS', items:['Place value: ones, tens, hundreds ... billions','Rounding: look one place right; &ge; 5 rounds up','<span class="formula">P &rarr; E &rarr; MD &rarr; AS</span> (left to right)','Nested parentheses: innermost first'] },
-    { day:2,  cls:'green',  title:'Integers &amp; Number Line', items:['Integers: ..., &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, ...','Right on number line = greater','<span class="formula">|a|</span> = distance from 0 (always &ge; 0)','Real life: temperature, elevation, debt'] },
-    { day:3,  cls:'amber',  title:'Integer Operations', items:['Same sign: add magnitudes, keep sign','Different signs: subtract, take larger sign','Subtract = add the opposite: <span class="formula">a &minus; b = a + (&minus;b)</span>','Multiply/Divide: same signs &rarr; +, different &rarr; &minus;'] },
-    { day:4,  cls:'red',    title:'Fractions Basics', items:['Fraction = numerator / denominator','Equivalent: multiply/divide top &amp; bottom by same #','Simplify using GCF','Compare: common denominator or cross-multiply','Mixed &harr; Improper: <span class="formula">a b/c = (ac+b)/c</span>'] },
-    { day:5,  cls:'purple', title:'Fraction Operations', items:['Add/Sub: find LCD, combine numerators','Multiply: <span class="formula">a/b &times; c/d = ac/bd</span>','Divide: Keep-Change-Flip <span class="formula">a/b &divide; c/d = a/b &times; d/c</span>','Mixed numbers: convert to improper first'] },
-    { day:6,  cls:'blue',   title:'Decimals', items:['Places: tenths, hundredths, thousandths','Fraction &rarr; Decimal: divide numerator by denominator','Add/Sub: line up decimal points','Multiply: count total decimal places','Divide: make divisor whole, shift both'] },
-    { day:7,  cls:'green',  title:'Ratios, Rates &amp; Proportions', items:['Ratio: a:b, a/b, or "a to b"','Unit rate: denominator = 1','Proportion: <span class="formula">a/b = c/d</span>','Cross-multiply: <span class="formula">ad = bc</span>'] },
-    { day:8,  cls:'amber',  title:'Percents', items:['Percent = "per hundred"','To decimal: <span class="formula">&divide; 100</span> &nbsp; To percent: <span class="formula">&times; 100</span>','<span class="formula">Part = Percent &times; Whole</span>','Discount: price &times; (1 &minus; rate)','Tax/Tip: price &times; (1 + rate)'] },
-    { day:9,  cls:'red',    title:'Variables &amp; Expressions', items:['Variable = letter placeholder for a number','Coefficient: the number before a variable (3x &rarr; 3)','Evaluate: substitute values, then compute','Like terms: same variable &amp; exponent','Distributive: <span class="formula">a(b + c) = ab + ac</span>'] },
-    { day:10, cls:'purple', title:'Equations &amp; Problem Solving', items:['Equation: expression = expression (balance)','Solve with inverse operations','Add/Sub to isolate; Multiply/Div to isolate','Word problems: define variable &rarr; write equation &rarr; solve &rarr; check'] }
-  ];
-  cards.forEach(c => {
-    html += `<div class="cheat-card ${c.cls}">
-      <div class="cheat-day">Day ${c.day}</div>
-      <h3>${c.title}</h3>
-      <ul>${c.items.map(i => `<li>${i}</li>`).join('')}</ul>
+      <div class="cheatsheet">
+      ${getCheatsheetCardsHTML()}
+      </div>
     </div>`;
-  });
-  html += `</div></div>`;
   return html;
 }
 

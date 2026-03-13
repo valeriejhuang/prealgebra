@@ -1,78 +1,63 @@
 export const DAYS_6_10 = {
+
+  // ============================================================
+  // DAY 6: Zero & Negative Exponents
+  // ============================================================
   day6: {
     lesson: {
-      title: "Decimals",
-      subtitle: "Master place value, conversions, and operations with decimals",
+      title: "Zero & Negative Exponents",
+      subtitle: "Discover what happens when the exponent is 0 or negative &mdash; the pattern never lies!",
       sections: [
         {
-          heading: "Decimal Place Value",
+          heading: "The Zero Exponent",
           paragraphs: [
-            "Decimals are another way to represent parts of a whole, just like fractions. The <strong>decimal point</strong> separates the whole-number part on the left from the fractional part on the right. Each place to the right of the decimal point has a specific value.",
-            "The first place after the decimal is the <strong>tenths</strong> place (1/10), the second is the <strong>hundredths</strong> place (1/100), and the third is the <strong>thousandths</strong> place (1/1000). For example, in the number 3.427, the 4 is in the tenths place, the 2 is in the hundredths place, and the 7 is in the thousandths place.",
-            "Reading decimals is easy once you know the places. Read the whole-number part first, say <em>\"and\"</em> for the decimal point, then read the rest as a whole number followed by the place name of the last digit. So 3.427 is read as <em>\"three and four hundred twenty-seven thousandths.\"</em>"
+            "On Day&nbsp;5 you learned that an exponent tells you how many times to multiply the base by itself. But what if the exponent is <strong>0</strong>? It might seem strange, but <em>any nonzero number raised to the zero power equals&nbsp;1</em>. In symbols: <strong>a<sup>0</sup> = 1</strong> whenever a &ne; 0.",
+            "Here&rsquo;s <em>why</em> it makes sense. Look at the powers of 2 and notice the pattern as the exponent drops by&nbsp;1 each time: 2<sup>4</sup>&nbsp;=&nbsp;16, 2<sup>3</sup>&nbsp;=&nbsp;8, 2<sup>2</sup>&nbsp;=&nbsp;4, 2<sup>1</sup>&nbsp;=&nbsp;2. Each step divides the previous answer by&nbsp;2. So the next step must be 2<sup>0</sup>&nbsp;=&nbsp;2&nbsp;&divide;&nbsp;2&nbsp;=&nbsp;<strong>1</strong>. The pattern forces 2<sup>0</sup> to be&nbsp;1!",
+            "This works for every nonzero base: 5<sup>0</sup>&nbsp;=&nbsp;1, (&minus;3)<sup>0</sup>&nbsp;=&nbsp;1, 100<sup>0</sup>&nbsp;=&nbsp;1. Think of it like this &mdash; if you multiply <em>zero copies</em> of a number together, you&rsquo;re left with the &ldquo;empty product,&rdquo; which mathematicians define as&nbsp;1. (Note: 0<sup>0</sup> is a special case that mathematicians debate, so we only use this rule when the base is not zero.)"
           ],
           example: {
-            title: "Worked Example: Identifying Place Value",
-            problem: "What is the value of the digit 6 in the number 0.368?",
+            title: "Worked Example: Evaluating Zero Exponents",
+            problem: "Evaluate 7<sup>0</sup> + 3<sup>0</sup> + (&minus;4)<sup>0</sup>.",
             steps: [
-              "The 3 is in the tenths place (3/10).",
-              "The 6 is in the hundredths place (6/100).",
-              "The 8 is in the thousandths place (8/1000).",
-              "Answer: The digit 6 has a value of <strong>6 hundredths</strong>, or <strong>6/100 = 0.06</strong>."
+              "Apply the zero-exponent rule to each term: 7<sup>0</sup> = <strong>1</strong>, 3<sup>0</sup> = <strong>1</strong>, (&minus;4)<sup>0</sup> = <strong>1</strong>.",
+              "Add the results: 1 + 1 + 1 = <strong>3</strong>.",
+              "Key idea: No matter how big or small the base is, as long as it isn&rsquo;t zero, raising it to the 0 power gives 1."
             ]
           }
         },
         {
-          heading: "Converting Between Fractions & Decimals",
+          heading: "Negative Exponents",
           paragraphs: [
-            "To convert a <strong>fraction to a decimal</strong>, simply divide the numerator by the denominator. For example, 3/4 means 3 &divide; 4 = 0.75. You can use long division or a calculator to do this.",
-            "Some conversions come up so often that it helps to memorize them: <strong>1/2 = 0.5</strong>, <strong>1/4 = 0.25</strong>, <strong>3/4 = 0.75</strong>, <strong>1/5 = 0.2</strong>, <strong>2/5 = 0.4</strong>, <strong>1/8 = 0.125</strong>, and <strong>1/10 = 0.1</strong>. Knowing these by heart saves time!",
-            "To convert a <strong>decimal to a fraction</strong>, read the decimal using place value and write it as a fraction. For example, 0.35 is <em>\"thirty-five hundredths,\"</em> so it becomes 35/100, which simplifies to 7/20."
+            "What happens if we keep going below zero in our exponent pattern? We already saw 2<sup>1</sup>&nbsp;=&nbsp;2 and 2<sup>0</sup>&nbsp;=&nbsp;1. Continuing to divide by 2: 2<sup>&minus;1</sup>&nbsp;=&nbsp;1&nbsp;&divide;&nbsp;2&nbsp;=&nbsp;<strong>1/2</strong>, then 2<sup>&minus;2</sup>&nbsp;=&nbsp;(1/2)&nbsp;&divide;&nbsp;2&nbsp;=&nbsp;<strong>1/4</strong>, and 2<sup>&minus;3</sup>&nbsp;=&nbsp;<strong>1/8</strong>.",
+            "Notice that 1/2&nbsp;=&nbsp;1/2<sup>1</sup>, 1/4&nbsp;=&nbsp;1/2<sup>2</sup>, and 1/8&nbsp;=&nbsp;1/2<sup>3</sup>. The rule is: <strong>a<sup>&minus;n</sup>&nbsp;=&nbsp;1/a<sup>n</sup></strong>. A negative exponent means &ldquo;take the reciprocal.&rdquo; The number flips to the bottom of a fraction!",
+            "Think of it like a see-saw: positive exponents make a number bigger and bigger, while negative exponents make it smaller and smaller (closer to zero). For example, 10<sup>3</sup>&nbsp;=&nbsp;1000 is huge, but 10<sup>&minus;3</sup>&nbsp;=&nbsp;1/1000&nbsp;=&nbsp;0.001 is tiny. The negative exponent doesn&rsquo;t make the answer negative &mdash; it makes it a fraction."
           ],
           example: {
-            title: "Worked Example: Converting a Fraction to a Decimal",
-            problem: "Convert 5/8 to a decimal.",
+            title: "Worked Example: Negative Exponents",
+            problem: "Evaluate 5<sup>&minus;2</sup>.",
             steps: [
-              "Divide the numerator by the denominator: 5 &divide; 8.",
-              "8 goes into 5.000 as follows: 8 &times; 0.6 = 4.8, remainder 0.2. Then 8 &times; 0.02 = 0.16, remainder 0.04. Then 8 &times; 0.005 = 0.04.",
-              "Answer: 5/8 = <strong>0.625</strong>."
+              "Apply the rule: a<sup>&minus;n</sup> = 1/a<sup>n</sup>.",
+              "So 5<sup>&minus;2</sup> = 1/5<sup>2</sup>.",
+              "Calculate the denominator: 5<sup>2</sup> = 25.",
+              "Answer: 5<sup>&minus;2</sup> = <strong>1/25</strong>."
             ]
           }
         },
         {
-          heading: "Decimal Operations",
+          heading: "The Quotient Rule & Putting It All Together",
           paragraphs: [
-            "When <strong>adding or subtracting decimals</strong>, the key rule is to <em>line up the decimal points</em>. Stack the numbers so the decimal points are directly above each other, fill in any empty places with zeros, then add or subtract as usual. Bring the decimal point straight down into your answer.",
-            "When <strong>multiplying decimals</strong>, ignore the decimal points at first and multiply as if they were whole numbers. Then count the <em>total number of decimal places</em> in both factors and place the decimal point in the product so it has that many decimal places. For example, 0.3 &times; 0.4: multiply 3 &times; 4 = 12, and since there are 2 total decimal places, the answer is 0.12.",
-            "When <strong>dividing decimals</strong>, if the divisor has a decimal, move the decimal point to the right to make it a whole number. Move the decimal in the dividend the same number of places. Then divide normally. For example, 1.44 &divide; 0.6 becomes 14.4 &divide; 6 = 2.4."
+            "On Day&nbsp;5 you learned the <em>product rule</em>: a<sup>m</sup>&nbsp;&times;&nbsp;a<sup>n</sup>&nbsp;=&nbsp;a<sup>m+n</sup>. Now here is its partner, the <strong>quotient rule</strong>: when you <em>divide</em> powers with the same base, you <em>subtract</em> the exponents: <strong>a<sup>m</sup>&nbsp;&divide;&nbsp;a<sup>n</sup>&nbsp;=&nbsp;a<sup>m&minus;n</sup></strong>.",
+            "Why does this work? Consider 2<sup>5</sup>&nbsp;&divide;&nbsp;2<sup>3</sup>. Written out, that is (2&times;2&times;2&times;2&times;2)&nbsp;&divide;&nbsp;(2&times;2&times;2). Three of the 2&rsquo;s cancel, leaving 2&times;2&nbsp;=&nbsp;2<sup>2</sup>. And indeed 5&nbsp;&minus;&nbsp;3&nbsp;=&nbsp;2. The quotient rule also explains zero and negative exponents: 2<sup>3</sup>&nbsp;&divide;&nbsp;2<sup>3</sup>&nbsp;=&nbsp;2<sup>0</sup>&nbsp;=&nbsp;1, and 2<sup>2</sup>&nbsp;&divide;&nbsp;2<sup>5</sup>&nbsp;=&nbsp;2<sup>&minus;3</sup>&nbsp;=&nbsp;1/8.",
+            "Let&rsquo;s combine all four exponent rules in one place: <strong>(1)</strong>&nbsp;Product rule: a<sup>m</sup>&nbsp;&times;&nbsp;a<sup>n</sup>&nbsp;=&nbsp;a<sup>m+n</sup>. <strong>(2)</strong>&nbsp;Power rule: (a<sup>m</sup>)<sup>n</sup>&nbsp;=&nbsp;a<sup>mn</sup>. <strong>(3)</strong>&nbsp;Quotient rule: a<sup>m</sup>&nbsp;&divide;&nbsp;a<sup>n</sup>&nbsp;=&nbsp;a<sup>m&minus;n</sup>. <strong>(4)</strong>&nbsp;Zero &amp; negative exponent: a<sup>0</sup>&nbsp;=&nbsp;1 and a<sup>&minus;n</sup>&nbsp;=&nbsp;1/a<sup>n</sup>. You now have a full exponent toolkit!"
           ],
           example: {
-            title: "Worked Example: Multiplying Decimals",
-            problem: "Calculate 2.5 &times; 1.3.",
+            title: "Worked Example: Combining Exponent Rules",
+            problem: "Simplify 3<sup>4</sup> &divide; 3<sup>6</sup>.",
             steps: [
-              "Ignore the decimals and multiply: 25 &times; 13 = 325.",
-              "Count total decimal places: 2.5 has 1 decimal place, and 1.3 has 1 decimal place. Total = 2 decimal places.",
-              "Place the decimal in 325 so there are 2 decimal places: 3.25.",
-              "Answer: 2.5 &times; 1.3 = <strong>3.25</strong>."
-            ]
-          }
-        },
-        {
-          heading: "Rounding Decimals",
-          paragraphs: [
-            "Rounding decimals works just like rounding whole numbers. First, find the place you are rounding to. Then look at the digit <em>one place to the right</em>. If that digit is 5 or greater, round up. If it is less than 5, round down (keep the digit the same).",
-            "For example, to round 3.847 to the nearest <strong>tenth</strong>, look at the hundredths digit (4). Since 4 &lt; 5, round down: the answer is 3.8. To round 3.847 to the nearest <strong>hundredth</strong>, look at the thousandths digit (7). Since 7 &ge; 5, round up: the answer is 3.85.",
-            "After rounding, drop all digits to the right of the rounding place. Remember: rounding gives an <em>approximate</em> answer, which is useful in real life when exact answers aren&rsquo;t needed, like when working with money."
-          ],
-          example: {
-            title: "Worked Example: Rounding to the Nearest Hundredth",
-            problem: "Round 6.2385 to the nearest hundredth.",
-            steps: [
-              "Find the hundredths digit: the 3 in 6.2385.",
-              "Look one place to the right: the thousandths digit is 8.",
-              "Since 8 &ge; 5, round the hundredths digit up: 3 becomes 4.",
-              "Drop everything after the hundredths place.",
-              "Answer: <strong>6.24</strong>."
+              "Use the quotient rule: 3<sup>4</sup> &divide; 3<sup>6</sup> = 3<sup>4&minus;6</sup> = 3<sup>&minus;2</sup>.",
+              "Now apply the negative-exponent rule: 3<sup>&minus;2</sup> = 1/3<sup>2</sup>.",
+              "Calculate: 3<sup>2</sup> = 9.",
+              "Answer: 3<sup>4</sup> &divide; 3<sup>6</sup> = <strong>1/9</strong>."
             ]
           }
         }
@@ -81,164 +66,172 @@ export const DAYS_6_10 = {
     quiz: [
       {
         id: "d6q1",
-        question: "What is 0.3 + 0.25?",
+        question: "What is 9<sup>0</sup>?",
         type: "multiple-choice",
-        options: ["0.28", "0.55", "0.525", "0.58"],
+        options: ["0", "1", "9", "Undefined"],
         correct: 1,
-        explanation: "Line up the decimal points: 0.30 + 0.25 = 0.55.",
+        explanation: "Any nonzero number raised to the zero power equals 1. So 9<sup>0</sup> = 1.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d6q2",
-        question: "In the number 4.629, which digit is in the hundredths place?",
+        question: "What is 2<sup>&minus;3</sup>?",
         type: "multiple-choice",
-        options: ["4", "6", "2", "9"],
+        options: ["&minus;8", "&minus;6", "1/8", "1/6"],
         correct: 2,
-        explanation: "After the decimal point: 6 is tenths, 2 is hundredths, 9 is thousandths.",
+        explanation: "2<sup>&minus;3</sup> = 1/2<sup>3</sup> = 1/8. A negative exponent means &ldquo;take the reciprocal,&rdquo; not &ldquo;make the answer negative.&rdquo;",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d6q3",
-        question: "What is 1/4 written as a decimal?",
+        question: "What is 10<sup>&minus;2</sup>?",
         type: "multiple-choice",
-        options: ["0.14", "0.4", "0.25", "0.75"],
-        correct: 2,
-        explanation: "1 &divide; 4 = 0.25. This is one of the common conversions to memorize.",
+        options: ["&minus;20", "0.01", "100", "&minus;100"],
+        correct: 1,
+        explanation: "10<sup>&minus;2</sup> = 1/10<sup>2</sup> = 1/100 = 0.01.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d6q4",
-        question: "What is 0.6 &times; 0.7?",
+        question: "Simplify using the quotient rule: 5<sup>7</sup> &divide; 5<sup>4</sup>.",
         type: "multiple-choice",
-        options: ["4.2", "0.42", "0.13", "0.042"],
-        correct: 1,
-        explanation: "Multiply 6 &times; 7 = 42. There are 2 total decimal places (one in each factor), so the answer is 0.42.",
+        options: ["5<sup>3</sup>", "5<sup>11</sup>", "5<sup>28</sup>", "1<sup>3</sup>"],
+        correct: 0,
+        explanation: "Quotient rule: subtract exponents. 5<sup>7</sup> &divide; 5<sup>4</sup> = 5<sup>7&minus;4</sup> = 5<sup>3</sup>.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d6q5",
-        question: "What is 5.03 &minus; 2.7?",
+        question: "What is 4<sup>&minus;1</sup> + 4<sup>0</sup>?",
         type: "multiple-choice",
-        options: ["2.96", "3.33", "2.33", "2.06"],
-        correct: 2,
-        explanation: "Line up the decimals: 5.03 &minus; 2.70 = 2.33.",
+        options: ["0", "5/4", "3/4", "1/4"],
+        correct: 1,
+        explanation: "4<sup>&minus;1</sup> = 1/4 and 4<sup>0</sup> = 1. So 1/4 + 1 = 1/4 + 4/4 = 5/4.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d6q6",
-        question: "What is 0.36 written as a fraction in simplest form?",
+        question: "Simplify: 2<sup>3</sup> &divide; 2<sup>5</sup>.",
         type: "multiple-choice",
-        options: ["36/10", "9/25", "18/50", "36/99"],
-        correct: 1,
-        explanation: "0.36 = 36/100. Simplify by dividing both by 4: 36 &divide; 4 = 9 and 100 &divide; 4 = 25, giving 9/25.",
+        options: ["2<sup>2</sup>", "2<sup>&minus;2</sup>", "1/4", "Both B and C"],
+        correct: 3,
+        explanation: "Quotient rule: 2<sup>3&minus;5</sup> = 2<sup>&minus;2</sup>. And 2<sup>&minus;2</sup> = 1/2<sup>2</sup> = 1/4. So both B and C are correct.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d6q7",
-        question: "What is 3.6 &divide; 0.12?",
+        question: "Which expression equals 1/27?",
         type: "multiple-choice",
-        options: ["3", "0.3", "30", "300"],
-        correct: 2,
-        explanation: "Move the decimal 2 places in both numbers: 360 &divide; 12 = 30.",
-        difficulty: "hard",
+        options: ["3<sup>&minus;3</sup>", "3<sup>&minus;2</sup>", "27<sup>0</sup>", "(&minus;3)<sup>3</sup>"],
+        correct: 0,
+        explanation: "3<sup>&minus;3</sup> = 1/3<sup>3</sup> = 1/27. Note: 3<sup>&minus;2</sup> = 1/9, 27<sup>0</sup> = 1, and (&minus;3)<sup>3</sup> = &minus;27.",
+        difficulty: "medium",
         category: "topic"
       },
       {
         id: "d6q8",
-        question: "Round 9.4653 to the nearest hundredth.",
+        question: "Simplify: (7<sup>2</sup>)<sup>3</sup> &divide; 7<sup>4</sup>.",
         type: "multiple-choice",
-        options: ["9.46", "9.47", "9.465", "9.5"],
-        correct: 1,
-        explanation: "The hundredths digit is 6. Look at the next digit: 5. Since 5 &ge; 5, round up: 6 becomes 7. Answer: 9.47.",
+        options: ["7<sup>2</sup>", "7<sup>10</sup>", "7<sup>1</sup>", "7<sup>0</sup>"],
+        correct: 0,
+        explanation: "Power rule first: (7<sup>2</sup>)<sup>3</sup> = 7<sup>6</sup>. Then quotient rule: 7<sup>6</sup> &divide; 7<sup>4</sup> = 7<sup>6&minus;4</sup> = 7<sup>2</sup>.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d6q9",
-        question: "What is 2/3 &minus; 1/6?",
+        question: "Using the product rule from Day 5, what is 6<sup>3</sup> &times; 6<sup>&minus;3</sup>?",
         type: "multiple-choice",
-        options: ["1/3", "1/2", "1/6", "3/6"],
+        options: ["0", "6<sup>0</sup> = 1", "6<sup>6</sup>", "6<sup>&minus;9</sup>"],
         correct: 1,
-        explanation: "Find a common denominator: 2/3 = 4/6. Then 4/6 &minus; 1/6 = 3/6 = 1/2.",
-        difficulty: "medium",
+        explanation: "Product rule: 6<sup>3</sup> &times; 6<sup>&minus;3</sup> = 6<sup>3+(&minus;3)</sup> = 6<sup>0</sup> = 1. Adding a number and its opposite always gives 0 in the exponent!",
+        difficulty: "hard",
         category: "review"
       },
       {
         id: "d6q10",
-        question: "What is &minus;8 + 3?",
+        question: "Which is larger: 4<sup>&minus;2</sup> or 2<sup>&minus;4</sup>?",
         type: "multiple-choice",
-        options: ["&minus;11", "&minus;5", "5", "11"],
-        correct: 1,
-        explanation: "Starting at &minus;8 on the number line and moving 3 to the right gives &minus;5.",
-        difficulty: "easy",
+        options: ["4<sup>&minus;2</sup>", "2<sup>&minus;4</sup>", "They are equal", "Cannot be determined"],
+        correct: 2,
+        explanation: "4<sup>&minus;2</sup> = 1/16 and 2<sup>&minus;4</sup> = 1/16. They are equal! This makes sense because 4<sup>2</sup> = 16 and 2<sup>4</sup> = 16.",
+        difficulty: "hard",
         category: "review"
       }
     ]
   },
 
+  // ============================================================
+  // DAY 7: Multiples, Divisibility Tests & Primes
+  // ============================================================
   day7: {
     lesson: {
-      title: "Ratios, Rates & Proportions",
-      subtitle: "Compare quantities and solve problems with equal ratios",
+      title: "Multiples, Divisibility & Prime Numbers",
+      subtitle: "Learn to spot factors and multiples, test divisibility like a pro, and meet the building blocks of all numbers",
       sections: [
         {
-          heading: "Ratios",
+          heading: "Multiples & Factors",
           paragraphs: [
-            "A <strong>ratio</strong> compares two quantities and tells you how much of one thing there is compared to another. For example, if a class has 12 boys and 8 girls, the ratio of boys to girls is 12 to 8.",
-            "There are three common ways to write a ratio: using the word <em>\"to\"</em> (12 to 8), using a colon (12:8), or as a fraction (12/8). All three mean the same thing. The <em>order matters</em>&mdash;the ratio of boys to girls (12:8) is different from the ratio of girls to boys (8:12).",
-            "You can <strong>simplify</strong> a ratio by dividing both numbers by their greatest common factor, just like simplifying a fraction. The ratio 12:8 simplifies to 3:2 because both 12 and 8 are divisible by 4."
+            "A <strong>multiple</strong> of a number is what you get when you multiply it by a whole number. For example, the multiples of 4 are 4, 8, 12, 16, 20, 24, &hellip; &mdash; you can keep going forever. Think of it like counting by 4&rsquo;s on a number line.",
+            "A <strong>factor</strong> (or <em>divisor</em>) of a number divides into it evenly with no remainder. For example, the factors of 12 are 1, 2, 3, 4, 6, and 12. Unlike multiples, the list of factors is always <em>finite</em>. A handy trick: factors come in <strong>pairs</strong>. Since 2 &times; 6 = 12, both 2 and 6 are factors of 12.",
+            "To find all factors of a number, start with 1 and the number itself, then try 2, 3, 4, &hellip; stopping when your pairs start repeating. For instance, for 36: 1&nbsp;&times;&nbsp;36, 2&nbsp;&times;&nbsp;18, 3&nbsp;&times;&nbsp;12, 4&nbsp;&times;&nbsp;9, 6&nbsp;&times;&nbsp;6. Since we hit a repeated pair (6&nbsp;&times;&nbsp;6), we&rsquo;re done. The factors are: 1, 2, 3, 4, 6, 9, 12, 18, 36."
           ],
           example: {
-            title: "Worked Example: Simplifying a Ratio",
-            problem: "A bag has 15 red marbles and 10 blue marbles. Write the ratio of red to blue in simplest form.",
+            title: "Worked Example: Listing Factor Pairs",
+            problem: "Find all the factors of 28.",
             steps: [
-              "The ratio is 15 to 10, or 15:10.",
-              "Find the GCF of 15 and 10. The GCF is 5.",
-              "Divide both numbers by 5: 15 &divide; 5 = 3 and 10 &divide; 5 = 2.",
-              "Answer: The simplified ratio is <strong>3:2</strong>."
+              "Start: 1 &times; 28 &rarr; factors 1 and 28.",
+              "Try 2: 28 &divide; 2 = 14 &rarr; factors 2 and 14.",
+              "Try 3: 28 &divide; 3 = 9 R1 &mdash; not a factor.",
+              "Try 4: 28 &divide; 4 = 7 &rarr; factors 4 and 7.",
+              "Try 5: 28 &divide; 5 = 5 R3 &mdash; not a factor.",
+              "Try 6: 6 &gt; &radic;28 &approx; 5.3, and we already have 7. We can stop.",
+              "Factors of 28: <strong>1, 2, 4, 7, 14, 28</strong> (6 factors total)."
             ]
           }
         },
         {
-          heading: "Rates & Unit Rates",
+          heading: "Divisibility Tests",
           paragraphs: [
-            "A <strong>rate</strong> is a special kind of ratio that compares two quantities with <em>different units</em>. For example, driving 150 miles in 3 hours is a rate: 150 miles per 3 hours. Rates often use the word <em>\"per\"</em> to connect the two units.",
-            "A <strong>unit rate</strong> is a rate where the second quantity is exactly 1. To find a unit rate, divide both numbers so the denominator becomes 1. For our driving example: 150 miles &divide; 3 = 50 miles per 1 hour, or simply 50 miles per hour (50 mph). Unit rates make it easy to compare.",
-            "Unit rates show up everywhere in daily life: price per item (like $2.50 per pound), speed (miles per hour), and even homework problems per minute. When comparing options, <em>always find the unit rate first</em>&mdash;it tells you which deal or speed is better."
+            "Divisibility tests are shortcuts that let you tell <em>instantly</em> whether a big number is divisible by a small one &mdash; no long division required! These are like math superpowers, especially in competitions.",
+            "Here are the most important rules. <strong>By 2:</strong> last digit is even (0, 2, 4, 6, 8). <strong>By 3:</strong> the sum of the digits is divisible by 3. <strong>By 4:</strong> the last two digits form a number divisible by 4. <strong>By 5:</strong> last digit is 0 or 5. <strong>By 6:</strong> divisible by both 2 <em>and</em> 3. <strong>By 9:</strong> the sum of the digits is divisible by 9. <strong>By 10:</strong> last digit is 0.",
+            "Let&rsquo;s test 4,356. Last digit is 6 (even), so it&rsquo;s divisible by <strong>2</strong>. Digit sum: 4+3+5+6 = 18, which is divisible by both 3 and 9, so 4,356 is divisible by <strong>3</strong> and <strong>9</strong>. Since it&rsquo;s divisible by 2 and 3, it&rsquo;s also divisible by <strong>6</strong>. Last two digits: 56 &divide; 4 = 14, so it&rsquo;s divisible by <strong>4</strong>. It does not end in 0 or 5, so it&rsquo;s <em>not</em> divisible by 5 or 10."
           ],
           example: {
-            title: "Worked Example: Finding the Better Deal",
-            problem: "Store A sells 6 apples for $3.00. Store B sells 4 apples for $2.20. Which is the better deal?",
+            title: "Worked Example: Divisibility Test Sprint",
+            problem: "Is 2,730 divisible by 2, 3, 5, 6, 9, and 10?",
             steps: [
-              "Find the unit rate for Store A: $3.00 &divide; 6 = $0.50 per apple.",
-              "Find the unit rate for Store B: $2.20 &divide; 4 = $0.55 per apple.",
-              "Compare: $0.50 &lt; $0.55.",
-              "Answer: <strong>Store A</strong> is the better deal at $0.50 per apple."
+              "<strong>By 2?</strong> Last digit is 0 (even). <strong>Yes.</strong>",
+              "<strong>By 3?</strong> Digit sum: 2+7+3+0 = 12. Is 12 divisible by 3? Yes (12 &divide; 3 = 4). <strong>Yes.</strong>",
+              "<strong>By 5?</strong> Last digit is 0. <strong>Yes.</strong>",
+              "<strong>By 6?</strong> Divisible by both 2 and 3? Yes and yes. <strong>Yes.</strong>",
+              "<strong>By 9?</strong> Digit sum is 12. Is 12 divisible by 9? No. <strong>No.</strong>",
+              "<strong>By 10?</strong> Last digit is 0. <strong>Yes.</strong>"
             ]
           }
         },
         {
-          heading: "Proportions",
+          heading: "Prime Numbers",
           paragraphs: [
-            "A <strong>proportion</strong> is an equation that says two ratios are equal. For example, 2/3 = 8/12 is a proportion because both fractions simplify to the same value. Proportions are powerful tools for solving real-world problems.",
-            "To check whether two ratios form a proportion, you can <strong>cross-multiply</strong>. For a/b = c/d, multiply a &times; d and b &times; c. If the two products are equal, the ratios form a true proportion. For example, 2/3 = 8/12: cross-multiply to get 2 &times; 12 = 24 and 3 &times; 8 = 24. They&rsquo;re equal, so it&rsquo;s a proportion!",
-            "You can also use cross-multiplication to <strong>solve for an unknown</strong>. If 3/5 = x/20, cross-multiply: 3 &times; 20 = 5 &times; x, which gives 60 = 5x. Divide both sides by 5 to get x = 12. Always check your answer by plugging it back in: 3/5 = 12/20 &mdash; and 12/20 simplifies to 3/5. Correct!"
+            "A <strong>prime number</strong> is a whole number greater than 1 that has <em>exactly two factors</em>: 1 and itself. The first ten primes are: <strong>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</strong>. Notice that 2 is the only even prime &mdash; every other even number has 2 as an extra factor, so it can&rsquo;t be prime.",
+            "A number greater than 1 that is <em>not</em> prime is called <strong>composite</strong>. For example, 15 is composite because 15 = 3&nbsp;&times;&nbsp;5. The number 1 is <em>neither</em> prime nor composite &mdash; it&rsquo;s in a category of its own.",
+            "An ancient Greek mathematician named Eratosthenes invented a clever method called the <strong>Sieve of Eratosthenes</strong> to find all primes up to a given number. You start by listing all numbers from 2 upward. Circle 2 (it&rsquo;s prime), then cross out all multiples of 2. The next uncrossed number is 3 &mdash; circle it and cross out all multiples of 3. Keep going: the next uncrossed number is always prime. This process quickly filters out all composite numbers, leaving only the primes behind."
           ],
           example: {
-            title: "Worked Example: Solving a Proportion",
-            problem: "Solve for n: 4/7 = n/21.",
+            title: "Worked Example: Is It Prime?",
+            problem: "Is 51 prime or composite?",
             steps: [
-              "Cross-multiply: 4 &times; 21 = 7 &times; n.",
-              "Calculate: 84 = 7n.",
-              "Divide both sides by 7: n = 84 &divide; 7 = 12.",
-              "Check: 4/7 = 12/21. Simplify 12/21 by dividing both by 3: 4/7. &#10003;",
-              "Answer: <strong>n = 12</strong>."
+              "Check divisibility by small primes: 2, 3, 5, 7 (we only need primes up to &radic;51 &approx; 7.1).",
+              "<strong>By 2?</strong> 51 is odd. No.",
+              "<strong>By 3?</strong> Digit sum: 5+1 = 6, and 6 is divisible by 3. <strong>Yes!</strong>",
+              "So 51 = 3 &times; 17.",
+              "Answer: 51 is <strong>composite</strong>."
             ]
           }
         }
@@ -247,179 +240,170 @@ export const DAYS_6_10 = {
     quiz: [
       {
         id: "d7q1",
-        question: "A class has 10 boys and 15 girls. What is the ratio of boys to girls in simplest form?",
+        question: "Which of the following is <strong>not</strong> a multiple of 6?",
         type: "multiple-choice",
-        options: ["10:15", "2:3", "3:2", "1:5"],
-        correct: 1,
-        explanation: "The ratio is 10:15. Divide both by the GCF (5): 10 &divide; 5 = 2 and 15 &divide; 5 = 3. Simplified ratio: 2:3.",
+        options: ["18", "42", "56", "66"],
+        correct: 2,
+        explanation: "56 &divide; 6 = 9 R2, so 56 is not a multiple of 6. The others divide evenly: 18&divide;6=3, 42&divide;6=7, 66&divide;6=11.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d7q2",
-        question: "If you drive 120 miles in 2 hours, what is your unit rate?",
+        question: "How many factors does 18 have?",
         type: "multiple-choice",
-        options: ["240 mph", "60 mph", "120 mph", "2 miles per hour"],
-        correct: 1,
-        explanation: "Unit rate = 120 miles &divide; 2 hours = 60 miles per hour.",
+        options: ["4", "5", "6", "8"],
+        correct: 2,
+        explanation: "Factor pairs of 18: 1&times;18, 2&times;9, 3&times;6. That gives factors: 1, 2, 3, 6, 9, 18 &mdash; a total of 6.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d7q3",
-        question: "Which pair of ratios forms a proportion?",
+        question: "Using the divisibility rule for 3, is 4,821 divisible by 3?",
         type: "multiple-choice",
-        options: ["2/3 and 4/5", "3/4 and 9/12", "1/2 and 3/5", "5/6 and 7/8"],
-        correct: 1,
-        explanation: "Check 3/4 and 9/12: cross-multiply 3 &times; 12 = 36 and 4 &times; 9 = 36. They are equal, so it is a proportion.",
+        options: ["Yes, because 4+8+2+1 = 15 and 15 is divisible by 3", "No, because it is odd", "No, because it ends in 1", "Yes, because it is greater than 3"],
+        correct: 0,
+        explanation: "The digit sum 4+8+2+1 = 15, and 15 &divide; 3 = 5. Since the digit sum is divisible by 3, the number is divisible by 3.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d7q4",
-        question: "Solve for x: 5/8 = x/24.",
+        question: "Which of these numbers is prime?",
         type: "multiple-choice",
-        options: ["10", "15", "3", "20"],
-        correct: 1,
-        explanation: "Cross-multiply: 5 &times; 24 = 8 &times; x, so 120 = 8x. Divide by 8: x = 15.",
+        options: ["39", "49", "51", "53"],
+        correct: 3,
+        explanation: "39 = 3&times;13, 49 = 7&times;7, 51 = 3&times;17. Only 53 has no factors other than 1 and itself, so 53 is prime.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d7q5",
-        question: "A store sells 5 notebooks for $8.00. What is the price per notebook?",
+        question: "A number is divisible by both 2 and 9. It must also be divisible by which of the following?",
         type: "multiple-choice",
-        options: ["$1.25", "$1.50", "$1.60", "$2.00"],
-        correct: 2,
-        explanation: "Price per notebook = $8.00 &divide; 5 = $1.60.",
+        options: ["12", "18", "36", "8"],
+        correct: 1,
+        explanation: "If a number is divisible by 2 and by 9, it is divisible by 2 &times; 9 = 18 (since 2 and 9 share no common factor).",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d7q6",
-        question: "The ratio of cats to dogs at a shelter is 5:3. If there are 40 cats, how many dogs are there?",
+        question: "Is 3,240 divisible by 4?",
         type: "multiple-choice",
-        options: ["15", "30", "24", "8"],
-        correct: 2,
-        explanation: "Set up the proportion: 5/3 = 40/d. Cross-multiply: 5d = 120. Divide by 5: d = 24.",
+        options: ["Yes, because the last two digits 40 are divisible by 4", "No, because the digit sum is odd", "Yes, because it ends in 0", "No, because 3 is odd"],
+        correct: 0,
+        explanation: "Divisibility by 4: check the last two digits. 40 &divide; 4 = 10, so yes, 3,240 is divisible by 4.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d7q7",
-        question: "A car uses 3 gallons of gas to travel 87 miles. How far can it travel on 7 gallons at the same rate?",
+        question: "What is the smallest prime number greater than 20?",
         type: "multiple-choice",
-        options: ["174 miles", "203 miles", "261 miles", "29 miles"],
-        correct: 1,
-        explanation: "Set up the proportion: 3/87 = 7/d. Cross-multiply: 3d = 609. Divide by 3: d = 203 miles.",
-        difficulty: "hard",
+        options: ["21", "22", "23", "25"],
+        correct: 2,
+        explanation: "21 = 3&times;7 (composite), 22 = 2&times;11 (composite), 25 = 5&times;5 (composite). 23 has no factors other than 1 and 23, so it is prime.",
+        difficulty: "medium",
         category: "topic"
       },
       {
         id: "d7q8",
-        question: "On a map, 2 cm represents 50 km. Two cities are 7 cm apart on the map. What is the actual distance?",
+        question: "A teacher wants to divide 84 students into equal groups with no students left over. Which of the following is <strong>not</strong> a possible group size?",
         type: "multiple-choice",
-        options: ["150 km", "175 km", "200 km", "350 km"],
-        correct: 1,
-        explanation: "Set up a proportion: 2/50 = 7/d. Cross-multiply: 2d = 350. Divide by 2: d = 175 km.",
+        options: ["7", "12", "14", "16"],
+        correct: 3,
+        explanation: "84 &divide; 7 = 12 &#10003;, 84 &divide; 12 = 7 &#10003;, 84 &divide; 14 = 6 &#10003;. But 84 &divide; 16 = 5 R4, so 16 does not work.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d7q9",
-        question: "What is 4.2 &times; 0.3?",
+        question: "What is 8<sup>0</sup> &times; 5<sup>&minus;1</sup>?",
         type: "multiple-choice",
-        options: ["12.6", "1.26", "0.126", "1.62"],
+        options: ["0", "1/5", "5", "8/5"],
         correct: 1,
-        explanation: "Multiply 42 &times; 3 = 126. Count 2 total decimal places. Answer: 1.26.",
-        difficulty: "medium",
+        explanation: "8<sup>0</sup> = 1 (zero exponent rule from Day 6). 5<sup>&minus;1</sup> = 1/5. So 1 &times; 1/5 = 1/5.",
+        difficulty: "hard",
         category: "review"
       },
       {
         id: "d7q10",
-        question: "What is the value of 3 + 2 &times; 4 &minus; 1?",
+        question: "Simplify using exponent rules: 2<sup>5</sup> &divide; 2<sup>7</sup>.",
         type: "multiple-choice",
-        options: ["19", "10", "12", "14"],
+        options: ["2<sup>2</sup>", "2<sup>&minus;2</sup> = 1/4", "2<sup>12</sup>", "&minus;2<sup>2</sup>"],
         correct: 1,
-        explanation: "Follow PEMDAS: first multiply 2 &times; 4 = 8. Then 3 + 8 &minus; 1 = 10.",
-        difficulty: "easy",
+        explanation: "Quotient rule from Day 6: 2<sup>5&minus;7</sup> = 2<sup>&minus;2</sup> = 1/2<sup>2</sup> = 1/4.",
+        difficulty: "hard",
         category: "review"
       }
     ]
   },
 
+  // ============================================================
+  // DAY 8: Prime Factorization & LCM
+  // ============================================================
   day8: {
     lesson: {
-      title: "Percents",
-      subtitle: "Understand and use percents for fractions, decimals, and real-life problems",
+      title: "Prime Factorization & Least Common Multiple",
+      subtitle: "Break every number into its prime building blocks, then use those blocks to find the LCM",
       sections: [
         {
-          heading: "Understanding Percents",
+          heading: "Prime Factorization",
           paragraphs: [
-            "The word <strong>percent</strong> means <em>\"per hundred.\"</em> A percent tells you how many out of 100. For example, 25% means 25 out of 100, and 80% means 80 out of 100. You can picture a 10&times;10 grid with 100 squares&mdash;shading 25 squares represents 25%.",
-            "Some percents come up so often that they&rsquo;re worth memorizing: <strong>100% = the whole thing</strong>, <strong>50% = one half</strong>, <strong>25% = one quarter</strong>, <strong>10% = one tenth</strong>, and <strong>1% = one hundredth</strong>. These benchmarks help you estimate quickly.",
-            "Percents can be less than 1% (like 0.5%) or greater than 100% (like 150%). A percent greater than 100% means <em>more than the whole</em>. For instance, if your savings grew by 150%, you now have more than you started with!"
+            "Every whole number greater than 1 can be written as a product of prime numbers. This is called its <strong>prime factorization</strong>. It&rsquo;s like breaking a LEGO creation all the way down to its individual bricks &mdash; primes are the bricks of multiplication.",
+            "The easiest way to find a prime factorization is to build a <strong>factor tree</strong>. Start with your number and split it into any two factors. Then split each factor further, and keep going until every &ldquo;leaf&rdquo; is a prime. For example, 60 &rarr; 6 &times; 10 &rarr; (2&times;3)&times;(2&times;5). So 60 = 2 &times; 2 &times; 3 &times; 5 = 2<sup>2</sup> &times; 3 &times; 5.",
+            "No matter how you build the tree, you always end up with the same set of primes (just possibly in a different order). This amazing fact is called the <strong>Fundamental Theorem of Arithmetic</strong>. When writing the final answer, it&rsquo;s standard to use exponents and list the primes in order from smallest to largest. For example, 360 = 2<sup>3</sup> &times; 3<sup>2</sup> &times; 5."
           ],
           example: {
-            title: "Worked Example: Visualizing a Percent",
-            problem: "What does 40% look like on a 100-square grid?",
+            title: "Worked Example: Factor Tree for 180",
+            problem: "Find the prime factorization of 180.",
             steps: [
-              "A 10&times;10 grid has 100 squares total.",
-              "40% means 40 out of 100.",
-              "Shade 40 squares (for example, 4 full rows of 10).",
-              "Answer: <strong>40 out of 100 squares</strong> are shaded, representing 40%."
+              "Start: 180 = 2 &times; 90 (180 is even, so divide by 2).",
+              "90 = 2 &times; 45.",
+              "45 = 3 &times; 15.",
+              "15 = 3 &times; 5.",
+              "Collect the primes: 2 &times; 2 &times; 3 &times; 3 &times; 5.",
+              "Write with exponents: 180 = <strong>2<sup>2</sup> &times; 3<sup>2</sup> &times; 5</strong>."
             ]
           }
         },
         {
-          heading: "Converting Between Fractions, Decimals, and Percents",
+          heading: "Least Common Multiple (LCM)",
           paragraphs: [
-            "These three forms all represent parts of a whole, and you can convert freely between them. To change a <strong>percent to a decimal</strong>, divide by 100 (or move the decimal point 2 places to the left). For example, 45% = 0.45 and 7% = 0.07.",
-            "To change a <strong>decimal to a percent</strong>, multiply by 100 (or move the decimal point 2 places to the right). For example, 0.8 = 80% and 0.125 = 12.5%.",
-            "To change a <strong>percent to a fraction</strong>, write the percent over 100 and simplify. For example, 60% = 60/100 = 3/5. To change a <strong>fraction to a percent</strong>, first convert the fraction to a decimal (divide), then convert that decimal to a percent. For instance, 3/8 = 0.375 = 37.5%."
+            "The <strong>Least Common Multiple</strong> (LCM) of two numbers is the <em>smallest</em> positive number that is a multiple of both. For instance, the multiples of 4 are 4, 8, 12, 16, 20, 24, &hellip; and the multiples of 6 are 6, 12, 18, 24, &hellip;. The common multiples are 12, 24, 36, &hellip;, and the <em>least</em> is <strong>12</strong>.",
+            "<strong>Method 1 &mdash; Listing multiples:</strong> Write out multiples of each number until you find the first match. This works great for small numbers. <strong>Method 2 &mdash; Prime factorization:</strong> Find the prime factorization of each number, then take the <em>highest power</em> of every prime that appears. This is faster for larger numbers.",
+            "For example, to find LCM(12, 18): 12 = 2<sup>2</sup> &times; 3 and 18 = 2 &times; 3<sup>2</sup>. Take the highest power of each prime: 2<sup>2</sup> and 3<sup>2</sup>. So LCM = 2<sup>2</sup> &times; 3<sup>2</sup> = 4 &times; 9 = <strong>36</strong>."
           ],
           example: {
-            title: "Worked Example: Converting All Three Ways",
-            problem: "Express 3/5 as a decimal and as a percent.",
+            title: "Worked Example: LCM Using Prime Factorization",
+            problem: "Find the LCM of 24 and 90.",
             steps: [
-              "Convert to decimal: 3 &divide; 5 = 0.6.",
-              "Convert decimal to percent: 0.6 &times; 100 = 60%.",
-              "Answer: 3/5 = <strong>0.6</strong> = <strong>60%</strong>."
+              "Prime factorize each: 24 = 2<sup>3</sup> &times; 3 and 90 = 2 &times; 3<sup>2</sup> &times; 5.",
+              "List all primes that appear: 2, 3, 5.",
+              "Take the <strong>highest</strong> power of each: 2<sup>3</sup>, 3<sup>2</sup>, 5<sup>1</sup>.",
+              "Multiply: 8 &times; 9 &times; 5 = <strong>360</strong>.",
+              "Check: 360 &divide; 24 = 15 &#10003; and 360 &divide; 90 = 4 &#10003;."
             ]
           }
         },
         {
-          heading: "Solving Percent Problems",
+          heading: "LCM Applications",
           paragraphs: [
-            "Most percent problems fall into three types. Use the formula: <strong>Part = Percent &times; Whole</strong>. You can rearrange it to solve for any of the three values.",
-            "<strong>Finding the part:</strong> What is 30% of 200? Multiply: 0.30 &times; 200 = 60. <strong>Finding the percent:</strong> 15 is what percent of 60? Divide: 15 &divide; 60 = 0.25, then convert: 0.25 = 25%. <strong>Finding the whole:</strong> 12 is 40% of what number? Divide the part by the percent: 12 &divide; 0.40 = 30.",
-            "A useful shortcut: to find <strong>10%</strong> of any number, just move the decimal one place to the left. Then you can build from there. For example, 10% of 80 is 8, so 20% is 16, 5% is 4, and 15% is 12."
+            "LCM shows up whenever two events happen on different cycles and you want to know <em>when they&rsquo;ll sync up</em>. Imagine one traffic light cycles every 40 seconds and another cycles every 60 seconds. When will they both be green at the same time again? You need LCM(40, 60)!",
+            "Here is a classic scheduling problem: Mia visits the library every 8 days and Noah visits every 12 days. If they are both there today, when is the next time they will visit on the same day? That&rsquo;s LCM(8, 12) = 24 days from now.",
+            "LCM is also essential when you add or subtract fractions with different denominators &mdash; the common denominator you need is the LCM of the two denominators. You&rsquo;ll use this skill a lot when we get to fractions on Day&nbsp;10!"
           ],
           example: {
-            title: "Worked Example: Finding the Part",
-            problem: "What is 15% of 80?",
+            title: "Worked Example: Scheduling Problem",
+            problem: "Hot dogs come in packs of 10 and buns in packs of 8. What is the smallest number of each you can buy so you have the same number of hot dogs and buns?",
             steps: [
-              "Convert the percent to a decimal: 15% = 0.15.",
-              "Multiply: 0.15 &times; 80.",
-              "Calculate: 0.15 &times; 80 = 12.",
-              "Answer: 15% of 80 is <strong>12</strong>."
-            ]
-          }
-        },
-        {
-          heading: "Real-World Percents",
-          paragraphs: [
-            "Percents are everywhere in real life! A <strong>discount</strong> is a percent taken off the original price. If a $50 shirt is 20% off, the discount is 0.20 &times; $50 = $10, so you pay $50 &minus; $10 = $40.",
-            "<strong>Sales tax</strong> is a percent added onto a price. If tax is 8% and your item costs $25, the tax is 0.08 &times; $25 = $2.00. The total cost is $25 + $2 = $27. Similarly, a <strong>tip</strong> at a restaurant is usually 15%&ndash;20% of the bill.",
-            "Here&rsquo;s a handy trick: to calculate a <strong>tip</strong>, find 10% of the bill (move the decimal one place left), then adjust. For a $36 bill: 10% is $3.60, so 20% is $7.20. For 15%, take the average: ($3.60 + $7.20) &divide; 2 = $5.40."
-          ],
-          example: {
-            title: "Worked Example: Finding the Sale Price",
-            problem: "A backpack costs $60 and is on sale for 25% off. What is the sale price?",
-            steps: [
-              "Find the discount: 25% of $60 = 0.25 &times; 60 = $15.",
-              "Subtract the discount from the original price: $60 &minus; $15.",
-              "Answer: The sale price is <strong>$45</strong>."
+              "We need the LCM of 10 and 8.",
+              "10 = 2 &times; 5 and 8 = 2<sup>3</sup>.",
+              "Highest powers: 2<sup>3</sup> and 5<sup>1</sup>. LCM = 8 &times; 5 = <strong>40</strong>.",
+              "Buy 40 &divide; 10 = <strong>4 packs</strong> of hot dogs and 40 &divide; 8 = <strong>5 packs</strong> of buns.",
+              "You&rsquo;ll have exactly 40 of each &mdash; no leftovers!"
             ]
           }
         }
@@ -428,181 +412,169 @@ export const DAYS_6_10 = {
     quiz: [
       {
         id: "d8q1",
-        question: "What is 50% written as a decimal?",
+        question: "What is the prime factorization of 36?",
         type: "multiple-choice",
-        options: ["5.0", "0.50", "0.05", "50.0"],
-        correct: 1,
-        explanation: "To convert a percent to a decimal, divide by 100: 50 &divide; 100 = 0.50.",
+        options: ["2<sup>2</sup> &times; 9", "4 &times; 9", "2<sup>2</sup> &times; 3<sup>2</sup>", "6<sup>2</sup>"],
+        correct: 2,
+        explanation: "36 = 4 &times; 9 = 2<sup>2</sup> &times; 3<sup>2</sup>. Both 4 and 9 must be broken down to primes.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d8q2",
-        question: "What is 25% of 80?",
+        question: "What is the prime factorization of 50?",
         type: "multiple-choice",
-        options: ["25", "15", "20", "40"],
-        correct: 2,
-        explanation: "25% = 0.25. Multiply: 0.25 &times; 80 = 20.",
+        options: ["2 &times; 25", "2 &times; 5<sup>2</sup>", "5 &times; 10", "2<sup>2</sup> &times; 5"],
+        correct: 1,
+        explanation: "50 = 2 &times; 25 = 2 &times; 5<sup>2</sup>. Remember, 25 = 5 &times; 5, so keep factoring until every factor is prime.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d8q3",
-        question: "Convert 0.6 to a percent.",
+        question: "What is the LCM of 6 and 8?",
         type: "multiple-choice",
-        options: ["0.6%", "6%", "60%", "600%"],
-        correct: 2,
-        explanation: "Multiply by 100: 0.6 &times; 100 = 60%.",
+        options: ["14", "24", "48", "2"],
+        correct: 1,
+        explanation: "Multiples of 6: 6, 12, 18, 24&hellip; Multiples of 8: 8, 16, 24&hellip; The smallest common multiple is 24.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d8q4",
-        question: "What percent of 50 is 12?",
+        question: "What is the prime factorization of 360?",
         type: "multiple-choice",
-        options: ["20%", "12%", "24%", "25%"],
-        correct: 2,
-        explanation: "Divide: 12 &divide; 50 = 0.24. Convert to percent: 0.24 &times; 100 = 24%.",
+        options: ["2<sup>3</sup> &times; 3<sup>2</sup> &times; 5", "2<sup>2</sup> &times; 3<sup>2</sup> &times; 10", "2<sup>3</sup> &times; 45", "4 &times; 9 &times; 10"],
+        correct: 0,
+        explanation: "360 = 8 &times; 45 = 2<sup>3</sup> &times; (9 &times; 5) = 2<sup>3</sup> &times; 3<sup>2</sup> &times; 5. All factors must be prime.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d8q5",
-        question: "A shirt costs $40 and is 15% off. What is the discount amount?",
+        question: "What is the LCM of 12 and 18?",
         type: "multiple-choice",
-        options: ["$4.00", "$6.00", "$8.00", "$15.00"],
+        options: ["6", "36", "72", "216"],
         correct: 1,
-        explanation: "15% of $40 = 0.15 &times; 40 = $6.00.",
+        explanation: "12 = 2<sup>2</sup> &times; 3 and 18 = 2 &times; 3<sup>2</sup>. Take highest powers: 2<sup>2</sup> &times; 3<sup>2</sup> = 4 &times; 9 = 36.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d8q6",
-        question: "Write 3/8 as a percent.",
+        question: "What is the LCM of 15 and 20?",
         type: "multiple-choice",
-        options: ["38%", "37.5%", "33.3%", "30%"],
+        options: ["30", "60", "100", "300"],
         correct: 1,
-        explanation: "3 &divide; 8 = 0.375. Convert to percent: 0.375 &times; 100 = 37.5%.",
+        explanation: "15 = 3 &times; 5 and 20 = 2<sup>2</sup> &times; 5. Take highest powers: 2<sup>2</sup> &times; 3 &times; 5 = 4 &times; 3 &times; 5 = 60.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d8q7",
-        question: "18 is 30% of what number?",
+        question: "Two alarms go off at the same time. One beeps every 15 minutes and the other every 20 minutes. In how many minutes will they beep together again?",
         type: "multiple-choice",
-        options: ["5.4", "54", "60", "48"],
-        correct: 2,
-        explanation: "Use Part = Percent &times; Whole: 18 = 0.30 &times; Whole. Divide: 18 &divide; 0.30 = 60.",
-        difficulty: "hard",
+        options: ["30", "60", "35", "300"],
+        correct: 1,
+        explanation: "LCM(15, 20) = 60. The alarms will sync up again in 60 minutes (1 hour).",
+        difficulty: "medium",
         category: "topic"
       },
       {
         id: "d8q8",
-        question: "A meal costs $45. You add 8% tax and then leave a 20% tip on the pre-tax amount. What is the total?",
+        question: "What is the LCM of 8, 12, and 15?",
         type: "multiple-choice",
-        options: ["$55.60", "$57.60", "$58.50", "$54.60"],
+        options: ["60", "120", "180", "360"],
         correct: 1,
-        explanation: "Tax: 0.08 &times; $45 = $3.60. Tip: 0.20 &times; $45 = $9.00. Total: $45 + $3.60 + $9.00 = $57.60.",
+        explanation: "8 = 2<sup>3</sup>, 12 = 2<sup>2</sup> &times; 3, 15 = 3 &times; 5. Take highest powers: 2<sup>3</sup> &times; 3 &times; 5 = 8 &times; 3 &times; 5 = 120.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d8q9",
-        question: "Solve for x: 3/5 = x/35.",
+        question: "Is 91 prime or composite?",
         type: "multiple-choice",
-        options: ["15", "21", "7", "25"],
-        correct: 1,
-        explanation: "Cross-multiply: 3 &times; 35 = 5 &times; x, so 105 = 5x. Divide by 5: x = 21.",
-        difficulty: "medium",
+        options: ["Prime", "Composite: 91 = 3 &times; 30 + 1", "Composite: 91 = 7 &times; 13", "Composite: 91 = 9 &times; 11"],
+        correct: 2,
+        explanation: "91 = 7 &times; 13. Many students think 91 is prime, but checking divisibility by 7 reveals 91 &divide; 7 = 13. (Review from Day 7.)",
+        difficulty: "hard",
         category: "review"
       },
       {
         id: "d8q10",
-        question: "What is 3/4 &times; 2/5?",
+        question: "Using divisibility rules, which of these numbers is divisible by 6?",
         type: "multiple-choice",
-        options: ["6/20 = 3/10", "5/9", "6/9 = 2/3", "3/20"],
-        correct: 0,
-        explanation: "Multiply numerators: 3 &times; 2 = 6. Multiply denominators: 4 &times; 5 = 20. Result: 6/20 = 3/10.",
-        difficulty: "easy",
+        options: ["1,335", "2,534", "4,122", "5,015"],
+        correct: 2,
+        explanation: "A number divisible by 6 must be divisible by both 2 and 3. 4,122 is even (ends in 2) and its digit sum 4+1+2+2 = 9 is divisible by 3. (Review from Day 7.)",
+        difficulty: "hard",
         category: "review"
       }
     ]
   },
 
+  // ============================================================
+  // DAY 9: Divisors & Greatest Common Divisor (GCD)
+  // ============================================================
   day9: {
     lesson: {
-      title: "Variables & Expressions",
-      subtitle: "Use letters and symbols to represent numbers and write math in a new way",
+      title: "Divisors & Greatest Common Divisor",
+      subtitle: "Use prime factorization to find every divisor of a number and discover the GCD &mdash; the biggest factor two numbers share",
       sections: [
         {
-          heading: "What Are Variables?",
+          heading: "Finding All Divisors",
           paragraphs: [
-            "A <strong>variable</strong> is a letter (like <em>x</em>, <em>y</em>, or <em>n</em>) that stands for a number we don&rsquo;t know yet. Think of it as a box or placeholder that can hold different values. Variables let us write math that works for <em>many</em> situations, not just one.",
-            "For example, if a movie ticket costs <em>x</em> dollars, then 3 tickets cost 3 &times; <em>x</em> dollars. We don&rsquo;t need to know the exact price to write the expression! Once we learn the price, we can plug it in.",
-            "In algebra, when a number is written right next to a variable with no sign between them, it means multiplication. So <strong>5n</strong> means 5 &times; <em>n</em>, and <strong>3xy</strong> means 3 &times; <em>x</em> &times; <em>y</em>. The number in front of the variable is called the <strong>coefficient</strong>."
+            "On Day&nbsp;7 you found factors by trying every number up to the square root. Now that you know prime factorization (Day&nbsp;8), there&rsquo;s a <em>more powerful</em> method. Every divisor of a number is made up of the same primes in its factorization, just with equal or <em>smaller</em> exponents.",
+            "For example, 72 = 2<sup>3</sup> &times; 3<sup>2</sup>. Any divisor of 72 looks like 2<sup>a</sup> &times; 3<sup>b</sup> where <em>a</em> can be 0, 1, 2, or 3 and <em>b</em> can be 0, 1, or 2. To count divisors without listing them all, use the <strong>divisor-counting formula</strong>: multiply (each exponent + 1). Here: (3+1) &times; (2+1) = 4 &times; 3 = <strong>12 divisors</strong>.",
+            "This formula is incredibly useful. Want to know how many divisors 360 = 2<sup>3</sup>&times;3<sup>2</sup>&times;5 has? Just compute (3+1)(2+1)(1+1) = 4&times;3&times;2 = <strong>24 divisors</strong> &mdash; no listing required! The formula works because you are counting all possible combinations of exponents for each prime."
           ],
           example: {
-            title: "Worked Example: Identifying Parts of an Expression",
-            problem: "Name the variable, coefficient, and constant in the expression 4x + 7.",
+            title: "Worked Example: Listing Divisors from Prime Factorization",
+            problem: "Find all divisors of 30.",
             steps: [
-              "The variable is <em>x</em>&mdash;it represents an unknown number.",
-              "The coefficient is 4&mdash;it is the number multiplied by the variable.",
-              "The constant is 7&mdash;it is a fixed number that doesn&rsquo;t change.",
-              "Answer: Variable = <strong>x</strong>, coefficient = <strong>4</strong>, constant = <strong>7</strong>."
+              "Prime factorization: 30 = 2 &times; 3 &times; 5.",
+              "Each prime has exponent 1, so each can be 0 or 1. That&rsquo;s (1+1)(1+1)(1+1) = 8 divisors.",
+              "List them systematically: pick exponent for 2 (0 or 1), then 3, then 5.",
+              "2<sup>0</sup>&times;3<sup>0</sup>&times;5<sup>0</sup>=1, 2<sup>1</sup>&times;3<sup>0</sup>&times;5<sup>0</sup>=2, 2<sup>0</sup>&times;3<sup>1</sup>&times;5<sup>0</sup>=3, 2<sup>0</sup>&times;3<sup>0</sup>&times;5<sup>1</sup>=5, 2<sup>1</sup>&times;3<sup>1</sup>&times;5<sup>0</sup>=6, 2<sup>1</sup>&times;3<sup>0</sup>&times;5<sup>1</sup>=10, 2<sup>0</sup>&times;3<sup>1</sup>&times;5<sup>1</sup>=15, 2<sup>1</sup>&times;3<sup>1</sup>&times;5<sup>1</sup>=30.",
+              "Divisors of 30: <strong>1, 2, 3, 5, 6, 10, 15, 30</strong>."
             ]
           }
         },
         {
-          heading: "Writing Algebraic Expressions",
+          heading: "Greatest Common Divisor (GCD)",
           paragraphs: [
-            "One of the most important skills in algebra is translating words into math expressions. Here are key phrases to know: <em>\"sum of\"</em> means addition, <em>\"difference of\"</em> means subtraction, <em>\"product of\"</em> means multiplication, and <em>\"quotient of\"</em> means division.",
-            "Watch out for tricky phrasing! <em>\"5 less than a number\"</em> means <strong>n &minus; 5</strong> (not 5 &minus; n). The phrase <em>\"less than\"</em> flips the order. Similarly, <em>\"twice a number\"</em> means <strong>2n</strong>, and <em>\"a number divided by 3\"</em> means <strong>n/3</strong>.",
-            "More complex phrases combine operations. <em>\"3 more than twice a number\"</em> translates to <strong>2n + 3</strong>. <em>\"Half of the sum of a number and 10\"</em> becomes <strong>(n + 10)/2</strong>. Practice reading these carefully&mdash;the order of the words tells you the order of the math!"
+            "The <strong>Greatest Common Divisor</strong> (GCD) &mdash; also called the <strong>Greatest Common Factor</strong> (GCF) &mdash; of two numbers is the <em>largest</em> number that divides both of them evenly. For example, the factors of 12 are 1, 2, 3, 4, 6, 12, and the factors of 18 are 1, 2, 3, 6, 9, 18. The common factors are 1, 2, 3, 6, and the greatest is <strong>6</strong>.",
+            "<strong>Method 1 &mdash; Listing factors:</strong> Write out all factors of each number and pick the largest one they share. <strong>Method 2 &mdash; Prime factorization:</strong> Factorize both numbers, then take the <em>lowest</em> power of each <em>shared</em> prime. This is the mirror image of LCM, where you took the highest power!",
+            "For example, GCD(48, 180): 48 = 2<sup>4</sup>&times;3 and 180 = 2<sup>2</sup>&times;3<sup>2</sup>&times;5. Shared primes are 2 and 3. Take the lower power of each: 2<sup>2</sup> and 3<sup>1</sup>. GCD = 4 &times; 3 = <strong>12</strong>. (The prime 5 is in 180 but not 48, so it&rsquo;s not shared.)"
           ],
           example: {
-            title: "Worked Example: Translating Words to Math",
-            problem: "Write an algebraic expression for: \"7 less than 3 times a number.\"",
+            title: "Worked Example: GCD by Prime Factorization",
+            problem: "Find the GCD of 60 and 84.",
             steps: [
-              "Let the unknown number be <em>n</em>.",
-              "\"3 times a number\" translates to 3n.",
-              "\"7 less than\" means we subtract 7 from that result.",
-              "Answer: <strong>3n &minus; 7</strong>."
+              "60 = 2<sup>2</sup> &times; 3 &times; 5.",
+              "84 = 2<sup>2</sup> &times; 3 &times; 7.",
+              "Shared primes: 2 and 3 (5 is only in 60; 7 is only in 84).",
+              "Take the <strong>lowest</strong> power of each shared prime: 2<sup>2</sup> and 3<sup>1</sup>.",
+              "GCD = 4 &times; 3 = <strong>12</strong>."
             ]
           }
         },
         {
-          heading: "Evaluating Expressions",
+          heading: "GCD Applications",
           paragraphs: [
-            "To <strong>evaluate</strong> an expression means to find its value when you replace the variable with a specific number. Substitute the given number for the variable, then compute step by step using the order of operations (PEMDAS).",
-            "For example, evaluate 2x + 5 when x = 4. Replace x with 4: 2(4) + 5 = 8 + 5 = 13. Always use parentheses around the substituted value to avoid mistakes, especially with negative numbers.",
-            "When expressions have more than one variable, you substitute a value for each one. For example, evaluate 3a &minus; b when a = 6 and b = 4: substitute to get 3(6) &minus; 4 = 18 &minus; 4 = 14."
+            "The GCD is the key to <strong>simplifying fractions</strong> &mdash; you divide the numerator and denominator by their GCD to get the simplest form. For example, 48/60: GCD(48,60) = 12, so 48/60 = (48 &divide; 12)/(60 &divide; 12) = 4/5. You&rsquo;ll use this constantly starting on Day&nbsp;10!",
+            "GCD also solves <strong>equal-sharing problems</strong>. Suppose you have 36 red marbles and 48 blue marbles and want to divide them into identical bags with no marbles left over. Each bag gets the same number of reds and the same number of blues. The maximum number of bags is GCD(36, 48) = 12. Each bag gets 36&divide;12 = 3 red and 48&divide;12 = 4 blue marbles.",
+            "There is a beautiful relationship between GCD and LCM: for any two positive integers <em>a</em> and <em>b</em>, <strong>GCD(a,b) &times; LCM(a,b) = a &times; b</strong>. This means if you know one, you can find the other! For example, GCD(12,18)=6, so LCM(12,18) = (12&times;18)/6 = 216/6 = 36 &mdash; matching what we found on Day&nbsp;8."
           ],
           example: {
-            title: "Worked Example: Evaluating an Expression",
-            problem: "Evaluate 5x &minus; 3 when x = &minus;2.",
+            title: "Worked Example: Splitting into Equal Groups",
+            problem: "A florist has 54 roses and 36 tulips. She wants to make identical bouquets using all flowers, with no flowers left over. What is the greatest number of bouquets she can make, and what goes in each?",
             steps: [
-              "Replace x with &minus;2: 5(&minus;2) &minus; 3.",
-              "Multiply first: 5 &times; (&minus;2) = &minus;10.",
-              "Subtract: &minus;10 &minus; 3 = &minus;13.",
-              "Answer: <strong>&minus;13</strong>."
-            ]
-          }
-        },
-        {
-          heading: "Simplifying Expressions",
-          paragraphs: [
-            "<strong>Like terms</strong> are terms that have the same variable raised to the same power. For example, 3x and 7x are like terms because they both have the variable <em>x</em>. However, 3x and 3x<sup>2</sup> are <em>not</em> like terms because the exponents are different. Constants (plain numbers) are also like terms with each other.",
-            "To <strong>combine like terms</strong>, add or subtract their coefficients. For example, 3x + 7x = 10x, and 5y &minus; 2y = 3y. You can also combine constants: 4 + 9 = 13. Combining like terms is one of the main ways to simplify an expression.",
-            "The <strong>distributive property</strong> says that a(b + c) = ab + ac. You multiply the number outside the parentheses by each term inside. For example, 3(x + 4) = 3x + 12. After distributing, look for like terms to combine and simplify further."
-          ],
-          example: {
-            title: "Worked Example: Simplifying with the Distributive Property",
-            problem: "Simplify: 2(3x + 5) + 4x.",
-            steps: [
-              "Distribute the 2: 2 &times; 3x + 2 &times; 5 = 6x + 10.",
-              "Write the full expression: 6x + 10 + 4x.",
-              "Combine like terms: 6x + 4x = 10x.",
-              "Answer: <strong>10x + 10</strong>."
+              "Find GCD(54, 36).",
+              "54 = 2 &times; 3<sup>3</sup> and 36 = 2<sup>2</sup> &times; 3<sup>2</sup>.",
+              "Shared primes: 2 and 3. Lowest powers: 2<sup>1</sup> and 3<sup>2</sup>.",
+              "GCD = 2 &times; 9 = <strong>18</strong>.",
+              "She can make <strong>18 bouquets</strong>: each has 54 &divide; 18 = 3 roses and 36 &divide; 18 = 2 tulips."
             ]
           }
         }
@@ -611,183 +583,168 @@ export const DAYS_6_10 = {
     quiz: [
       {
         id: "d9q1",
-        question: "In the expression 6n + 3, what is the coefficient of n?",
+        question: "How many divisors does 24 have? (24 = 2<sup>3</sup> &times; 3)",
         type: "multiple-choice",
-        options: ["n", "3", "6", "6n"],
-        correct: 2,
-        explanation: "The coefficient is the number multiplied by the variable. In 6n, the coefficient is 6.",
+        options: ["6", "8", "10", "12"],
+        correct: 1,
+        explanation: "Using the divisor-counting formula: (3+1) &times; (1+1) = 4 &times; 2 = 8 divisors.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d9q2",
-        question: "Which expression represents \"the sum of a number and 9\"?",
+        question: "What is the GCD of 20 and 30?",
         type: "multiple-choice",
-        options: ["9n", "n &minus; 9", "n + 9", "n &divide; 9"],
-        correct: 2,
-        explanation: "\"Sum\" means addition. A number plus 9 is written as n + 9.",
+        options: ["5", "10", "15", "60"],
+        correct: 1,
+        explanation: "Factors of 20: 1,2,4,5,10,20. Factors of 30: 1,2,3,5,6,10,15,30. Largest shared factor: 10.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d9q3",
-        question: "Evaluate 4x when x = 3.",
+        question: "What is the GCD of 36 and 48?",
         type: "multiple-choice",
-        options: ["7", "12", "34", "43"],
-        correct: 1,
-        explanation: "Substitute x = 3 into 4x: 4 &times; 3 = 12.",
+        options: ["6", "8", "12", "24"],
+        correct: 2,
+        explanation: "36 = 2<sup>2</sup>&times;3<sup>2</sup> and 48 = 2<sup>4</sup>&times;3. Lowest shared powers: 2<sup>2</sup>&times;3<sup>1</sup> = 4 &times; 3 = 12.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d9q4",
-        question: "Which expression means \"5 less than twice a number\"?",
+        question: "How many divisors does 100 have? (100 = 2<sup>2</sup> &times; 5<sup>2</sup>)",
         type: "multiple-choice",
-        options: ["5 &minus; 2n", "2n &minus; 5", "2(n &minus; 5)", "5n &minus; 2"],
-        correct: 1,
-        explanation: "\"Twice a number\" is 2n. \"5 less than\" means subtract 5 from it: 2n &minus; 5.",
+        options: ["4", "6", "9", "8"],
+        correct: 2,
+        explanation: "(2+1) &times; (2+1) = 3 &times; 3 = 9 divisors: 1, 2, 4, 5, 10, 20, 25, 50, 100.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d9q5",
-        question: "Evaluate 3a + 2b when a = 4 and b = 5.",
+        question: "What is the GCD of 72 and 108?",
         type: "multiple-choice",
-        options: ["22", "19", "27", "17"],
-        correct: 0,
-        explanation: "Substitute: 3(4) + 2(5) = 12 + 10 = 22.",
+        options: ["12", "18", "36", "9"],
+        correct: 2,
+        explanation: "72 = 2<sup>3</sup>&times;3<sup>2</sup> and 108 = 2<sup>2</sup>&times;3<sup>3</sup>. Lowest shared: 2<sup>2</sup>&times;3<sup>2</sup> = 4 &times; 9 = 36.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d9q6",
-        question: "Simplify: 8x + 3 &minus; 2x + 7.",
+        question: "A baker has 42 chocolate chips and 56 gummy bears. She puts them into bags so each bag has the same number of chips and the same number of bears, with none left over. What is the maximum number of bags?",
         type: "multiple-choice",
-        options: ["10x + 10", "6x + 10", "6x &minus; 4", "10x &minus; 4"],
-        correct: 1,
-        explanation: "Combine like terms: 8x &minus; 2x = 6x and 3 + 7 = 10. Result: 6x + 10.",
+        options: ["6", "7", "14", "21"],
+        correct: 2,
+        explanation: "GCD(42, 56): 42 = 2&times;3&times;7 and 56 = 2<sup>3</sup>&times;7. Shared: 2&times;7 = 14. She makes 14 bags (3 chips and 4 bears each).",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d9q7",
-        question: "Simplify: 4(2x + 3) &minus; 5x.",
+        question: "If GCD(a, b) = 15 and a &times; b = 4,500, what is LCM(a, b)?",
         type: "multiple-choice",
-        options: ["3x + 3", "3x + 12", "13x + 3", "3x + 7"],
+        options: ["150", "300", "675", "4,500"],
         correct: 1,
-        explanation: "Distribute: 4 &times; 2x + 4 &times; 3 = 8x + 12. Then 8x + 12 &minus; 5x = 3x + 12.",
+        explanation: "GCD &times; LCM = a &times; b, so LCM = 4,500 &divide; 15 = 300.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d9q8",
-        question: "Evaluate x<sup>2</sup> &minus; 3x + 2 when x = 5.",
+        question: "How many divisors does 360 have? (360 = 2<sup>3</sup> &times; 3<sup>2</sup> &times; 5)",
         type: "multiple-choice",
-        options: ["12", "2", "42", "10"],
-        correct: 0,
-        explanation: "Substitute x = 5: 5<sup>2</sup> &minus; 3(5) + 2 = 25 &minus; 15 + 2 = 12.",
+        options: ["12", "18", "24", "36"],
+        correct: 2,
+        explanation: "(3+1)(2+1)(1+1) = 4 &times; 3 &times; 2 = 24 divisors.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d9q9",
-        question: "What is 40% of 90?",
+        question: "What is the prime factorization of 252?",
         type: "multiple-choice",
-        options: ["32", "36", "40", "45"],
-        correct: 1,
-        explanation: "40% = 0.40. Multiply: 0.40 &times; 90 = 36.",
-        difficulty: "medium",
+        options: ["2<sup>2</sup> &times; 3<sup>2</sup> &times; 7", "2<sup>3</sup> &times; 3 &times; 7", "2<sup>2</sup> &times; 7<sup>2</sup>", "4 &times; 63"],
+        correct: 0,
+        explanation: "252 = 4 &times; 63 = 2<sup>2</sup> &times; (9 &times; 7) = 2<sup>2</sup> &times; 3<sup>2</sup> &times; 7. All factors must be prime! (Review from Day 8.)",
+        difficulty: "hard",
         category: "review"
       },
       {
         id: "d9q10",
-        question: "A recipe needs sugar and flour in a ratio of 2:5. If you use 6 cups of sugar, how many cups of flour do you need?",
+        question: "What is the LCM of 14 and 21?",
         type: "multiple-choice",
-        options: ["10", "12", "15", "20"],
-        correct: 2,
-        explanation: "Set up the proportion: 2/5 = 6/f. Cross-multiply: 2f = 30. Divide by 2: f = 15.",
+        options: ["7", "42", "84", "294"],
+        correct: 1,
+        explanation: "14 = 2 &times; 7 and 21 = 3 &times; 7. Highest powers: 2, 3, 7. LCM = 2 &times; 3 &times; 7 = 42. (Review from Day 8.)",
         difficulty: "medium",
         category: "review"
       }
     ]
   },
 
+  // ============================================================
+  // DAY 10: Fractions — What They Mean & Simplifying
+  // ============================================================
   day10: {
     lesson: {
-      title: "Equations & Problem Solving",
-      subtitle: "Solve equations and put all your pre-algebra skills to work",
+      title: "Fractions &mdash; What They Mean & Simplifying",
+      subtitle: "Understand what fractions really are, build equivalent fractions, and simplify using the GCD you learned yesterday",
       sections: [
         {
-          heading: "Understanding Equations",
+          heading: "What Is a Fraction?",
           paragraphs: [
-            "An <strong>equation</strong> is a math sentence that says two things are <em>equal</em>, connected by an equals sign (=). For example, 3x + 2 = 14 is an equation. An <strong>expression</strong> like 3x + 2 doesn&rsquo;t have an equals sign&mdash;that&rsquo;s the key difference.",
-            "Think of an equation like a <strong>balance scale</strong>. Whatever you do to one side, you must also do to the other side to keep it balanced. If both sides are equal and you add 5 to the left, you must add 5 to the right too.",
-            "The <strong>solution</strong> of an equation is the value of the variable that makes the equation true. For example, in x + 3 = 10, the solution is x = 7 because 7 + 3 = 10. Finding the solution is called <em>\"solving the equation.\"</em>"
+            "A <strong>fraction</strong> represents a <em>part of a whole</em>. It is written as one number over another with a line between them: the top number is the <strong>numerator</strong> (how many parts you have) and the bottom number is the <strong>denominator</strong> (how many equal parts the whole is divided into). For example, 3/4 means you have 3 out of 4 equal pieces.",
+            "Fractions also live on the <strong>number line</strong>. To place 3/4, split the segment from 0 to 1 into 4 equal parts and count 3 of them to the right. Fractions greater than 1 (like 7/4) extend past 1 on the number line. Any whole number can be written as a fraction too: 5 = 5/1, because you have 5 whole pieces each of size 1.",
+            "The denominator can <em>never</em> be zero. Think about it &mdash; you can&rsquo;t divide something into zero equal parts! So expressions like 4/0 are <strong>undefined</strong>. The numerator, however, can be zero: 0/5 = 0 (zero parts of anything is still nothing)."
           ],
           example: {
-            title: "Worked Example: Equation vs. Expression",
-            problem: "Which of these is an equation and which is an expression? (A) 5x &minus; 3  (B) 5x &minus; 3 = 12",
+            title: "Worked Example: Fractions on a Number Line",
+            problem: "Place 5/3 on a number line.",
             steps: [
-              "(A) 5x &minus; 3 has no equals sign, so it is an <strong>expression</strong>.",
-              "(B) 5x &minus; 3 = 12 has an equals sign showing two sides are equal, so it is an <strong>equation</strong>.",
-              "Answer: (A) is an expression; (B) is an <strong>equation</strong>."
+              "The denominator is 3, so each whole unit is split into 3 equal parts.",
+              "Count 5 of those parts starting from 0.",
+              "After 3 parts you reach 1 (since 3/3 = 1). After 2 more parts you reach 5/3.",
+              "5/3 is between <strong>1</strong> and <strong>2</strong>, one-third of the way from 1 to 2.",
+              "As a mixed number: 5/3 = <strong>1 2/3</strong>."
             ]
           }
         },
         {
-          heading: "Solving One-Step Equations",
+          heading: "Equivalent Fractions",
           paragraphs: [
-            "A <strong>one-step equation</strong> can be solved in a single move by using the <strong>inverse (opposite) operation</strong>. Addition and subtraction are inverses of each other, and multiplication and division are inverses of each other.",
-            "If the equation has addition, <em>subtract</em> from both sides. For x + 9 = 15: subtract 9 from both sides to get x = 6. If it has subtraction, <em>add</em> to both sides. For x &minus; 4 = 10: add 4 to both sides to get x = 14.",
-            "If the equation has multiplication, <em>divide</em> both sides. For 6x = 42: divide both sides by 6 to get x = 7. If it has division, <em>multiply</em> both sides. For x/5 = 3: multiply both sides by 5 to get x = 15. Always <strong>check</strong> your answer by plugging it back in!"
+            "<strong>Equivalent fractions</strong> are different fractions that represent the <em>same</em> amount. For example, 1/2, 2/4, 3/6, and 50/100 all mean &ldquo;half.&rdquo; You can picture it like this: if you cut a pizza into 4 slices and take 2, you have the same amount as cutting it into 2 slices and taking 1.",
+            "To create an equivalent fraction, <strong>multiply</strong> (or <strong>divide</strong>) both the numerator and denominator by the <em>same nonzero number</em>. This works because multiplying top and bottom by the same number is like multiplying by 1 (since n/n = 1), which doesn&rsquo;t change the value.",
+            "For example: 3/5 = (3&times;4)/(5&times;4) = 12/20. Going the other way: 18/24 = (18&divide;6)/(24&divide;6) = 3/4. This &ldquo;going the other way&rdquo; &mdash; dividing top and bottom by a common factor &mdash; is called <strong>simplifying</strong>, and it&rsquo;s exactly what we&rsquo;ll master in the next section."
           ],
           example: {
-            title: "Worked Example: Solving a One-Step Equation",
-            problem: "Solve: 4x = 28.",
+            title: "Worked Example: Building Equivalent Fractions",
+            problem: "Write 2/7 as an equivalent fraction with a denominator of 35.",
             steps: [
-              "The variable x is being multiplied by 4. Use the inverse operation: divide.",
-              "Divide both sides by 4: 4x &divide; 4 = 28 &divide; 4.",
-              "Simplify: x = 7.",
-              "Check: 4(7) = 28. &#10003;",
-              "Answer: <strong>x = 7</strong>."
+              "We need 7 &times; ? = 35, so ? = 5.",
+              "Multiply the numerator by the same number: 2 &times; 5 = 10.",
+              "Answer: 2/7 = <strong>10/35</strong>.",
+              "Check: both numerator and denominator were multiplied by 5, so the fraction&rsquo;s value didn&rsquo;t change."
             ]
           }
         },
         {
-          heading: "Word Problems to Equations",
+          heading: "Simplifying Fractions Using the GCD",
           paragraphs: [
-            "Many real-world problems can be solved by turning them into equations. Follow these steps: <strong>(1)</strong> Read the problem carefully and identify what you are looking for&mdash;that&rsquo;s your variable. <strong>(2)</strong> Translate the words into an equation. <strong>(3)</strong> Solve the equation. <strong>(4)</strong> Check your answer against the original problem.",
-            "Watch for key phrases: <em>\"a number increased by 5\"</em> becomes x + 5, <em>\"twice a number is 16\"</em> becomes 2x = 16, and <em>\"a number decreased by 8 equals 3\"</em> becomes x &minus; 8 = 3. The word <em>\"is\"</em> or <em>\"equals\"</em> usually tells you where the equals sign goes.",
-            "Let&rsquo;s say: <em>\"Maria has some stickers. After giving away 12, she has 23 left. How many did she start with?\"</em> Let x = stickers she started with. The equation is x &minus; 12 = 23. Add 12: x = 35. Check: 35 &minus; 12 = 23. &#10003;"
+            "A fraction is in <strong>simplest form</strong> (or <em>lowest terms</em>) when the numerator and denominator share no common factor other than 1. To simplify a fraction, divide both the numerator and the denominator by their <strong>GCD</strong>. This is exactly why we learned GCD on Day&nbsp;9!",
+            "For example, simplify 48/60. Step 1: Find GCD(48, 60). We know 48 = 2<sup>4</sup>&times;3 and 60 = 2<sup>2</sup>&times;3&times;5, so GCD = 2<sup>2</sup>&times;3 = 12. Step 2: Divide both by 12. 48&divide;12 = 4 and 60&divide;12 = 5. So 48/60 = <strong>4/5</strong>.",
+            "You can also simplify step by step, dividing by any common factor you spot: 48/60 &divide; 2/2 = 24/30 &divide; 2/2 = 12/15 &divide; 3/3 = 4/5. You&rsquo;ll get the same answer either way, but using the GCD gets you there in <em>one step</em> &mdash; much faster! Always check your final answer: are there any common factors left? If not, you&rsquo;re done."
           ],
           example: {
-            title: "Worked Example: Writing and Solving an Equation",
-            problem: "A number multiplied by 6 gives 54. What is the number?",
+            title: "Worked Example: Simplifying with GCD",
+            problem: "Simplify 84/126.",
             steps: [
-              "Let the unknown number be <em>n</em>.",
-              "Translate: \"a number multiplied by 6 gives 54\" becomes 6n = 54.",
-              "Solve: divide both sides by 6. n = 54 &divide; 6 = 9.",
-              "Check: 6 &times; 9 = 54. &#10003;",
-              "Answer: The number is <strong>9</strong>."
-            ]
-          }
-        },
-        {
-          heading: "Course Review Highlights",
-          paragraphs: [
-            "Congratulations on making it through 10 days of pre-algebra! Let&rsquo;s recap the big ideas. In <strong>Days 1&ndash;2</strong>, you built a solid number sense with whole numbers, place value, rounding, and the order of operations (PEMDAS). In <strong>Days 3&ndash;4</strong>, you explored integers&mdash;positive and negative numbers&mdash;and learned the rules for adding, subtracting, multiplying, and dividing them.",
-            "In <strong>Day 5</strong>, you worked with fractions: finding common denominators, adding, subtracting, multiplying, and dividing. <strong>Day 6</strong> covered decimals and how they connect to fractions. <strong>Day 7</strong> introduced ratios, unit rates, and proportions for comparing quantities. <strong>Day 8</strong> brought it all together with percents and real-world applications like discounts and tax.",
-            "Finally, in <strong>Days 9&ndash;10</strong>, you entered the world of algebra: writing expressions, evaluating them, simplifying like terms, and solving equations. These skills are the foundation for everything you&rsquo;ll learn next in math. Keep practicing, and remember&mdash;algebra is just arithmetic with letters!"
-          ],
-          example: {
-            title: "Worked Example: Putting It All Together",
-            problem: "A store sells a jacket for $80 at 25% off, plus 10% sales tax. What is the total cost?",
-            steps: [
-              "Find the discount: 25% of $80 = 0.25 &times; 80 = $20.",
-              "Subtract the discount: $80 &minus; $20 = $60 (sale price).",
-              "Find the tax: 10% of $60 = 0.10 &times; 60 = $6.",
-              "Add the tax: $60 + $6 = $66.",
-              "Answer: The total cost is <strong>$66</strong>."
+              "Find the prime factorizations: 84 = 2<sup>2</sup> &times; 3 &times; 7 and 126 = 2 &times; 3<sup>2</sup> &times; 7.",
+              "GCD: take the lowest power of each shared prime. Shared: 2<sup>1</sup>, 3<sup>1</sup>, 7<sup>1</sup>.",
+              "GCD = 2 &times; 3 &times; 7 = <strong>42</strong>.",
+              "Divide both by 42: 84 &divide; 42 = 2 and 126 &divide; 42 = 3.",
+              "84/126 = <strong>2/3</strong>."
             ]
           }
         }
@@ -796,106 +753,101 @@ export const DAYS_6_10 = {
     quiz: [
       {
         id: "d10q1",
-        question: "Solve: x + 7 = 15.",
+        question: "What does the fraction 5/8 represent?",
         type: "multiple-choice",
-        options: ["x = 22", "x = 8", "x = 7", "x = 9"],
-        correct: 1,
-        explanation: "Subtract 7 from both sides: x = 15 &minus; 7 = 8.",
+        options: ["5 groups of 8", "8 out of 5 equal parts", "5 out of 8 equal parts", "5 minus 8"],
+        correct: 2,
+        explanation: "In a fraction, the numerator (5) tells how many parts you have, and the denominator (8) tells how many equal parts the whole is divided into.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d10q2",
-        question: "Solve: x &minus; 5 = 12.",
+        question: "Which fraction is equivalent to 3/4?",
         type: "multiple-choice",
-        options: ["x = 7", "x = 60", "x = 17", "x = 15"],
-        correct: 2,
-        explanation: "Add 5 to both sides: x = 12 + 5 = 17.",
+        options: ["6/12", "9/12", "4/3", "3/8"],
+        correct: 1,
+        explanation: "Multiply numerator and denominator of 3/4 by 3: (3&times;3)/(4&times;3) = 9/12.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d10q3",
-        question: "Which of these is an equation?",
+        question: "Simplify 18/24.",
         type: "multiple-choice",
-        options: ["3x + 4", "7 &minus; y", "2n + 1 = 9", "5(a + b)"],
+        options: ["2/3", "9/12", "3/4", "6/8"],
         correct: 2,
-        explanation: "An equation contains an equals sign. Only 2n + 1 = 9 has one.",
+        explanation: "GCD(18,24) = 6. Divide both by 6: 18&divide;6 = 3 and 24&divide;6 = 4. So 18/24 = 3/4.",
         difficulty: "easy",
         category: "topic"
       },
       {
         id: "d10q4",
-        question: "Solve: 5x = 45.",
+        question: "Where does 7/4 fall on the number line?",
         type: "multiple-choice",
-        options: ["x = 50", "x = 40", "x = 9", "x = 225"],
+        options: ["Between 0 and 1", "Exactly at 1", "Between 1 and 2", "Between 2 and 3"],
         correct: 2,
-        explanation: "Divide both sides by 5: x = 45 &divide; 5 = 9.",
+        explanation: "7/4 = 1 3/4. Since 4/4 = 1 and 8/4 = 2, the fraction 7/4 falls between 1 and 2.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d10q5",
-        question: "Solve: n/4 = 8.",
+        question: "Simplify 45/60.",
         type: "multiple-choice",
-        options: ["n = 2", "n = 12", "n = 24", "n = 32"],
+        options: ["9/12", "3/4", "15/20", "All of the above are correct, but 3/4 is simplest"],
         correct: 3,
-        explanation: "Multiply both sides by 4: n = 8 &times; 4 = 32.",
+        explanation: "GCD(45,60)=15. So 45/60 = 3/4. The other options (9/12, 15/20) are equivalent but not fully simplified.",
         difficulty: "medium",
         category: "topic"
       },
       {
         id: "d10q6",
-        question: "\"A number doubled and then increased by 3 equals 19.\" What is the equation and solution?",
+        question: "Write 2/9 as an equivalent fraction with denominator 63.",
         type: "multiple-choice",
-        options: [
-          "2x + 3 = 19; x = 8",
-          "2x + 3 = 19; x = 11",
-          "2(x + 3) = 19; x = 6.5",
-          "x + 6 = 19; x = 13"
-        ],
-        correct: 0,
-        explanation: "\"Doubled\" means 2x, \"increased by 3\" means + 3. Equation: 2x + 3 = 19. Subtract 3: 2x = 16. Divide by 2: x = 8.",
-        difficulty: "hard",
+        options: ["7/63", "14/63", "18/63", "2/63"],
+        correct: 1,
+        explanation: "9 &times; 7 = 63, so multiply the numerator by 7 too: 2 &times; 7 = 14. Therefore 2/9 = 14/63.",
+        difficulty: "medium",
         category: "topic"
       },
       {
         id: "d10q7",
-        question: "Sam had some trading cards. He gave away 15 and now has 42 left. How many did he start with?",
+        question: "Simplify 84/126.",
         type: "multiple-choice",
-        options: ["x = 27", "x = 57", "x = 47", "x = 37"],
-        correct: 1,
-        explanation: "Let x = cards he started with. Equation: x &minus; 15 = 42. Add 15: x = 57.",
+        options: ["14/21", "4/6", "2/3", "42/63"],
+        correct: 2,
+        explanation: "GCD(84,126) = 42. So 84 &divide; 42 = 2 and 126 &divide; 42 = 3. The simplest form is 2/3.",
         difficulty: "hard",
         category: "topic"
       },
       {
         id: "d10q8",
-        question: "What is &minus;6 &times; (&minus;4)?",
+        question: "Which fraction is already in simplest form?",
         type: "multiple-choice",
-        options: ["&minus;24", "&minus;10", "24", "10"],
+        options: ["14/21", "25/40", "17/30", "12/18"],
         correct: 2,
-        explanation: "A negative times a negative is positive: &minus;6 &times; (&minus;4) = 24.",
-        difficulty: "medium",
-        category: "review"
+        explanation: "17 is prime and does not divide 30, so GCD(17,30) = 1. The others can be simplified: 14/21 = 2/3, 25/40 = 5/8, 12/18 = 2/3.",
+        difficulty: "hard",
+        category: "topic"
       },
       {
         id: "d10q9",
-        question: "What is 5/6 &minus; 1/3?",
+        question: "What is the GCD of 56 and 98?",
         type: "multiple-choice",
-        options: ["4/3", "1/2", "2/3", "1/6"],
+        options: ["7", "14", "28", "2"],
         correct: 1,
-        explanation: "Convert to a common denominator: 1/3 = 2/6. Then 5/6 &minus; 2/6 = 3/6 = 1/2.",
-        difficulty: "medium",
+        explanation: "56 = 2<sup>3</sup>&times;7 and 98 = 2&times;7<sup>2</sup>. Shared primes at lowest power: 2<sup>1</sup>&times;7<sup>1</sup> = 14. (Review from Day 9.)",
+        difficulty: "hard",
         category: "review"
       },
       {
         id: "d10q10",
-        question: "A video game originally costs $60. It is on sale for 30% off. What is the sale price?",
+        question: "Simplify 120/180 to lowest terms using the GCD.",
         type: "multiple-choice",
-        options: ["$30", "$42", "$18", "$48"],
-        correct: 1,
-        explanation: "Discount: 30% of $60 = 0.30 &times; 60 = $18. Sale price: $60 &minus; $18 = $42.",
+        options: ["12/18", "4/6", "2/3", "20/30"],
+        correct: 2,
+        explanation: "GCD(120,180) = 60. So 120&divide;60 = 2 and 180&divide;60 = 3. Answer: 2/3. This combines GCD skills from Day 9 with fraction simplification from today!",
         difficulty: "medium",
         category: "review"
       }
