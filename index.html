@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prealgebra 10-Day Crash Course</title>
+<style>
+/* ── Reset & Base ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Header ─────────────────────────────────── */
+.top-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.top-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.top-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.top-header .progress-summary {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.mindmap-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s;
+  white-space: nowrap;
+}
+.mindmap-header-btn:hover {
+  background: rgba(255,255,255,.3);
+}
+.mindmap-header-btn svg {
+  width: 14px; height: 14px;
+  fill: currentColor;
+}
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+.app-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Sidebar ────────────────────────────────────── */
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  overflow-y: auto;
+  padding: 16px 0;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+}
+.sidebar h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #718096;
+  padding: 0 20px;
+  margin-bottom: 8px;
+}
+.day-list { list-style: none; }
+.day-list li { border-bottom: 1px solid #f7fafc; }
+.day-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background .15s;
+  text-decoration: none;
+  color: inherit;
+}
+.day-item:hover { background: #f7fafc; }
+.day-item.active { background: #ebf4ff; border-left: 3px solid #667eea; }
+.day-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem;
+  background: #e2e8f0; color: #4a5568;
+  flex-shrink: 0;
+}
+.day-item.active .day-num { background: #667eea; color: #fff; }
+.day-item.completed .day-num { background: #48bb78; color: #fff; }
+.day-info { min-width: 0; }
+.day-info .day-title {
+  font-size: 0.9rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.day-info .day-status {
+  font-size: 0.75rem; color: #a0aec0;
+}
+.day-item.completed .day-info .day-status { color: #48bb78; }
+
+/* ── Main Content ───────────────────────────────── */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 40px;
+  max-width: 860px;
+}
+
+/* ── Welcome Screen ─────────────────────────────── */
+.welcome {
+  text-align: center;
+  padding: 60px 20px;
+}
+.welcome h2 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+.welcome p { color: #718096; font-size: 1.05rem; max-width: 520px; margin: 0 auto 24px; }
+.btn-primary {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(102,126,234,.4); }
+
+/* ── Tabs (Lesson / Quiz) ───────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 28px;
+}
+.tab-btn {
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #a0aec0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color .15s, border-color .15s;
+}
+.tab-btn:hover { color: #4a5568; }
+.tab-btn.active { color: #667eea; border-bottom-color: #667eea; }
+
+/* ── Lesson Styles ──────────────────────────────── */
+.lesson-header {
+  margin-bottom: 32px;
+}
+.lesson-header h2 {
+  font-size: 1.75rem;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+.lesson-header .subtitle {
+  font-size: 1rem;
+  color: #718096;
+}
+.section {
+  margin-bottom: 36px;
+}
+.section h3 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e2e8f0;
+}
+.section p {
+  margin-bottom: 12px;
+  color: #4a5568;
+  font-size: 0.98rem;
+}
+.example-box {
+  background: linear-gradient(135deg, #ebf8ff 0%, #e9ecff 100%);
+  border-left: 4px solid #667eea;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.example-box h4 {
+  font-size: 0.95rem;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+.example-box .problem {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2d3748;
+  font-size: 1rem;
+}
+.example-box ol {
+  padding-left: 20px;
+  color: #4a5568;
+}
+.example-box li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* ── Quiz Styles ────────────────────────────────── */
+.quiz-header {
+  margin-bottom: 24px;
+}
+.quiz-header h2 { font-size: 1.5rem; color: #2d3748; }
+.quiz-header p { color: #718096; font-size: 0.95rem; margin-top: 4px; }
+
+.quiz-progress-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+  transition: width .3s ease;
+}
+
+.question-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  margin-bottom: 20px;
+}
+.question-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.q-number {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 0.85rem;
+}
+.q-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.q-badge.easy { background: #c6f6d5; color: #276749; }
+.q-badge.medium { background: #fefcbf; color: #975a16; }
+.q-badge.hard { background: #fed7d7; color: #9b2c2c; }
+.q-badge.review { background: #e9d8fd; color: #553c9a; }
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.options-list { list-style: none; }
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 18px;
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #2d3748;
+  transition: border-color .15s, background .15s;
+  text-align: left;
+}
+.option-btn:hover:not(.disabled) { border-color: #667eea; background: #ebf4ff; }
+.option-btn .option-letter {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.8rem; color: #4a5568;
+  flex-shrink: 0;
+}
+.option-btn.selected { border-color: #667eea; background: #ebf4ff; }
+.option-btn.selected .option-letter { background: #667eea; color: #fff; }
+.option-btn.correct { border-color: #48bb78; background: #f0fff4; }
+.option-btn.correct .option-letter { background: #48bb78; color: #fff; }
+.option-btn.incorrect { border-color: #f56565; background: #fff5f5; }
+.option-btn.incorrect .option-letter { background: #f56565; color: #fff; }
+.option-btn.disabled { cursor: default; opacity: 0.7; }
+.option-btn.show-correct { border-color: #48bb78; background: #f0fff4; }
+.option-btn.show-correct .option-letter { background: #48bb78; color: #fff; }
+
+.explanation {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: #f0fff4;
+  border-left: 4px solid #48bb78;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  color: #276749;
+  display: none;
+}
+.explanation.wrong {
+  background: #fff5f5;
+  border-left-color: #f56565;
+  color: #9b2c2c;
+}
+.explanation.visible { display: block; }
+
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.btn-secondary {
+  padding: 10px 24px;
+  background: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-secondary:hover { background: #cbd5e0; }
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
+
+/* ── Quiz Results ───────────────────────────────── */
+.results-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+.results-card .score-circle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem; font-weight: 800; color: #fff;
+}
+.score-circle.excellent { background: linear-gradient(135deg, #48bb78, #38a169); }
+.score-circle.good { background: linear-gradient(135deg, #667eea, #764ba2); }
+.score-circle.needs-work { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+.score-circle.struggling { background: linear-gradient(135deg, #f56565, #e53e3e); }
+.results-card h3 { font-size: 1.4rem; margin-bottom: 8px; color: #2d3748; }
+.results-card p { color: #718096; margin-bottom: 24px; }
+.results-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Day Navigation Footer ──────────────────────── */
+.day-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ── Mindmap Styles ─────────────────────────────── */
+.mindmap-container {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.mindmap-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.mindmap-toolbar button {
+  padding: 6px 14px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #4a5568;
+  transition: background .15s;
+}
+.mindmap-toolbar button:hover { background: #ebf4ff; }
+.mindmap-toolbar .zoom-display {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  min-width: 50px;
+  text-align: center;
+}
+.mindmap-viewport {
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+  cursor: grab;
+  position: relative;
+}
+.mindmap-viewport:active { cursor: grabbing; }
+.mindmap-viewport img,
+.mindmap-viewport object {
+  display: block;
+  transform-origin: 0 0;
+  transition: transform .2s ease;
+}
+.mindmap-header {
+  margin-bottom: 20px;
+}
+.mindmap-header h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+.mindmap-header p {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+.cheatsheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.cheat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  border-top: 4px solid #667eea;
+}
+.cheat-card h3 {
+  font-size: 1rem;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+.cheat-card .cheat-day {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.cheat-card ul {
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: #4a5568;
+}
+.cheat-card li { margin-bottom: 4px; }
+.cheat-card .formula {
+  display: inline-block;
+  background: #ebf4ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #667eea;
+  font-weight: 600;
+}
+.cheat-card.blue { border-top-color: #667eea; }
+.cheat-card.green { border-top-color: #48bb78; }
+.cheat-card.amber { border-top-color: #d69e2e; }
+.cheat-card.red { border-top-color: #e53e3e; }
+.cheat-card.purple { border-top-color: #805ad5; }
+.mindmap-section-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  padding: 3px;
+}
+.mindmap-section-toggle button {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #718096;
+  cursor: pointer;
+  transition: all .15s;
+}
+.mindmap-section-toggle button.active {
+  background: #fff;
+  color: #667eea;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+/* ── Mindmap Overlay (full-page) ────────────────── */
+.mindmap-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #f7fafc;
+  overflow-y: auto;
+  animation: overlayFadeIn .25s ease;
+}
+.mindmap-overlay.open { display: block; }
+@keyframes overlayFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mindmap-overlay-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.mindmap-overlay-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+.mindmap-overlay-header p {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin: 2px 0 0;
+}
+.mindmap-overlay-close {
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.mindmap-overlay-close:hover { background: rgba(255,255,255,.35); }
+.mindmap-overlay-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu-btn { display: block; }
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    top: 56px;
+    height: calc(100vh - 56px);
+    z-index: 90;
+    transition: left .3s ease;
+    box-shadow: 2px 0 12px rgba(0,0,0,.15);
+  }
+  .sidebar.open { left: 0; }
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 56px;
+    background: rgba(0,0,0,.3);
+    z-index: 89;
+  }
+  .sidebar-overlay.open { display: block; }
+  .main-content { padding: 24px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Top Header ────────────────────────────────── -->
+<header class="top-header">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="menu-btn" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+    <h1>Prealgebra Crash Course</h1>
+  </div>
+  <div class="header-right">
+    <button class="mindmap-header-btn" onclick="openMindmapOverlay()">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      Mindmap &amp; Cheatsheet
+    </button>
+    <div class="progress-summary" id="progressSummary">Day 0 / 10</div>
+  </div>
+</header>
+
+<!-- ── Sidebar Overlay (mobile) ──────────────────── -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- ── Mindmap Full-Page Overlay ───────────────────── -->
+<div class="mindmap-overlay" id="mindmapOverlay">
+  <div class="mindmap-overlay-header">
+    <div>
+      <h2>Course Mindmap &amp; Cheatsheet</h2>
+      <p>Visual overview of all 10 days of prealgebra topics with key formulas and concepts.</p>
+    </div>
+    <button class="mindmap-overlay-close" onclick="closeMindmapOverlay()">&#10005; Close</button>
+  </div>
+  <div class="mindmap-overlay-body" id="mindmapOverlayBody"></div>
+</div>
+
+<!-- ── App Layout ────────────────────────────────── -->
+<div class="app-layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <h2>Course Map</h2>
+    <ul class="day-list" id="dayList"></ul>
+  </nav>
+
+  <!-- Main -->
+  <main class="main-content" id="mainContent">
+    <!-- Welcome Screen (default) -->
+    <div class="welcome" id="welcomeScreen">
+      <h2>Welcome to Prealgebra!</h2>
+      <p>A 10-day crash course covering whole numbers through introductory algebra. Designed for grades 5&ndash;6 with step-up quizzes and progress tracking.</p>
+      <button class="btn-primary" onclick="goToDay(1)">Start Day 1</button>
+    </div>
+  </main>
+</div>
+
+<!-- ── Data Modules ──────────────────────────────── -->
+<script type="module">
+import { DAYS_1_5 } from './prealgebra-days1-5.js';
+import { DAYS_6_10 } from './prealgebra-days6-10.js';
+
+// ─── Merge all days into one object ───────────────
+const ALL_DAYS = {};
+for (let i = 1; i <= 5; i++) ALL_DAYS[i] = DAYS_1_5[`day${i}`];
+for (let i = 6; i <= 10; i++) ALL_DAYS[i] = DAYS_6_10[`day${i}`];
+
+const TOTAL_DAYS = 10;
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+// ─── State ────────────────────────────────────────
+let state = {
+  currentDay: 0,       // 0 = welcome screen
+  currentTab: 'lesson', // 'lesson', 'quiz', or 'mindmap'
+  quizIndex: 0,
+  quizAnswers: {},      // { questionId: selectedIndex }
+  quizSubmitted: {},    // { questionId: true }
+  progress: loadProgress()  // { day1: { lessonRead: bool, quizScore: number|null }, ... }
+};
+
+function loadProgress() {
+  try {
+    const saved = localStorage.getItem('prealgebra-progress');
+    return saved ? JSON.parse(saved) : initProgress();
+  } catch { return initProgress(); }
+}
+function initProgress() {
+  const p = {};
+  for (let i = 1; i <= TOTAL_DAYS; i++) p[`day${i}`] = { lessonRead: false, quizScore: null, quizCompleted: false };
+  return p;
+}
+function saveProgress() {
+  try { localStorage.setItem('prealgebra-progress', JSON.stringify(state.progress)); } catch {}
+}
+
+// ─── Sidebar Rendering ────────────────────────────
+const dayTitles = {};
+for (let i = 1; i <= TOTAL_DAYS; i++) dayTitles[i] = ALL_DAYS[i].lesson.title;
+
+function renderSidebar() {
+  const list = document.getElementById('dayList');
+  list.innerHTML = '';
+  for (let i = 1; i <= TOTAL_DAYS; i++) {
+    const prog = state.progress[`day${i}`];
+    const isActive = state.currentDay === i;
+    const isCompleted = prog.quizCompleted;
+    const li = document.createElement('li');
+    const div = document.createElement('div');
+    div.className = 'day-item' + (isActive ? ' active' : '') + (isCompleted ? ' completed' : '');
+    div.onclick = () => goToDay(i);
+    div.innerHTML = `
+      <div class="day-num">${isCompleted ? '&#10003;' : i}</div>
+      <div class="day-info">
+        <div class="day-title">${dayTitles[i]}</div>
+        <div class="day-status">${
+          isCompleted ? `Score: ${prog.quizScore}/10` :
+          prog.lessonRead ? 'Lesson read' :
+          'Not started'
+        }</div>
+      </div>`;
+    li.appendChild(div);
+    list.appendChild(li);
+  }
+  // Progress summary
+  const completed = Object.values(state.progress).filter(p => p.quizCompleted).length;
+  document.getElementById('progressSummary').textContent = `${completed} / ${TOTAL_DAYS} days completed`;
+}
+
+// ─── Navigation ───────────────────────────────────
+window.goToDay = function(day) {
+  state.currentDay = day;
+  state.currentTab = 'lesson';
+  state.quizIndex = 0;
+  state.quizAnswers = {};
+  state.quizSubmitted = {};
+  // Mark lesson as read
+  state.progress[`day${day}`].lessonRead = true;
+  saveProgress();
+  renderSidebar();
+  renderMain();
+  closeSidebar();
+  window.scrollTo(0, 0);
+};
+
+window.switchTab = function(tab) {
+  state.currentTab = tab;
+  state.quizIndex = 0;
+  renderMain();
+  window.scrollTo(0, 0);
+};
+
+// ─── Main Content Rendering ───────────────────────
+function renderMain() {
+  const main = document.getElementById('mainContent');
+  if (state.currentDay === 0) {
+    main.innerHTML = `
+      <div class="welcome" id="welcomeScreen">
+        <h2>Welcome to Prealgebra!</h2>
+        <p>A 10-day crash course covering whole numbers through introductory algebra. Designed for grades 5&ndash;6 with step-up quizzes and progress tracking.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="goToDay(1)">Start Day 1</button>
+        </div>
+      </div>`;
+    return;
+  }
+  const day = ALL_DAYS[state.currentDay];
+  const prog = state.progress[`day${state.currentDay}`];
+
+  // Tab bar
+  let html = `
+    <div class="tab-bar">
+      <button class="tab-btn ${state.currentTab === 'lesson' ? 'active' : ''}" onclick="switchTab('lesson')">Lesson</button>
+      <button class="tab-btn ${state.currentTab === 'quiz' ? 'active' : ''}" onclick="switchTab('quiz')">Quiz${prog.quizCompleted ? ' (' + prog.quizScore + '/10)' : ''}</button>
+    </div>`;
+
+  // Fall back to lesson if tab was 'mindmap' (removed per-day mindmap tab)
+  if (state.currentTab === 'mindmap') state.currentTab = 'lesson';
+
+  if (state.currentTab === 'lesson') {
+    html += renderLesson(day);
+  } else if (state.currentTab === 'quiz') {
+    html += renderQuiz(day);
+  }
+
+  const mainEl = document.getElementById('mainContent');
+  mainEl.style.maxWidth = '860px';
+
+  // Day navigation footer
+  html += `
+    <div class="day-nav-footer">
+      ${state.currentDay > 1
+        ? `<button class="btn-secondary" onclick="goToDay(${state.currentDay - 1})">&larr; Day ${state.currentDay - 1}</button>`
+        : '<div></div>'}
+      ${state.currentDay < TOTAL_DAYS
+        ? `<button class="btn-primary" onclick="goToDay(${state.currentDay + 1})">Day ${state.currentDay + 1} &rarr;</button>`
+        : '<div></div>'}
+    </div>`;
+
+  main.innerHTML = html;
+
+  // Re-attach quiz event listeners
+  if (state.currentTab === 'quiz') attachQuizListeners(day);
+}
+
+// ─── Lesson Renderer ──────────────────────────────
+function renderLesson(day) {
+  const lesson = day.lesson;
+  let html = `
+    <div class="lesson-header">
+      <h2>Day ${state.currentDay}: ${lesson.title}</h2>
+      <p class="subtitle">${lesson.subtitle}</p>
+    </div>`;
+
+  lesson.sections.forEach(sec => {
+    html += `<div class="section"><h3>${sec.heading}</h3>`;
+    sec.paragraphs.forEach(p => { html += `<p>${p}</p>`; });
+    if (sec.example) {
+      html += `
+        <div class="example-box">
+          <h4>${sec.example.title}</h4>
+          <div class="problem">${sec.example.problem}</div>
+          <ol>${sec.example.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+        </div>`;
+    }
+    html += `</div>`;
+  });
+
+  html += `
+    <div style="text-align:center;margin-top:32px;">
+      <button class="btn-primary" onclick="switchTab('quiz')">Take the Quiz &rarr;</button>
+    </div>`;
+  return html;
+}
+
+// ─── Quiz Renderer ────────────────────────────────
+function renderQuiz(day) {
+  const quiz = day.quiz;
+  const prog = state.progress[`day${state.currentDay}`];
+
+  // If quiz was completed and we're viewing results
+  if (prog.quizCompleted && Object.keys(state.quizAnswers).length === 0) {
+    return renderResults(prog.quizScore, quiz);
+  }
+
+  // Check if all answered
+  const allAnswered = quiz.every(q => state.quizSubmitted[q.id]);
+  if (allAnswered) {
+    // Calculate score
+    let score = 0;
+    quiz.forEach(q => {
+      if (state.quizAnswers[q.id] === q.correct) score++;
+    });
+    state.progress[`day${state.currentDay}`].quizScore = score;
+    state.progress[`day${state.currentDay}`].quizCompleted = true;
+    saveProgress();
+    renderSidebar();
+    return renderResults(score, quiz);
+  }
+
+  // Render questions one at a time
+  const q = quiz[state.quizIndex];
+  const answered = state.quizSubmitted[q.id] === true;
+  const selected = state.quizAnswers[q.id];
+  const isCorrect = selected === q.correct;
+
+  let html = `
+    <div class="quiz-header">
+      <h2>Day ${state.currentDay} Quiz</h2>
+      <p>Question ${state.quizIndex + 1} of ${quiz.length}</p>
+    </div>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" style="width:${((state.quizIndex) / quiz.length) * 100}%"></div>
+    </div>
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="q-number">Q${state.quizIndex + 1}</span>
+        <span class="q-badge ${q.difficulty}">${q.difficulty}</span>
+        ${q.category === 'review' ? '<span class="q-badge review">review</span>' : ''}
+      </div>
+      <div class="question-text">${q.question}</div>
+      <ul class="options-list">`;
+
+  q.options.forEach((opt, idx) => {
+    let cls = 'option-btn';
+    if (answered) {
+      cls += ' disabled';
+      if (idx === q.correct) cls += ' correct show-correct';
+      if (idx === selected && idx !== q.correct) cls += ' incorrect';
+    } else if (selected === idx) {
+      cls += ' selected';
+    }
+    html += `
+        <li><button class="${cls}" data-qid="${q.id}" data-idx="${idx}">
+          <span class="option-letter">${LETTERS[idx]}</span>
+          <span>${opt}</span>
+        </button></li>`;
+  });
+
+  html += `</ul>`;
+
+  // Explanation
+  if (answered) {
+    html += `<div class="explanation ${isCorrect ? '' : 'wrong'} visible">
+      <strong>${isCorrect ? 'Correct!' : 'Not quite.'}</strong> ${q.explanation}
+    </div>`;
+  }
+
+  html += `</div>`;
+
+  // Navigation
+  html += `<div class="quiz-nav">
+    <button class="btn-secondary" ${state.quizIndex === 0 ? 'disabled' : ''} onclick="quizPrev()">Previous</button>
+    <span style="font-size:0.85rem;color:#a0aec0;">${state.quizIndex + 1} / ${quiz.length}</span>`;
+
+  if (!answered && selected !== undefined) {
+    html += `<button class="btn-primary" onclick="submitAnswer()">Check Answer</button>`;
+  } else if (answered && state.quizIndex < quiz.length - 1) {
+    html += `<button class="btn-primary" onclick="quizNext()">Next &rarr;</button>`;
+  } else if (answered && state.quizIndex === quiz.length - 1) {
+    html += `<button class="btn-primary" onclick="finishQuiz()">See Results</button>`;
+  } else {
+    html += `<div></div>`;
+  }
+  html += `</div>`;
+
+  return html;
+}
+
+// ─── Results ──────────────────────────────────────
+function renderResults(score, quiz) {
+  const pct = Math.round((score / quiz.length) * 100);
+  let tier, msg;
+  if (pct >= 90) { tier = 'excellent'; msg = 'Outstanding work! You\'ve mastered this topic!'; }
+  else if (pct >= 70) { tier = 'good'; msg = 'Great job! You have a solid understanding.'; }
+  else if (pct >= 50) { tier = 'needs-work'; msg = 'Good effort! Review the lesson and try again.'; }
+  else { tier = 'struggling'; msg = 'Keep practicing! Re-read the lesson and try the quiz again.'; }
+
+  let html = `
+    <div class="results-card">
+      <div class="score-circle ${tier}">${score}/${quiz.length}</div>
+      <h3>${pct}% &mdash; ${tier === 'excellent' ? 'Excellent!' : tier === 'good' ? 'Well Done!' : tier === 'needs-work' ? 'Almost There!' : 'Keep Going!'}</h3>
+      <p>${msg}</p>
+      <div class="results-actions">
+        <button class="btn-secondary" onclick="retakeQuiz()">Retake Quiz</button>
+        <button class="btn-secondary" onclick="switchTab('lesson')">Review Lesson</button>
+        ${state.currentDay < TOTAL_DAYS
+          ? `<button class="btn-primary" onclick="goToDay(${state.currentDay + 1})">Next Day &rarr;</button>`
+          : `<button class="btn-primary" onclick="goToDay(0)">Back to Home</button>`}
+      </div>
+    </div>`;
+
+  // Show answers summary
+  html += `<div style="margin-top:32px;">
+    <h3 style="font-size:1.15rem;margin-bottom:16px;color:#2d3748;">Answer Review</h3>`;
+  quiz.forEach((q, i) => {
+    const userAns = state.quizAnswers[q.id];
+    const correct = userAns === q.correct;
+    html += `
+      <div class="question-card" style="margin-bottom:12px;padding:18px 22px;">
+        <div class="question-meta">
+          <span class="q-number">Q${i + 1}</span>
+          <span class="q-badge ${q.difficulty}">${q.difficulty}</span>
+          <span style="margin-left:auto;font-weight:700;color:${correct ? '#48bb78' : '#f56565'}">${correct ? 'Correct' : 'Incorrect'}</span>
+        </div>
+        <div class="question-text" style="font-size:0.98rem;margin-bottom:10px;">${q.question}</div>
+        <div style="font-size:0.9rem;color:#4a5568;">
+          ${userAns !== undefined
+            ? `Your answer: <strong>${LETTERS[userAns]}. ${q.options[userAns]}</strong>`
+            : '<em>Not answered</em>'}
+          ${!correct ? `<br>Correct answer: <strong>${LETTERS[q.correct]}. ${q.options[q.correct]}</strong>` : ''}
+        </div>
+        <div class="explanation visible" style="margin-top:10px;display:block;">
+          ${q.explanation}
+        </div>
+      </div>`;
+  });
+  html += `</div>`;
+  return html;
+}
+
+// ─── Mindmap / Cheatsheet Renderer ────────────────
+function renderMindmap() {
+  let html = `
+    <div class="mindmap-header">
+      <h2>Course Mindmap &amp; Cheatsheet</h2>
+      <p>Visual overview of all 10 days of prealgebra topics with key formulas and concepts.</p>
+    </div>
+    <div class="mindmap-section-toggle">
+      <button id="toggleMap" class="active" onclick="showMindmapSection('map')">Mindmap</button>
+      <button id="toggleCheat" onclick="showMindmapSection('cheat')">Cheatsheet</button>
+    </div>`;
+
+  // Mindmap SVG viewer
+  html += `
+    <div id="mindmapSection">
+      <div class="mindmap-container">
+        <div class="mindmap-toolbar">
+          <button onclick="zoomMindmap(-0.15)">&#8722; Zoom</button>
+          <span class="zoom-display" id="zoomDisplay">100%</span>
+          <button onclick="zoomMindmap(0.15)">&#43; Zoom</button>
+          <button onclick="resetZoom()">Fit</button>
+          <button onclick="window.open('prealgebra-mindmap.drawio.svg','_blank')">Open Full</button>
+        </div>
+        <div class="mindmap-viewport" id="mindmapViewport">
+          <img src="prealgebra-mindmap.drawio.svg" id="mindmapImg" alt="Prealgebra Mindmap"
+               style="max-width:none;" draggable="false"
+               onload="fitMindmap()"/>
+        </div>
+      </div>
+    </div>`;
+
+  // Cheatsheet cards
+  html += `
+    <div id="cheatsheetSection" style="display:none;">
+      <div class="cheatsheet">
+
+        <div class="cheat-card blue">
+          <div class="cheat-day">Day 1</div>
+          <h3>Whole Numbers &amp; PEMDAS</h3>
+          <ul>
+            <li>Place value: ones, tens, hundreds ... billions</li>
+            <li>Rounding: look one place right; &ge; 5 rounds up</li>
+            <li><span class="formula">P &rarr; E &rarr; MD &rarr; AS</span> (left to right)</li>
+            <li>Nested parentheses: innermost first</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card green">
+          <div class="cheat-day">Day 2</div>
+          <h3>Integers &amp; Number Line</h3>
+          <ul>
+            <li>Integers: ..., &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, ...</li>
+            <li>Right on number line = greater</li>
+            <li><span class="formula">|a|</span> = distance from 0 (always &ge; 0)</li>
+            <li>Real life: temperature, elevation, debt</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card amber">
+          <div class="cheat-day">Day 3</div>
+          <h3>Integer Operations</h3>
+          <ul>
+            <li>Same sign: add magnitudes, keep sign</li>
+            <li>Different signs: subtract, take larger sign</li>
+            <li>Subtract = add the opposite: <span class="formula">a &minus; b = a + (&minus;b)</span></li>
+            <li>Multiply/Divide: same signs &rarr; +, different &rarr; &minus;</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card red">
+          <div class="cheat-day">Day 4</div>
+          <h3>Fractions Basics</h3>
+          <ul>
+            <li>Fraction = numerator / denominator</li>
+            <li>Equivalent: multiply/divide top &amp; bottom by same #</li>
+            <li>Simplify using GCF</li>
+            <li>Compare: common denominator or cross-multiply</li>
+            <li>Mixed &harr; Improper: <span class="formula">a b/c = (ac+b)/c</span></li>
+          </ul>
+        </div>
+
+        <div class="cheat-card purple">
+          <div class="cheat-day">Day 5</div>
+          <h3>Fraction Operations</h3>
+          <ul>
+            <li>Add/Sub: find LCD, combine numerators</li>
+            <li>Multiply: <span class="formula">a/b &times; c/d = ac/bd</span></li>
+            <li>Divide: Keep-Change-Flip <span class="formula">a/b &divide; c/d = a/b &times; d/c</span></li>
+            <li>Mixed numbers: convert to improper first</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card blue">
+          <div class="cheat-day">Day 6</div>
+          <h3>Decimals</h3>
+          <ul>
+            <li>Places: tenths, hundredths, thousandths</li>
+            <li>Fraction &rarr; Decimal: divide numerator by denominator</li>
+            <li>Add/Sub: line up decimal points</li>
+            <li>Multiply: count total decimal places</li>
+            <li>Divide: make divisor whole, shift both</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card green">
+          <div class="cheat-day">Day 7</div>
+          <h3>Ratios, Rates &amp; Proportions</h3>
+          <ul>
+            <li>Ratio: a:b, a/b, or "a to b"</li>
+            <li>Unit rate: denominator = 1</li>
+            <li>Proportion: <span class="formula">a/b = c/d</span></li>
+            <li>Cross-multiply: <span class="formula">ad = bc</span></li>
+          </ul>
+        </div>
+
+        <div class="cheat-card amber">
+          <div class="cheat-day">Day 8</div>
+          <h3>Percents</h3>
+          <ul>
+            <li>Percent = "per hundred"</li>
+            <li>To decimal: <span class="formula">&divide; 100</span> &nbsp; To percent: <span class="formula">&times; 100</span></li>
+            <li><span class="formula">Part = Percent &times; Whole</span></li>
+            <li>Discount: price &times; (1 &minus; rate)</li>
+            <li>Tax/Tip: price &times; (1 + rate)</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card red">
+          <div class="cheat-day">Day 9</div>
+          <h3>Variables &amp; Expressions</h3>
+          <ul>
+            <li>Variable = letter placeholder for a number</li>
+            <li>Coefficient: the number before a variable (3x &rarr; 3)</li>
+            <li>Evaluate: substitute values, then compute</li>
+            <li>Like terms: same variable &amp; exponent</li>
+            <li>Distributive: <span class="formula">a(b + c) = ab + ac</span></li>
+          </ul>
+        </div>
+
+        <div class="cheat-card purple">
+          <div class="cheat-day">Day 10</div>
+          <h3>Equations &amp; Problem Solving</h3>
+          <ul>
+            <li>Equation: expression = expression (balance)</li>
+            <li>Solve with inverse operations</li>
+            <li>Add/Sub to isolate; Multiply/Div to isolate</li>
+            <li>Word problems: define variable &rarr; write equation &rarr; solve &rarr; check</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>`;
+
+  return html;
+}
+
+// ─── Mindmap zoom/pan helpers ─────────────────────
+let mindmapZoom = 1;
+
+window.showMindmapSection = function(section) {
+  const mapEl = document.getElementById('mindmapSection');
+  const cheatEl = document.getElementById('cheatsheetSection');
+  const btnMap = document.getElementById('toggleMap');
+  const btnCheat = document.getElementById('toggleCheat');
+  if (section === 'map') {
+    mapEl.style.display = '';
+    cheatEl.style.display = 'none';
+    btnMap.classList.add('active');
+    btnCheat.classList.remove('active');
+  } else {
+    mapEl.style.display = 'none';
+    cheatEl.style.display = '';
+    btnMap.classList.remove('active');
+    btnCheat.classList.add('active');
+  }
+};
+
+window.zoomMindmap = function(delta) {
+  mindmapZoom = Math.max(0.2, Math.min(3, mindmapZoom + delta));
+  applyZoom();
+};
+
+window.resetZoom = function() {
+  const viewport = document.getElementById('mindmapViewport');
+  const img = document.getElementById('mindmapImg');
+  if (!viewport || !img) return;
+  const scaleW = viewport.clientWidth / img.naturalWidth;
+  const scaleH = viewport.clientHeight / img.naturalHeight;
+  mindmapZoom = Math.min(scaleW, scaleH, 1);
+  applyZoom();
+};
+
+window.fitMindmap = function() {
+  window.resetZoom();
+};
+
+function applyZoom() {
+  const img = document.getElementById('mindmapImg');
+  const display = document.getElementById('zoomDisplay');
+  if (!img) return;
+  img.style.transform = `scale(${mindmapZoom})`;
+  if (display) display.textContent = Math.round(mindmapZoom * 100) + '%';
+}
+
+// ─── Mindmap Overlay (full-page, independent) ─────
+let overlayZoom = 1;
+
+function renderOverlayContent() {
+  let html = `
+    <div class="mindmap-section-toggle">
+      <button id="ovToggleMap" class="active" onclick="showOverlaySection('map')">Mindmap</button>
+      <button id="ovToggleCheat" onclick="showOverlaySection('cheat')">Cheatsheet</button>
+    </div>
+    <div id="ovMindmapSection">
+      <div class="mindmap-container">
+        <div class="mindmap-toolbar">
+          <button onclick="overlayZoomFn(-0.15)">&#8722; Zoom</button>
+          <span class="zoom-display" id="ovZoomDisplay">100%</span>
+          <button onclick="overlayZoomFn(0.15)">&#43; Zoom</button>
+          <button onclick="overlayFit()">Fit</button>
+          <button onclick="window.open('prealgebra-mindmap.drawio.svg','_blank')">Open Full</button>
+        </div>
+        <div class="mindmap-viewport" id="ovViewport">
+          <img src="prealgebra-mindmap.drawio.svg" id="ovMindmapImg" alt="Prealgebra Mindmap"
+               style="max-width:none;" draggable="false"
+               onload="overlayFit()"/>
+        </div>
+      </div>
+    </div>
+    <div id="ovCheatsheetSection" style="display:none;">
+      <div class="cheatsheet">`;
+  // Reuse the same cheatsheet card data
+  const cards = [
+    { day:1,  cls:'blue',   title:'Whole Numbers &amp; PEMDAS', items:['Place value: ones, tens, hundreds ... billions','Rounding: look one place right; &ge; 5 rounds up','<span class="formula">P &rarr; E &rarr; MD &rarr; AS</span> (left to right)','Nested parentheses: innermost first'] },
+    { day:2,  cls:'green',  title:'Integers &amp; Number Line', items:['Integers: ..., &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, ...','Right on number line = greater','<span class="formula">|a|</span> = distance from 0 (always &ge; 0)','Real life: temperature, elevation, debt'] },
+    { day:3,  cls:'amber',  title:'Integer Operations', items:['Same sign: add magnitudes, keep sign','Different signs: subtract, take larger sign','Subtract = add the opposite: <span class="formula">a &minus; b = a + (&minus;b)</span>','Multiply/Divide: same signs &rarr; +, different &rarr; &minus;'] },
+    { day:4,  cls:'red',    title:'Fractions Basics', items:['Fraction = numerator / denominator','Equivalent: multiply/divide top &amp; bottom by same #','Simplify using GCF','Compare: common denominator or cross-multiply','Mixed &harr; Improper: <span class="formula">a b/c = (ac+b)/c</span>'] },
+    { day:5,  cls:'purple', title:'Fraction Operations', items:['Add/Sub: find LCD, combine numerators','Multiply: <span class="formula">a/b &times; c/d = ac/bd</span>','Divide: Keep-Change-Flip <span class="formula">a/b &divide; c/d = a/b &times; d/c</span>','Mixed numbers: convert to improper first'] },
+    { day:6,  cls:'blue',   title:'Decimals', items:['Places: tenths, hundredths, thousandths','Fraction &rarr; Decimal: divide numerator by denominator','Add/Sub: line up decimal points','Multiply: count total decimal places','Divide: make divisor whole, shift both'] },
+    { day:7,  cls:'green',  title:'Ratios, Rates &amp; Proportions', items:['Ratio: a:b, a/b, or "a to b"','Unit rate: denominator = 1','Proportion: <span class="formula">a/b = c/d</span>','Cross-multiply: <span class="formula">ad = bc</span>'] },
+    { day:8,  cls:'amber',  title:'Percents', items:['Percent = "per hundred"','To decimal: <span class="formula">&divide; 100</span> &nbsp; To percent: <span class="formula">&times; 100</span>','<span class="formula">Part = Percent &times; Whole</span>','Discount: price &times; (1 &minus; rate)','Tax/Tip: price &times; (1 + rate)'] },
+    { day:9,  cls:'red',    title:'Variables &amp; Expressions', items:['Variable = letter placeholder for a number','Coefficient: the number before a variable (3x &rarr; 3)','Evaluate: substitute values, then compute','Like terms: same variable &amp; exponent','Distributive: <span class="formula">a(b + c) = ab + ac</span>'] },
+    { day:10, cls:'purple', title:'Equations &amp; Problem Solving', items:['Equation: expression = expression (balance)','Solve with inverse operations','Add/Sub to isolate; Multiply/Div to isolate','Word problems: define variable &rarr; write equation &rarr; solve &rarr; check'] }
+  ];
+  cards.forEach(c => {
+    html += `<div class="cheat-card ${c.cls}">
+      <div class="cheat-day">Day ${c.day}</div>
+      <h3>${c.title}</h3>
+      <ul>${c.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>`;
+  });
+  html += `</div></div>`;
+  return html;
+}
+
+window.openMindmapOverlay = function() {
+  const overlay = document.getElementById('mindmapOverlay');
+  const body = document.getElementById('mindmapOverlayBody');
+  body.innerHTML = renderOverlayContent();
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  overlayZoom = 1;
+};
+
+window.closeMindmapOverlay = function() {
+  const overlay = document.getElementById('mindmapOverlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+window.showOverlaySection = function(section) {
+  const mapEl = document.getElementById('ovMindmapSection');
+  const cheatEl = document.getElementById('ovCheatsheetSection');
+  const btnMap = document.getElementById('ovToggleMap');
+  const btnCheat = document.getElementById('ovToggleCheat');
+  if (section === 'map') {
+    mapEl.style.display = '';
+    cheatEl.style.display = 'none';
+    btnMap.classList.add('active');
+    btnCheat.classList.remove('active');
+  } else {
+    mapEl.style.display = 'none';
+    cheatEl.style.display = '';
+    btnMap.classList.remove('active');
+    btnCheat.classList.add('active');
+  }
+};
+
+window.overlayZoomFn = function(delta) {
+  overlayZoom = Math.max(0.2, Math.min(3, overlayZoom + delta));
+  applyOverlayZoom();
+};
+
+window.overlayFit = function() {
+  const viewport = document.getElementById('ovViewport');
+  const img = document.getElementById('ovMindmapImg');
+  if (!viewport || !img) return;
+  const scaleW = viewport.clientWidth / img.naturalWidth;
+  const scaleH = viewport.clientHeight / img.naturalHeight;
+  overlayZoom = Math.min(scaleW, scaleH, 1);
+  applyOverlayZoom();
+};
+
+function applyOverlayZoom() {
+  const img = document.getElementById('ovMindmapImg');
+  const display = document.getElementById('ovZoomDisplay');
+  if (!img) return;
+  img.style.transform = `scale(${overlayZoom})`;
+  if (display) display.textContent = Math.round(overlayZoom * 100) + '%';
+}
+
+// Close overlay on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('mindmapOverlay');
+    if (overlay && overlay.classList.contains('open')) {
+      closeMindmapOverlay();
+    }
+  }
+});
+
+// ─── Quiz Actions ─────────────────────────────────
+window.submitAnswer = function() {
+  const q = ALL_DAYS[state.currentDay].quiz[state.quizIndex];
+  state.quizSubmitted[q.id] = true;
+  renderMain();
+};
+
+window.quizNext = function() {
+  const quiz = ALL_DAYS[state.currentDay].quiz;
+  if (state.quizIndex < quiz.length - 1) {
+    state.quizIndex++;
+    renderMain();
+    window.scrollTo(0, 0);
+  }
+};
+
+window.quizPrev = function() {
+  if (state.quizIndex > 0) {
+    state.quizIndex--;
+    renderMain();
+    window.scrollTo(0, 0);
+  }
+};
+
+window.finishQuiz = function() {
+  const quiz = ALL_DAYS[state.currentDay].quiz;
+  // Mark all unanswered as submitted
+  quiz.forEach(q => { state.quizSubmitted[q.id] = true; });
+  renderMain();
+  window.scrollTo(0, 0);
+};
+
+window.retakeQuiz = function() {
+  state.quizIndex = 0;
+  state.quizAnswers = {};
+  state.quizSubmitted = {};
+  state.progress[`day${state.currentDay}`].quizCompleted = false;
+  state.progress[`day${state.currentDay}`].quizScore = null;
+  saveProgress();
+  renderSidebar();
+  renderMain();
+  window.scrollTo(0, 0);
+};
+
+// ─── Quiz Event Listeners ─────────────────────────
+function attachQuizListeners(day) {
+  document.querySelectorAll('.option-btn:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const qid = btn.dataset.qid;
+      const idx = parseInt(btn.dataset.idx);
+      state.quizAnswers[qid] = idx;
+      renderMain();
+    });
+  });
+}
+
+// ─── Sidebar Toggle (mobile) ──────────────────────
+window.toggleSidebar = function() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+};
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+// Show mindmap from welcome screen — open the overlay
+window.showFullMindmap = function() {
+  openMindmapOverlay();
+};
+
+// Also handle goToDay(0) for home
+const origGoToDay = window.goToDay;
+window.goToDay = function(day) {
+  if (day === 0) {
+    state.currentDay = 0;
+    state.currentTab = 'lesson';
+    renderSidebar();
+    renderMain();
+    closeSidebar();
+    return;
+  }
+  origGoToDay(day);
+};
+
+// ─── Initialize ───────────────────────────────────
+renderSidebar();
+renderMain();
+</script>
+</body>
+</html>
