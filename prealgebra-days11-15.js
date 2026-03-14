@@ -100,7 +100,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "LCD of 6, 4, and 8 is 24. Rewrite: 5/6 = 20/24, 3/4 = 18/24, 7/8 = 21/24. The smallest numerator is 18, so 3/4 is the smallest.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To compare fractions, try giving them all the same denominator.", "Find the LCD of 6, 4, and 8 — then rewrite each fraction and compare the tops."]
       },
       {
         id: "d11q5",
@@ -110,7 +111,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Compare absolute values: 3/5 = 6/10 and 1/2 = 5/10. Since 6/10 &gt; 5/10, &minus;3/5 is farther from zero, so &minus;3/5 &lt; &minus;1/2.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["With negative fractions, the one with the bigger absolute value is actually the smaller number.", "Compare the absolute values 3/5 and 1/2 first — which one is farther from zero?"]
       },
       {
         id: "d11q6",
@@ -125,7 +127,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "LCD of 3, 8, and 5 is 120. Rewrite: 1/3 = 40/120, 3/8 = 45/120, 2/5 = 48/120. Order: 40 &lt; 45 &lt; 48, so 1/3 &lt; 3/8 &lt; 2/5.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To order fractions, rewrite them all with the same denominator and compare.", "Find the LCD of 3, 8, and 5, then convert each fraction."]
       },
       {
         id: "d11q7",
@@ -135,7 +138,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "31 &divide; 5 = 6 remainder 1. So 31/5 = 6 1/5.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To convert an improper fraction to a mixed number, divide the top by the bottom.", "Divide 31 by 5 — the quotient is the whole part and the remainder goes on top."]
       },
       {
         id: "d11q8",
@@ -150,7 +154,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Convert: 1 3/4 = 7/4, 5/3 stays, 1 2/5 = 7/5. LCD of 4, 3, 5 is 60. Rewrite: 7/4 = 105/60, 5/3 = 100/60, 7/5 = 84/60. Order: 84 &lt; 100 &lt; 105, so 1 2/5 &lt; 5/3 &lt; 1 3/4.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Convert every mixed number to an improper fraction first, then find a common denominator.", "Start by turning 1 3/4, 5/3, and 1 2/5 into improper fractions — then find the LCD of 4, 3, and 5."]
       },
       {
         id: "d11q9",
@@ -160,7 +165,8 @@ export const DAYS_11_15 = {
         correct: 2,
         explanation: "GCD of 36 and 48 is 12. Divide both: 36 &divide; 12 = 3 and 48 &divide; 12 = 4. So 36/48 = 3/4.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["To simplify a fraction, divide the top and bottom by their GCD.", "Find the GCD of 36 and 48 — try listing factors or using prime factorization."]
       },
       {
         id: "d11q10",
@@ -170,7 +176,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Prime factorizations: 42 = 2 &times; 3 &times; 7 and 56 = 2<sup>3</sup> &times; 7. The shared factors are 2 and 7, so GCD = 2 &times; 7 = 14.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["The GCD is the biggest number that divides evenly into both numbers.", "Break 42 and 56 into their prime factors and multiply the ones they share."]
       }
     ]
   },
@@ -262,10 +269,10 @@ export const DAYS_11_15 = {
       },
       {
         id: "d12q3",
-        question: "What is 1/3 + 1/4?",
-        type: "multiple-choice",
-        options: ["2/7", "7/12", "1/12", "4/12"],
-        correct: 1,
+        question: "What is 1/3 + 1/4? Write your answer as a fraction.",
+        type: "type-answer",
+        answer: "7/12",
+        accept: ["7/12"],
         explanation: "LCD = LCM(3, 4) = 12. Rewrite: 1/3 = 4/12, 1/4 = 3/12. Add: 4/12 + 3/12 = 7/12.",
         difficulty: "easy",
         category: "topic"
@@ -278,7 +285,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "LCD = LCM(6, 4) = 12. Rewrite: 5/6 = 10/12, 1/4 = 3/12. Subtract: 10/12 &minus; 3/12 = 7/12.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When denominators are different, you need a common denominator before subtracting.", "Find the LCD of 6 and 4, then rewrite both fractions with that denominator."]
       },
       {
         id: "d12q5",
@@ -288,7 +296,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "LCD = LCM(3, 5) = 15. Rewrite: 2/3 = 10/15, 3/5 = 9/15. Add: 10/15 + 9/15 = 19/15 = 1 4/15.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Find a common denominator for the two fractions, then add — the result might be improper!", "The LCD of 3 and 5 is 15. Rewrite 2/3 and 3/5 with denominator 15 before adding."]
       },
       {
         id: "d12q6",
@@ -298,7 +307,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Whole parts: 3 + 2 = 5. Fractions: 1/2 + 2/3. LCD = 6: 3/6 + 4/6 = 7/6 = 1 1/6. Add to whole: 5 + 1 1/6 = 6 1/6.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["You can add the whole parts and the fraction parts separately.", "Add 3 + 2 = 5 for the whole parts, then add 1/2 + 2/3 using a common denominator of 6."]
       },
       {
         id: "d12q7",
@@ -308,7 +318,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "1/4 &minus; 3/4 is negative, so borrow: 5 1/4 = 4 5/4. Now: 4 &minus; 2 = 2, 5/4 &minus; 3/4 = 2/4 = 1/2. Answer: 2 1/2.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["When the fraction you're subtracting is bigger, you need to borrow from the whole number.", "Since 1/4 is less than 3/4, borrow 1 from the 5 to make the fraction part bigger."]
       },
       {
         id: "d12q8",
@@ -318,7 +329,8 @@ export const DAYS_11_15 = {
         correct: 2,
         explanation: "LCD of 8, 6, and 3 is 24. Rewrite: 7/8 = 21/24, 5/6 = 20/24, 1/3 = 8/24. Compute: 21 + 20 &minus; 8 = 33/24. Wait&mdash;let me recalculate: 21/24 + 20/24 = 41/24, then 41/24 &minus; 8/24 = 33/24. Hmm, that simplifies to 11/8 = 1 3/8. Actually: 21 + 20 = 41, 41 &minus; 8 = 33. 33/24 = 11/8. Let me recheck the options&mdash;29/24 corresponds to a different calculation. Recheck: 7/8 = 21/24. 5/6 = 20/24. 1/3 = 8/24. Sum: 21 + 20 &minus; 8 = 33. 33/24 = 11/8. The answer is 11/8 = 1 3/8.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["With three fractions, find the LCD of all three denominators first.", "The LCD of 8, 6, and 3 is 24 — rewrite every fraction with 24 on the bottom, then add and subtract."]
       },
       {
         id: "d12q9",
@@ -328,7 +340,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "9 = 3<sup>2</sup> and 12 = 2<sup>2</sup> &times; 3. LCM = 2<sup>2</sup> &times; 3<sup>2</sup> = 4 &times; 9 = 36.",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["The LCM is the smallest number that both values divide into evenly.", "Write out the prime factorizations of 9 and 12, then take the highest power of each prime."]
       },
       {
         id: "d12q10",
@@ -338,7 +351,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "8 = 2<sup>3</sup> and 14 = 2 &times; 7. LCM = 2<sup>3</sup> &times; 7 = 8 &times; 7 = 56.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Use prime factorization to find the LCM — take the highest power of each prime.", "8 = 2³ and 14 = 2 × 7. The LCM uses the biggest power of each prime factor."]
       }
     ]
   },
@@ -446,7 +460,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Multiply: 4 &times; 3 = 12, 9 &times; 8 = 72. Simplify: 12/72 = 1/6. (Or cross-cancel first: 4 and 8 share 4, 3 and 9 share 3, giving 1/3 &times; 1/2 = 1/6.)",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Multiply tops together and bottoms together — but try cross-canceling first to keep numbers small.", "Look for a common factor between the 4 and 8, and between the 3 and 9, before you multiply."]
       },
       {
         id: "d13q5",
@@ -456,7 +471,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Convert: 2 1/2 = 5/2 and 1 3/5 = 8/5. Multiply: 5/2 &times; 8/5. Cross-cancel the 5s: 1/2 &times; 8/1 = 8/2 = 4.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Convert both mixed numbers to improper fractions before multiplying.", "2 1/2 = 5/2 and 1 3/5 = 8/5 — now multiply and look for cross-canceling."]
       },
       {
         id: "d13q6",
@@ -466,7 +482,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Keep-Change-Flip: 5/6 &times; 9/10. Cross-cancel: 5 and 10 (factor 5) &rarr; 1/6 &times; 9/2. Also 9 and 6 (factor 3) &rarr; 1/2 &times; 3/2 = 3/4.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Remember Keep-Change-Flip: keep the first fraction, change ÷ to ×, flip the second.", "Flip 10/9 to get 9/10, then multiply 5/6 × 9/10 and cross-cancel."]
       },
       {
         id: "d13q7",
@@ -476,7 +493,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Apply the exponent to numerator and denominator: 2<sup>3</sup>/3<sup>3</sup> = 8/27.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["When you raise a fraction to a power, apply the exponent to both the top and bottom.", "Compute 2³ for the numerator and 3³ for the denominator separately."]
       },
       {
         id: "d13q8",
@@ -486,7 +504,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Convert: 3 1/3 = 10/3 and 1 2/3 = 5/3. Keep-Change-Flip: 10/3 &times; 3/5. Cross-cancel the 3s and the 5 with 10: 10/1 &times; 1/5 = 10/5 = 2.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Convert both mixed numbers to improper fractions, then use Keep-Change-Flip.", "3 1/3 = 10/3 and 1 2/3 = 5/3 — now flip the second and multiply."]
       },
       {
         id: "d13q9",
@@ -496,7 +515,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Using the quotient rule: 3<sup>4</sup> &divide; 3<sup>2</sup> = 3<sup>4&minus;2</sup> = 3<sup>2</sup> = 9.",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["When dividing powers with the same base, you can subtract the exponents.", "Use the quotient rule: 3⁴ ÷ 3² = 3^(4−2). What's 3²?"]
       },
       {
         id: "d13q10",
@@ -506,7 +526,8 @@ export const DAYS_11_15 = {
         correct: 2,
         explanation: "Any nonzero number raised to the power of 0 equals 1. So 5<sup>0</sup> = 1.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["There's a special rule for any nonzero number raised to the zero power.", "Think about the pattern: 5³ = 125, 5² = 25, 5¹ = 5 — what comes next when you keep dividing by 5?"]
       }
     ]
   },
@@ -559,6 +580,11 @@ export const DAYS_11_15 = {
             "To <strong>evaluate</strong> an expression means to find its value by <em>substituting</em> a given number for each variable, then computing with PEMDAS. Always use parentheses when you substitute to avoid sign errors, especially with negative numbers.",
             "Example: Evaluate 3x<sup>2</sup> &minus; 2x + 1 when x = 4. Substitute: 3(4)<sup>2</sup> &minus; 2(4) + 1 = 3(16) &minus; 8 + 1 = 48 &minus; 8 + 1 = 41. Exponents come before multiplication in PEMDAS, so square the 4 first, <em>then</em> multiply by 3.",
             "With <strong>multiple variables</strong>, substitute each one. Evaluate 2a + b/c when a = 5, b = 12, c = 4: substitute to get 2(5) + 12/4 = 10 + 3 = 13. Be sure to substitute the correct value for each letter&mdash;mix-ups are a common mistake!"
+          ],
+          practice: [
+            { type: "type-answer", prompt: "Evaluate 4x &minus; 3 when x = 5.", answer: "17", accept: ["17"], explanation: "4(5) &minus; 3 = 20 &minus; 3 = 17." },
+            { type: "type-answer", prompt: "Evaluate x<sup>2</sup> + 2x when x = 3.", answer: "15", accept: ["15"], explanation: "3&sup2; + 2(3) = 9 + 6 = 15." },
+            { type: "multiple-quick", prompt: "If y = &minus;2, what is 3y + 10?", options: ["16", "4", "&minus;4", "&minus;16"], correct: 1, explanation: "3(&minus;2) + 10 = &minus;6 + 10 = 4." }
           ],
           example: {
             title: "Worked Example: Evaluating with Negatives",
@@ -632,17 +658,19 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "\"Three times a number\" = 3n. \"6 less than\" = subtract 6 from it. Result: 3n &minus; 6.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Watch the word order — 'less than' means you subtract FROM the other part.", "Write 'three times a number' first (3n), then subtract 6 from it."]
       },
       {
         id: "d14q5",
         question: "Evaluate 2a<sup>2</sup> &minus; b when a = 3 and b = 5.",
-        type: "multiple-choice",
-        options: ["1", "13", "31", "7"],
-        correct: 1,
+        type: "type-answer",
+        answer: "13",
+        accept: ["13"],
         explanation: "Substitute: 2(3)<sup>2</sup> &minus; 5 = 2(9) &minus; 5 = 18 &minus; 5 = 13.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Substitute the values for each variable carefully, and remember PEMDAS \u2014 exponents come first!", "Replace a with 3: compute (3)\u00b2 = 9 first, then multiply by 2 and subtract b."]
       },
       {
         id: "d14q6",
@@ -652,7 +680,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Combine x-terms: 6x &minus; 4x = 2x. Combine constants: 3 + 9 = 12. Result: 2x + 12.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Combine like terms: group the x-terms together and the plain numbers together.", "Add 6x and −4x for the variable part, then add 3 and 9 for the constant part."]
       },
       {
         id: "d14q7",
@@ -662,7 +691,8 @@ export const DAYS_11_15 = {
         correct: 2,
         explanation: "Distribute: 3(4x) &minus; 3(2) = 12x &minus; 6. Then 12x &minus; 6 + 5x = 17x &minus; 6.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the distributive property first — multiply 3 by each term inside the parentheses.", "Distribute: 3 × 4x and 3 × (−2), then combine the result with the +5x."]
       },
       {
         id: "d14q8",
@@ -672,7 +702,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Substitute: (&minus;2)<sup>2</sup> &minus; 4(&minus;2) + 4 = 4 + 8 + 4 = 16.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Substitute carefully with negatives — use parentheses around −2 to avoid sign mistakes.", "Start with (−2)² = 4 (positive!), then compute −4(−2) = +8, and add everything up."]
       },
       {
         id: "d14q9",
@@ -682,7 +713,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Multiply: (3 &times; 8)/(4 &times; 9) = 24/36. Simplify: GCD(24, 36) = 12, so 24/36 = 2/3.",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["Multiply numerators together and denominators together — but cross-cancel first!", "The 3 and 9 share a factor, and the 8 and 4 share a factor. Cancel before multiplying."]
       },
       {
         id: "d14q10",
@@ -692,7 +724,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Convert: 3 1/2 = 7/2. Keep-Change-Flip: 7/2 &times; 8/7. Cross-cancel the 7s: 1/2 &times; 8/1 = 8/2 = 4.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Convert the mixed number to an improper fraction, then use Keep-Change-Flip to divide.", "3 1/2 = 7/2. Now flip 7/8 to get 8/7 and multiply."]
       }
     ]
   },
@@ -746,6 +779,11 @@ export const DAYS_11_15 = {
             "For example, solve 2x + 5 = 13. <strong>Step 1:</strong> Undo the +5 by subtracting 5 from both sides: 2x = 8. <strong>Step 2:</strong> Undo the &times;2 by dividing both sides by 2: x = 4. Check: 2(4) + 5 = 8 + 5 = 13. &#10003;",
             "Two-step equations can also involve <strong>fractions</strong>. For x/3 &minus; 4 = 2: <strong>Step 1:</strong> Add 4 to both sides: x/3 = 6. <strong>Step 2:</strong> Multiply both sides by 3: x = 18. Check: 18/3 &minus; 4 = 6 &minus; 4 = 2. &#10003; The same \"peel off the outer layer first\" strategy always works, whether the numbers are whole, negative, or fractions."
           ],
+          practice: [
+            { type: "type-answer", prompt: "Solve: 3x + 4 = 19. What is x?", answer: "5", accept: ["5"], explanation: "Subtract 4: 3x = 15. Divide by 3: x = 5." },
+            { type: "type-answer", prompt: "Solve: 2x &minus; 6 = 10. What is x?", answer: "8", accept: ["8"], explanation: "Add 6: 2x = 16. Divide by 2: x = 8." },
+            { type: "multiple-quick", prompt: "What is the FIRST step to solve 5x + 3 = 28?", options: ["Divide by 5", "Subtract 3", "Subtract 28", "Add 3"], correct: 1, explanation: "Undo the outer operation first: subtract 3 from both sides to get 5x = 25." }
+          ],
           example: {
             title: "Worked Example: Solving a Two-Step Equation",
             problem: "Solve: 4x &minus; 7 = 21.",
@@ -798,17 +836,19 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Add 12 to both sides: x = &minus;5 + 12 = 7.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the inverse operation — what undoes subtraction?", "Add 12 to both sides of the equation to get x by itself."]
       },
       {
         id: "d15q5",
-        question: "Solve: 3x + 4 = 19.",
-        type: "multiple-choice",
-        options: ["x = 5", "x = 7", "x = 23/3", "x = 15"],
-        correct: 0,
+        question: "Solve: 3x + 4 = 19. What is x?",
+        type: "type-answer",
+        answer: "5",
+        accept: ["5", "x=5", "x = 5"],
         explanation: "Step 1: Subtract 4 from both sides: 3x = 15. Step 2: Divide by 3: x = 5. Check: 3(5) + 4 = 19. &#10003;",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["This is a two-step equation \u2014 undo the addition/subtraction first, then the multiplication.", "Subtract 4 from both sides first to isolate the 3x term, then divide by 3."]
       },
       {
         id: "d15q6",
@@ -818,7 +858,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Step 1: Subtract 3 from both sides: x/6 = 5. Step 2: Multiply both sides by 6: x = 30. Check: 30/6 + 3 = 5 + 3 = 8. &#10003;",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Undo the outer operation first — deal with the +3 before the division.", "Subtract 3 from both sides to get x/6 alone, then multiply both sides by 6."]
       },
       {
         id: "d15q7",
@@ -828,7 +869,8 @@ export const DAYS_11_15 = {
         correct: 0,
         explanation: "Step 1: Add 10 to both sides: 7x = 35. Step 2: Divide by 7: x = 5. Check: 7(5) &minus; 10 = 35 &minus; 10 = 25. &#10003;",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Two-step equation: undo the subtraction first, then the multiplication.", "Add 10 to both sides to get 7x = 35, then divide both sides by 7."]
       },
       {
         id: "d15q8",
@@ -838,7 +880,8 @@ export const DAYS_11_15 = {
         correct: 2,
         explanation: "Step 1: Subtract 9 from both sides: &minus;2x = &minus;8. Step 2: Divide by &minus;2: x = 4. Check: &minus;2(4) + 9 = &minus;8 + 9 = 1. &#10003;",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Be extra careful when dividing by a negative — the sign of your answer will flip.", "Subtract 9 from both sides first to get −2x = −8, then divide both sides by −2."]
       },
       {
         id: "d15q9",
@@ -848,7 +891,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Substitute: 5(4) &minus; 2 = 20 &minus; 2 = 18.",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["To evaluate an expression, replace the variable with the given number and compute.", "Plug in x = 4: compute 5(4) first, then subtract 2."]
       },
       {
         id: "d15q10",
@@ -858,7 +902,8 @@ export const DAYS_11_15 = {
         correct: 1,
         explanation: "Distribute: 6x + 2 &minus; 4x. Combine like terms: 6x &minus; 4x = 2x. Result: 2x + 2.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Distribute first — multiply the 2 by everything inside the parentheses.", "2 × 3x = 6x and 2 × 1 = 2. Now combine 6x − 4x and simplify."]
       }
     ]
   }

@@ -102,7 +102,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "Quotient rule: subtract exponents. 5<sup>7</sup> &divide; 5<sup>4</sup> = 5<sup>7&minus;4</sup> = 5<sup>3</sup>.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When you divide two powers that have the same base, think about what happens to the exponents.", "Use the quotient rule: subtract the bottom exponent from the top exponent. What is 7 minus 4?"]
       },
       {
         id: "d6q5",
@@ -112,7 +113,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "4<sup>&minus;1</sup> = 1/4 and 4<sup>0</sup> = 1. So 1/4 + 1 = 1/4 + 4/4 = 5/4.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Handle each term separately: what does a negative exponent do, and what does a zero exponent give you?", "4 to the power of &minus;1 means 1/4, and 4 to the power of 0 means 1. Now add those two numbers together."]
       },
       {
         id: "d6q6",
@@ -122,7 +124,8 @@ export const DAYS_6_10 = {
         correct: 3,
         explanation: "Quotient rule: 2<sup>3&minus;5</sup> = 2<sup>&minus;2</sup>. And 2<sup>&minus;2</sup> = 1/2<sup>2</sup> = 1/4. So both B and C are correct.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the quotient rule first: subtract exponents. What do you get when the result is a negative exponent?", "3 minus 5 gives &minus;2, so you get 2 to the &minus;2. Now convert that negative exponent to a fraction \u2014 could more than one answer be right?"]
       },
       {
         id: "d6q7",
@@ -132,7 +135,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "3<sup>&minus;3</sup> = 1/3<sup>3</sup> = 1/27. Note: 3<sup>&minus;2</sup> = 1/9, 27<sup>0</sup> = 1, and (&minus;3)<sup>3</sup> = &minus;27.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["First, figure out which power of 3 gives you 27. Then think about how a negative exponent turns that into a fraction.", "Since 3 cubed is 27, a negative exponent on 3 would flip it to 1/27. Which option matches that?"]
       },
       {
         id: "d6q8",
@@ -142,7 +146,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "Power rule first: (7<sup>2</sup>)<sup>3</sup> = 7<sup>6</sup>. Then quotient rule: 7<sup>6</sup> &divide; 7<sup>4</sup> = 7<sup>6&minus;4</sup> = 7<sup>2</sup>.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["This problem uses two rules! Start with the power rule: when you raise a power to another power, multiply the exponents.", "After the power rule, you have 7 to the 6th. Now use the quotient rule to divide by 7 to the 4th \u2014 subtract the exponents."]
       },
       {
         id: "d6q9",
@@ -152,7 +157,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "Product rule: 6<sup>3</sup> &times; 6<sup>&minus;3</sup> = 6<sup>3+(&minus;3)</sup> = 6<sup>0</sup> = 1. Adding a number and its opposite always gives 0 in the exponent!",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["The product rule says: when you multiply same bases, add the exponents. What is 3 + (\u22123)?", "Adding the exponents gives 0. Now remember the zero exponent rule \u2014 what does any nonzero base raised to the 0 power equal?"]
       },
       {
         id: "d6q10",
@@ -162,7 +168,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "4<sup>&minus;2</sup> = 1/16 and 2<sup>&minus;4</sup> = 1/16. They are equal! This makes sense because 4<sup>2</sup> = 16 and 2<sup>4</sup> = 16.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Convert each negative exponent to a fraction: a to the \u2212n means 1 over a to the n. Calculate each one separately.", "4 squared is 16, and 2 to the 4th is also 16. So what do 1/16 and 1/16 tell you about which is larger?"]
       }
     ]
   },
@@ -251,9 +258,9 @@ export const DAYS_6_10 = {
       {
         id: "d7q2",
         question: "How many factors does 18 have?",
-        type: "multiple-choice",
-        options: ["4", "5", "6", "8"],
-        correct: 2,
+        type: "type-answer",
+        answer: "6",
+        accept: ["6"],
         explanation: "Factor pairs of 18: 1&times;18, 2&times;9, 3&times;6. That gives factors: 1, 2, 3, 6, 9, 18 &mdash; a total of 6.",
         difficulty: "easy",
         category: "topic"
@@ -276,7 +283,8 @@ export const DAYS_6_10 = {
         correct: 3,
         explanation: "39 = 3&times;13, 49 = 7&times;7, 51 = 3&times;17. Only 53 has no factors other than 1 and itself, so 53 is prime.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A prime number has exactly two factors: 1 and itself. Try checking if each option can be divided evenly by small primes like 3 or 7.", "Use the divisibility rule for 3 (add the digits) on 39 and 51. Check if 49 is a perfect square. The one left standing is prime!"]
       },
       {
         id: "d7q5",
@@ -286,7 +294,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "If a number is divisible by 2 and by 9, it is divisible by 2 &times; 9 = 18 (since 2 and 9 share no common factor).",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When two numbers share no common factor, being divisible by both means you\u2019re divisible by their product.", "2 and 9 share no common factor, so multiply them: 2 \u00d7 9 = ? Which answer choice matches?"]
       },
       {
         id: "d7q6",
@@ -296,7 +305,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "Divisibility by 4: check the last two digits. 40 &divide; 4 = 10, so yes, 3,240 is divisible by 4.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["The divisibility rule for 4 doesn\u2019t use the digit sum or just the last digit \u2014 it uses something specific about the end of the number.", "Look at the last two digits of 3,240. Is that two-digit number divisible by 4?"]
       },
       {
         id: "d7q7",
@@ -306,7 +316,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "21 = 3&times;7 (composite), 22 = 2&times;11 (composite), 25 = 5&times;5 (composite). 23 has no factors other than 1 and 23, so it is prime.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Start from 21 and check each number. Can you find any factors besides 1 and itself? Remember, even numbers are never prime (except 2).", "21 is divisible by 3 (since 2+1=3), 22 is even, and 25 = 5\u00d75. What about 23 \u2014 can any small prime divide it?"]
       },
       {
         id: "d7q8",
@@ -316,7 +327,8 @@ export const DAYS_6_10 = {
         correct: 3,
         explanation: "84 &divide; 7 = 12 &#10003;, 84 &divide; 12 = 7 &#10003;, 84 &divide; 14 = 6 &#10003;. But 84 &divide; 16 = 5 R4, so 16 does not work.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["\"No students left over\" means 84 must be evenly divisible by the group size. A possible group size must be a factor of 84.", "Try dividing 84 by each option. Three of them divide evenly. Which one leaves a remainder?"]
       },
       {
         id: "d7q9",
@@ -326,7 +338,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "8<sup>0</sup> = 1 (zero exponent rule from Day 6). 5<sup>&minus;1</sup> = 1/5. So 1 &times; 1/5 = 1/5.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Break this into two parts: first recall what any nonzero number to the 0 power equals (Day 6), then handle the negative exponent.", "8 to the 0 is just 1. Now 5 to the \u22121 means the reciprocal of 5. What is 1 times that reciprocal?"]
       },
       {
         id: "d7q10",
@@ -336,7 +349,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "Quotient rule from Day 6: 2<sup>5&minus;7</sup> = 2<sup>&minus;2</sup> = 1/2<sup>2</sup> = 1/4.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["When dividing powers with the same base, subtract the exponents (quotient rule from Day 6). What is 5 minus 7?", "You get 2 to the \u22122. A negative exponent means \"flip it\" \u2014 rewrite it as 1 over 2 squared, then calculate."]
       }
     ]
   },
@@ -448,7 +462,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "360 = 8 &times; 45 = 2<sup>3</sup> &times; (9 &times; 5) = 2<sup>3</sup> &times; 3<sup>2</sup> &times; 5. All factors must be prime.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Build a factor tree: keep splitting numbers until every branch ends with a prime. Remember, 4, 9, 10, and 45 are NOT prime!", "Start by dividing 360 by 2 repeatedly, then by 3. Make sure every factor in your final answer is a prime number."]
       },
       {
         id: "d8q5",
@@ -458,7 +473,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "12 = 2<sup>2</sup> &times; 3 and 18 = 2 &times; 3<sup>2</sup>. Take highest powers: 2<sup>2</sup> &times; 3<sup>2</sup> = 4 &times; 9 = 36.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To find the LCM, first write the prime factorization of both numbers. Then take the highest power of each prime.", "12 = 2\u00b2 \u00d7 3 and 18 = 2 \u00d7 3\u00b2. Pick the bigger exponent for each prime: 2\u00b2 and 3\u00b2. Now multiply those together."]
       },
       {
         id: "d8q6",
@@ -468,7 +484,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "15 = 3 &times; 5 and 20 = 2<sup>2</sup> &times; 5. Take highest powers: 2<sup>2</sup> &times; 3 &times; 5 = 4 &times; 3 &times; 5 = 60.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Prime factorize both numbers first, then take the highest power of every prime that shows up in either factorization.", "15 = 3 \u00d7 5 and 20 = 2\u00b2 \u00d7 5. The primes involved are 2, 3, and 5. Grab the biggest power of each and multiply."]
       },
       {
         id: "d8q7",
@@ -478,7 +495,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "LCM(15, 20) = 60. The alarms will sync up again in 60 minutes (1 hour).",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When two things repeat on different cycles, they sync up at the Least Common Multiple of those cycle lengths.", "Find the LCM of 15 and 20. You just solved that in the previous question \u2014 same numbers, real-world twist!"]
       },
       {
         id: "d8q8",
@@ -488,7 +506,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "8 = 2<sup>3</sup>, 12 = 2<sup>2</sup> &times; 3, 15 = 3 &times; 5. Take highest powers: 2<sup>3</sup> &times; 3 &times; 5 = 8 &times; 3 &times; 5 = 120.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["The LCM method works the same way for three numbers \u2014 prime factorize all three, then take the highest power of every prime that appears.", "8 = 2\u00b3, 12 = 2\u00b2 \u00d7 3, 15 = 3 \u00d7 5. The primes are 2, 3, and 5. Pick the highest power of each: 2\u00b3, 3, and 5. Now multiply."]
       },
       {
         id: "d8q9",
@@ -498,7 +517,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "91 = 7 &times; 13. Many students think 91 is prime, but checking divisibility by 7 reveals 91 &divide; 7 = 13. (Review from Day 7.)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Don\u2019t assume a number is prime just because it looks like one! Test divisibility by primes up to the square root of 91 (about 9.5).", "Try dividing 91 by 7. Does it go in evenly? If so, 91 has factors besides 1 and itself."]
       },
       {
         id: "d8q10",
@@ -508,7 +528,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "A number divisible by 6 must be divisible by both 2 and 3. 4,122 is even (ends in 2) and its digit sum 4+1+2+2 = 9 is divisible by 3. (Review from Day 7.)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Divisible by 6 means divisible by BOTH 2 and 3. First cross off any odd numbers (not divisible by 2), then check the digit-sum rule for 3.", "After eliminating odd numbers, add up the digits of the remaining options. Which one has a digit sum divisible by 3?"]
       }
     ]
   },
@@ -619,7 +640,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "(2+1) &times; (2+1) = 3 &times; 3 = 9 divisors: 1, 2, 4, 5, 10, 20, 25, 50, 100.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the divisor-counting formula: add 1 to each exponent in the prime factorization, then multiply those results together.", "The exponents are both 2. So you compute (2+1) \u00d7 (2+1). What does that give you?"]
       },
       {
         id: "d9q5",
@@ -629,7 +651,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "72 = 2<sup>3</sup>&times;3<sup>2</sup> and 108 = 2<sup>2</sup>&times;3<sup>3</sup>. Lowest shared: 2<sup>2</sup>&times;3<sup>2</sup> = 4 &times; 9 = 36.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["GCD is the opposite of LCM: instead of taking the highest power of each prime, take the LOWEST power of each shared prime.", "72 = 2\u00b3 \u00d7 3\u00b2 and 108 = 2\u00b2 \u00d7 3\u00b3. For the GCD, pick the smaller exponent for each shared prime: 2\u00b2 and 3\u00b2. Multiply those."]
       },
       {
         id: "d9q6",
@@ -639,7 +662,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "GCD(42, 56): 42 = 2&times;3&times;7 and 56 = 2<sup>3</sup>&times;7. Shared: 2&times;7 = 14. She makes 14 bags (3 chips and 4 bears each).",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When you need to split two amounts into the maximum number of equal groups with nothing left over, you need the GCD.", "Find GCD(42, 56). Prime factorize both: 42 = 2 \u00d7 3 \u00d7 7 and 56 = 2\u00b3 \u00d7 7. What primes do they share, and at what powers?"]
       },
       {
         id: "d9q7",
@@ -649,7 +673,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "GCD &times; LCM = a &times; b, so LCM = 4,500 &divide; 15 = 300.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["There\u2019s a handy formula connecting GCD and LCM: GCD(a,b) \u00d7 LCM(a,b) = a \u00d7 b.", "Plug in what you know: 15 \u00d7 LCM = 4,500. Divide both sides by 15 to find the LCM."]
       },
       {
         id: "d9q8",
@@ -659,7 +684,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "(3+1)(2+1)(1+1) = 4 &times; 3 &times; 2 = 24 divisors.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the divisor-counting formula: add 1 to each exponent, then multiply all the results together.", "The exponents are 3, 2, and 1. So compute (3+1) \u00d7 (2+1) \u00d7 (1+1). What do you get?"]
       },
       {
         id: "d9q9",
@@ -669,7 +695,8 @@ export const DAYS_6_10 = {
         correct: 0,
         explanation: "252 = 4 &times; 63 = 2<sup>2</sup> &times; (9 &times; 7) = 2<sup>2</sup> &times; 3<sup>2</sup> &times; 7. All factors must be prime! (Review from Day 8.)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Build a factor tree for 252. Remember, you\u2019re not done until every factor is a prime number \u2014 things like 4 and 63 still need to be broken down!", "252 \u00f7 2 = 126, and 126 \u00f7 2 = 63. Now factor 63: 63 = 9 \u00d7 7 = 3\u00b2 \u00d7 7. Put it all together."]
       },
       {
         id: "d9q10",
@@ -679,7 +706,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "14 = 2 &times; 7 and 21 = 3 &times; 7. Highest powers: 2, 3, 7. LCM = 2 &times; 3 &times; 7 = 42. (Review from Day 8.)",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["For LCM, prime factorize both numbers and take the highest power of every prime that appears in either one.", "14 = 2 \u00d7 7 and 21 = 3 \u00d7 7. The primes are 2, 3, and 7. Multiply them all together for the LCM."]
       }
     ]
   },
@@ -755,6 +783,11 @@ export const DAYS_6_10 = {
             "For example, simplify 48/60. Step 1: Find GCD(48, 60). We know 48 = 2<sup>4</sup>&times;3 and 60 = 2<sup>2</sup>&times;3&times;5, so GCD = 2<sup>2</sup>&times;3 = 12. Step 2: Divide both by 12. 48&divide;12 = 4 and 60&divide;12 = 5. So 48/60 = <strong>4/5</strong>.",
             "You can also simplify step by step, dividing by any common factor you spot: 48/60 &divide; 2/2 = 24/30 &divide; 2/2 = 12/15 &divide; 3/3 = 4/5. You&rsquo;ll get the same answer either way, but using the GCD gets you there in <em>one step</em> &mdash; much faster! Always check your final answer: are there any common factors left? If not, you&rsquo;re done."
           ],
+          practice: [
+            { type: "type-answer", prompt: "Simplify 18/24 to lowest terms. Write as a fraction (e.g., 3/4).", answer: "3/4", accept: ["3/4"], explanation: "GCD(18, 24) = 6. 18 &divide; 6 = 3, 24 &divide; 6 = 4. So 18/24 = 3/4." },
+            { type: "type-answer", prompt: "Simplify 36/48 to lowest terms.", answer: "3/4", accept: ["3/4"], explanation: "GCD(36, 48) = 12. 36 &divide; 12 = 3, 48 &divide; 12 = 4. So 36/48 = 3/4." },
+            { type: "multiple-quick", prompt: "Which fraction is already in simplest form?", options: ["8/12", "15/20", "7/10", "6/9"], correct: 2, explanation: "GCD(7, 10) = 1, so 7/10 is already simplified. The others all share common factors." }
+          ],
           example: {
             title: "Worked Example: Simplifying with GCD",
             problem: "Simplify 84/126.",
@@ -792,10 +825,10 @@ export const DAYS_6_10 = {
       },
       {
         id: "d10q3",
-        question: "Simplify 18/24.",
-        type: "multiple-choice",
-        options: ["2/3", "9/12", "3/4", "6/8"],
-        correct: 2,
+        question: "Simplify 18/24. Write your answer as a fraction.",
+        type: "type-answer",
+        answer: "3/4",
+        accept: ["3/4", "0.75"],
         explanation: "GCD(18,24) = 6. Divide both by 6: 18&divide;6 = 3 and 24&divide;6 = 4. So 18/24 = 3/4.",
         difficulty: "easy",
         category: "topic"
@@ -808,7 +841,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "7/4 = 1 3/4. Since 4/4 = 1 and 8/4 = 2, the fraction 7/4 falls between 1 and 2.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When the numerator is bigger than the denominator, the fraction is greater than 1. Convert it to a mixed number to see where it lands.", "How many times does 4 go into 7? Once, with 3 left over \u2014 so 7/4 = 1 and 3/4. Where does that sit on the number line?"]
       },
       {
         id: "d10q5",
@@ -818,7 +852,8 @@ export const DAYS_6_10 = {
         correct: 3,
         explanation: "GCD(45,60)=15. So 45/60 = 3/4. The other options (9/12, 15/20) are equivalent but not fully simplified.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To fully simplify, divide top and bottom by their GCD. But also check \u2014 are any of the other options equivalent fractions that aren\u2019t fully reduced?", "GCD(45, 60) = 15. Dividing gives 3/4. Notice that 9/12 and 15/20 also equal 3/4 but aren\u2019t in simplest form. Could more than one answer be right?"]
       },
       {
         id: "d10q6",
@@ -828,7 +863,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "9 &times; 7 = 63, so multiply the numerator by 7 too: 2 &times; 7 = 14. Therefore 2/9 = 14/63.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["To build an equivalent fraction, you must multiply the numerator and denominator by the same number. Figure out what you multiply 9 by to get 63.", "9 \u00d7 7 = 63, so the multiplier is 7. Now do the same to the numerator: 2 \u00d7 7 = ?"]
       },
       {
         id: "d10q7",
@@ -838,7 +874,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "GCD(84,126) = 42. So 84 &divide; 42 = 2 and 126 &divide; 42 = 3. The simplest form is 2/3.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["To simplify in one step, find the GCD of 84 and 126 using prime factorizations, then divide both by it.", "84 = 2\u00b2 \u00d7 3 \u00d7 7 and 126 = 2 \u00d7 3\u00b2 \u00d7 7. The GCD is 2 \u00d7 3 \u00d7 7 = 42. Divide both numerator and denominator by 42."]
       },
       {
         id: "d10q8",
@@ -848,7 +885,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "17 is prime and does not divide 30, so GCD(17,30) = 1. The others can be simplified: 14/21 = 2/3, 25/40 = 5/8, 12/18 = 2/3.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["A fraction is in simplest form when the numerator and denominator share no common factor besides 1. Check each option\u2019s GCD.", "Look for a numerator that is prime. If a prime number doesn\u2019t divide the denominator, the GCD must be 1 and the fraction is already simplified."]
       },
       {
         id: "d10q9",
@@ -858,7 +896,8 @@ export const DAYS_6_10 = {
         correct: 1,
         explanation: "56 = 2<sup>3</sup>&times;7 and 98 = 2&times;7<sup>2</sup>. Shared primes at lowest power: 2<sup>1</sup>&times;7<sup>1</sup> = 14. (Review from Day 9.)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Prime factorize both numbers, then take the lowest power of each prime they share in common.", "56 = 2\u00b3 \u00d7 7 and 98 = 2 \u00d7 7\u00b2. They share 2 and 7 \u2014 take the smaller exponent of each: 2\u00b9 and 7\u00b9. Multiply those together."]
       },
       {
         id: "d10q10",
@@ -868,7 +907,8 @@ export const DAYS_6_10 = {
         correct: 2,
         explanation: "GCD(120,180) = 60. So 120&divide;60 = 2 and 180&divide;60 = 3. Answer: 2/3. This combines GCD skills from Day 9 with fraction simplification from today!",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["Find the GCD of 120 and 180 first (use prime factorizations from Day 8!), then divide both top and bottom by it.", "120 = 2\u00b3 \u00d7 3 \u00d7 5 and 180 = 2\u00b2 \u00d7 3\u00b2 \u00d7 5. The GCD uses the lowest shared powers: 2\u00b2 \u00d7 3 \u00d7 5 = 60. Now divide both 120 and 180 by 60."]
       }
     ]
   }

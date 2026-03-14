@@ -101,6 +101,7 @@ export const DAYS_21_25 = {
         options: ["78%", "85%", "87.5%", "88%"],
         correct: 2,
         explanation: "7 &divide; 8 = 0.875. Multiply by 100: 0.875 &times; 100 = 87.5%.",
+        hints: ["To turn a fraction into a percent, first turn it into a decimal.", "Try dividing 7 by 8 — what decimal do you get?"],
         difficulty: "medium",
         category: "topic"
       },
@@ -111,6 +112,7 @@ export const DAYS_21_25 = {
         options: ["25%", "30%", "33%", "35%"],
         correct: 1,
         explanation: "Percent = Part &divide; Whole = 63 &divide; 210 = 0.30 = 30%.",
+        hints: ["Remember the formula: Percent = Part ÷ Whole.", "Start by dividing 63 by 210, then convert the decimal to a percent."],
         difficulty: "medium",
         category: "topic"
       },
@@ -121,6 +123,7 @@ export const DAYS_21_25 = {
         options: ["10.8", "24", "30", "36"],
         correct: 2,
         explanation: "Whole = Part &divide; Percent = 18 &divide; 0.60 = 30.",
+        hints: ["Use the percent equation: Part = Percent × Whole. You know the part and the percent.", "Rearrange to get Whole = 18 ÷ 0.60."],
         difficulty: "medium",
         category: "topic"
       },
@@ -131,6 +134,7 @@ export const DAYS_21_25 = {
         options: ["30", "36", "42", "48"],
         correct: 1,
         explanation: "10% of 240 = 24. 5% of 240 = 12. So 15% = 24 + 12 = 36.",
+        hints: ["Break 15% into friendlier percents you can do in your head.", "Find 10% of 240 first (just move the decimal), then find 5% as half of that."],
         difficulty: "medium",
         category: "topic"
       },
@@ -141,6 +145,7 @@ export const DAYS_21_25 = {
         options: ["324", "126", "108", "150"],
         correct: 1,
         explanation: "Not blue = 100% &minus; 72% = 28%. 28% of 450 = 0.28 &times; 450 = 126.",
+        hints: ["If 72% are blue, what percent are NOT blue?", "Subtract 72% from 100% to get the 'not blue' percent, then find that percent of 450."],
         difficulty: "hard",
         category: "topic"
       },
@@ -151,6 +156,7 @@ export const DAYS_21_25 = {
         options: ["3/5", "0.58", "62%", "They are all equal"],
         correct: 2,
         explanation: "3/5 = 0.60 = 60%. 0.58 = 58%. 62% = 0.62. The largest is 62%.",
+        hints: ["To compare, convert everything to the same form — decimals or percents both work.", "Start by turning 3/5 into a decimal: 3 ÷ 5 = ?"],
         difficulty: "hard",
         category: "review"
       },
@@ -161,6 +167,7 @@ export const DAYS_21_25 = {
         options: ["1/3 and 33.3̄%", "3/10 and 30%", "1/3 and 30%", "3/9 and 39%"],
         correct: 0,
         explanation: "0.333&hellip; = 1/3. As a percent: (1 &divide; 3) &times; 100 = 33.333&hellip;% = 33.3̄%. (Recall repeating decimals from Day 18.)",
+        hints: ["Think about which fraction gives a repeating decimal of 0.333...", "0.333... is a famous fraction — it's 1 divided by 3. Now convert that fraction to a percent."],
         difficulty: "hard",
         category: "review"
       }
@@ -269,6 +276,7 @@ export const DAYS_21_25 = {
         options: ["$10.52", "$11.52", "$12.80", "$9.60"],
         correct: 1,
         explanation: "Tip = 0.18 &times; $64 = $11.52.",
+        hints: ["A tip is just a percent of the bill — multiply to find it.", "Convert 18% to a decimal (0.18) and multiply by $64."],
         difficulty: "medium",
         category: "topic"
       },
@@ -279,6 +287,7 @@ export const DAYS_21_25 = {
         options: ["$550.80", "$518.40", "$540.00", "$556.92"],
         correct: 0,
         explanation: "Sale price = $600 &times; 0.85 = $510. Tax: $510 &times; 1.08 = $550.80.",
+        hints: ["This is a two-step problem: first apply the discount, then apply the tax.", "Multiply $600 by 0.85 to get the sale price, then multiply that result by 1.08 for tax."],
         difficulty: "medium",
         category: "topic"
       },
@@ -289,6 +298,7 @@ export const DAYS_21_25 = {
         options: ["16%", "25%", "20%", "80%"],
         correct: 2,
         explanation: "Change = 1,600. Percent decrease = 1,600 &divide; 8,000 &times; 100% = 20%.",
+        hints: ["Percent change = (Change ÷ Original) × 100%. Find the change first!", "The change is 8,000 − 6,400 = 1,600. Now divide that by the original (8,000)."],
         difficulty: "medium",
         category: "topic"
       },
@@ -299,6 +309,7 @@ export const DAYS_21_25 = {
         options: ["0% (no change)", "25% decrease", "25% increase", "10% decrease"],
         correct: 1,
         explanation: "Multipliers: 1.50 &times; 0.50 = 0.75. That is a 25% decrease from the original.",
+        hints: ["Successive percent changes don't just cancel out — multiply the multipliers!", "A 50% increase means ×1.50, and a 50% decrease means ×0.50. Multiply those together."],
         difficulty: "medium",
         category: "topic"
       },
@@ -309,6 +320,7 @@ export const DAYS_21_25 = {
         options: ["280", "288", "300", "320"],
         correct: 2,
         explanation: "Original &times; 1.20 = 360. Original = 360 &divide; 1.20 = 300.",
+        hints: ["You know the result after the increase — work backwards to find the original.", "A 20% increase means Original × 1.20 = 360. Divide 360 by 1.20."],
         difficulty: "hard",
         category: "topic"
       },
@@ -319,6 +331,7 @@ export const DAYS_21_25 = {
         options: ["40%", "42%", "44%", "45%"],
         correct: 2,
         explanation: "1.20 &times; 1.20 = 1.44. That is a 44% total increase.",
+        hints: ["Don't just add the percents! Successive changes multiply.", "The multiplier for a 20% increase is 1.20. Multiply 1.20 × 1.20 and see how far above 1 you land."],
         difficulty: "hard",
         category: "review"
       },
@@ -329,6 +342,7 @@ export const DAYS_21_25 = {
         options: ["$78.00", "$81.00", "$84.00", "$75.60"],
         correct: 1,
         explanation: "After 25% off: $120 &times; 0.75 = $90. After another 10% off: $90 &times; 0.90 = $81.00. (Note: 25% + 10% = 35% off would give $78, but successive discounts give $81.)",
+        hints: ["Apply each discount one at a time — the second discount is on the already-reduced price.", "First find 25% off $120 (multiply by 0.75), then take 10% off that new price (multiply by 0.90)."],
         difficulty: "hard",
         category: "review"
       }
@@ -379,6 +393,11 @@ export const DAYS_21_25 = {
               ],
               caption: "Squeeze technique: \u221a50 is between 7 and 8; \u221a30 is between 5 and 6" }
           ],
+          practice: [
+            { type: "type-answer", prompt: "&radic;45 is between which two whole numbers? Type the SMALLER one.", answer: "6", accept: ["6"], explanation: "6&sup2; = 36 and 7&sup2; = 49. Since 36 &lt; 45 &lt; 49, &radic;45 is between 6 and 7." },
+            { type: "type-answer", prompt: "&radic;81 = ?", answer: "9", accept: ["9"], explanation: "81 is a perfect square: 9 &times; 9 = 81, so &radic;81 = 9." },
+            { type: "multiple-quick", prompt: "&radic;60 is closest to which value?", options: ["7.2", "7.7", "8.1", "6.5"], correct: 1, explanation: "7&sup2; = 49 and 8&sup2; = 64. 60 is closer to 64, so &radic;60 &approx; 7.7." }
+          ],
           example: {
             title: "Worked Example: Estimating &radic;20",
             problem: "Between which two whole numbers does &radic;20 lie? Estimate its value.",
@@ -425,9 +444,9 @@ export const DAYS_21_25 = {
       {
         id: "d23q1",
         question: "What is &radic;64?",
-        type: "multiple-choice",
-        options: ["6", "7", "8", "9"],
-        correct: 2,
+        type: "type-answer",
+        answer: "8",
+        accept: ["8"],
         explanation: "8<sup>2</sup> = 64, so &radic;64 = 8.",
         difficulty: "easy",
         category: "topic"
@@ -459,6 +478,7 @@ export const DAYS_21_25 = {
         options: ["7", "12", "20", "25"],
         correct: 1,
         explanation: "&radic;(9 &times; 16) = &radic;9 &times; &radic;16 = 3 &times; 4 = 12. (Or: 9 &times; 16 = 144, &radic;144 = 12.)",
+        hints: ["Remember the product rule: √(a × b) = √a × √b.", "Split it up: find √9 and √16 separately, then multiply those results."],
         difficulty: "medium",
         category: "topic"
       },
@@ -469,6 +489,7 @@ export const DAYS_21_25 = {
         options: ["&radic;14", "49", "7", "14"],
         correct: 2,
         explanation: "Squaring a square root gives back the original number: (&radic;7)<sup>2</sup> = 7.",
+        hints: ["Squaring and square-rooting are inverse operations — they undo each other.", "Think: (√7) × (√7) = ? What number times itself gives you 7?"],
         difficulty: "medium",
         category: "topic"
       },
@@ -484,6 +505,7 @@ export const DAYS_21_25 = {
         ],
         correct: 1,
         explanation: "&radic;9 = 3 and &radic;16 = 4. So &radic;9 + &radic;16 = 3 + 4 = 7. Note that &radic;25 = 5, which is different!",
+        hints: ["Be careful — √a + √b is NOT the same as √(a + b). Evaluate each root first!", "Find √9 and √16 as plain numbers, then check each answer choice."],
         difficulty: "medium",
         category: "topic"
       },
@@ -494,6 +516,7 @@ export const DAYS_21_25 = {
         options: ["8.3", "8.5", "8.7", "9.0"],
         correct: 2,
         explanation: "8<sup>2</sup> = 64 and 9<sup>2</sup> = 81. 75 is 11/17 of the way from 64 to 81, so &radic;75 &approx; 8.66, which rounds to 8.7.",
+        hints: ["Use the squeeze technique: find which two perfect squares 75 is between.", "8² = 64 and 9² = 81. Since 75 is much closer to 81, √75 is closer to 9 than to 8."],
         difficulty: "medium",
         category: "topic"
       },
@@ -504,6 +527,7 @@ export const DAYS_21_25 = {
         options: ["&radic;25 = 5", "&radic;96", "50", "2.5"],
         correct: 0,
         explanation: "&radic;(100/4) = &radic;100 &divide; &radic;4 = 10 &divide; 2 = 5. Or: 100/4 = 25, and &radic;25 = 5.",
+        hints: ["You can use the quotient rule: √(a/b) = √a ÷ √b. Or just simplify 100/4 first.", "Try the easy route: what is 100 ÷ 4? Then take the square root of that."],
         difficulty: "hard",
         category: "topic"
       },
@@ -514,6 +538,7 @@ export const DAYS_21_25 = {
         options: ["5", "6", "7", "8"],
         correct: 1,
         explanation: "2<sup>6</sup> = 64. (Recall exponent rules from Day 5: 2<sup>1</sup>=2, 2<sup>2</sup>=4, 2<sup>3</sup>=8, 2<sup>4</sup>=16, 2<sup>5</sup>=32, 2<sup>6</sup>=64.)",
+        hints: ["Keep doubling: 2, 4, 8, 16, 32, 64... count how many times you multiplied by 2.", "Start listing powers of 2: 2¹=2, 2²=4, 2³=8... keep going until you hit 64."],
         difficulty: "hard",
         category: "review"
       },
@@ -524,6 +549,7 @@ export const DAYS_21_25 = {
         options: ["3", "9", "27", "81"],
         correct: 1,
         explanation: "(3<sup>2</sup>)<sup>2</sup> = 3<sup>4</sup> = 81. Then 81 &divide; 3<sup>2</sup> = 81 &divide; 9 = 9. (Using exponent rules: 3<sup>4</sup> &divide; 3<sup>2</sup> = 3<sup>2</sup> = 9.)",
+        hints: ["Use the power-of-a-power rule: (aᵐ)ⁿ = aᵐˣⁿ. Then use the quotient rule for exponents.", "First simplify (3²)² into a single power of 3, then divide by 3²."],
         difficulty: "hard",
         category: "review"
       }
@@ -633,6 +659,7 @@ export const DAYS_21_25 = {
         options: ["8&radic;2", "6&radic;2", "3&radic;8", "2&radic;18"],
         correct: 1,
         explanation: "&radic;72 = &radic;(36 &times; 2) = 6&radic;2.",
+        hints: ["Find the largest perfect square that divides evenly into 72.", "36 × 2 = 72, and 36 is a perfect square. Pull √36 out of the radical."],
         difficulty: "medium",
         category: "topic"
       },
@@ -643,6 +670,7 @@ export const DAYS_21_25 = {
         options: ["&radic;39", "5&radic;3", "5&radic;6", "6&radic;3"],
         correct: 1,
         explanation: "&radic;12 = 2&radic;3 and &radic;27 = 3&radic;3. So 2&radic;3 + 3&radic;3 = 5&radic;3.",
+        hints: ["You can only add radicals if the number under the √ is the same. Try simplifying each one first.", "Simplify √12 and √27 separately — both have a factor of 3 under the radical."],
         difficulty: "medium",
         category: "topic"
       },
@@ -653,6 +681,7 @@ export const DAYS_21_25 = {
         options: ["&radic;100 = 10", "&radic;25 = 5", "4&radic;5", "2&radic;25"],
         correct: 0,
         explanation: "&radic;5 &times; &radic;20 = &radic;(5 &times; 20) = &radic;100 = 10.",
+        hints: ["Use the product rule: √a × √b = √(a × b).", "Multiply the numbers under the radicals: 5 × 20 = ? Then take the square root."],
         difficulty: "medium",
         category: "topic"
       },
@@ -663,6 +692,7 @@ export const DAYS_21_25 = {
         options: ["&radic;2", "&radic;2/2", "1/2", "2/&radic;2"],
         correct: 1,
         explanation: "Multiply top and bottom by &radic;2: (1 &times; &radic;2)/(&radic;2 &times; &radic;2) = &radic;2/2.",
+        hints: ["To 'rationalize' means to get rid of the square root in the denominator.", "Multiply both the top and bottom of the fraction by √2 — that clears the radical downstairs."],
         difficulty: "medium",
         category: "topic"
       },
@@ -673,6 +703,7 @@ export const DAYS_21_25 = {
         options: ["9&radic;2 &minus; 4&radic;2 = 5&radic;2", "&radic;10", "5&radic;10", "7&radic;2"],
         correct: 0,
         explanation: "3&radic;18 = 3 &times; 3&radic;2 = 9&radic;2. 2&radic;8 = 2 &times; 2&radic;2 = 4&radic;2. So 9&radic;2 &minus; 4&radic;2 = 5&radic;2.",
+        hints: ["Simplify each radical first, then see if you can combine like terms.", "Simplify √18 (= 3√2) and √8 (= 2√2), then multiply by the coefficients out front."],
         difficulty: "hard",
         category: "topic"
       },
@@ -683,6 +714,7 @@ export const DAYS_21_25 = {
         options: ["2&radic;5", "5&radic;2", "&radic;50", "2&radic;10"],
         correct: 0,
         explanation: "Rationalize: (10 &times; &radic;5)/(&radic;5 &times; &radic;5) = 10&radic;5/5 = 2&radic;5.",
+        hints: ["There's a radical in the denominator — rationalize it by multiplying top and bottom by √5.", "After multiplying, the denominator becomes 5. Then simplify 10√5 ÷ 5."],
         difficulty: "hard",
         category: "review"
       },
@@ -698,6 +730,7 @@ export const DAYS_21_25 = {
         ],
         correct: 0,
         explanation: "9<sup>2</sup> = 81 and 10<sup>2</sup> = 100. Since 90 &minus; 81 = 9 &lt; 100 &minus; 90 = 10, &radic;90 is between 9 and 10 and closer to 9. (Actual value &approx; 9.49.)",
+        hints: ["Use the squeeze technique: which two perfect squares does 90 sit between?", "9² = 81 and 10² = 100. Now check: is 90 closer to 81 or to 100?"],
         difficulty: "hard",
         category: "review"
       }
@@ -801,6 +834,11 @@ export const DAYS_21_25 = {
               caption: "Triangle angles: 50\u00b0 + 60\u00b0 + 70\u00b0 = 180\u00b0"
             }
           ],
+          practice: [
+            { type: "type-answer", prompt: "What is the sum of the interior angles of a pentagon (5 sides)? Type a number in degrees.", answer: "540", accept: ["540", "540°"], explanation: "(5 &minus; 2) &times; 180 = 3 &times; 180 = 540&deg;." },
+            { type: "type-answer", prompt: "A triangle has angles of 40&deg; and 75&deg;. What is the third angle?", answer: "65", accept: ["65", "65°"], explanation: "180 &minus; 40 &minus; 75 = 65&deg;." },
+            { type: "multiple-quick", prompt: "Each exterior angle of any polygon sums to:", options: ["180&deg;", "360&deg;", "540&deg;", "720&deg;"], correct: 1, explanation: "The exterior angles of any convex polygon always sum to 360&deg;." }
+          ],
           example: {
             title: "Worked Example: Angle Sum in a Hexagon",
             problem: "What is the sum of the interior angles of a hexagon (6 sides)?",
@@ -838,9 +876,9 @@ export const DAYS_21_25 = {
       {
         id: "d25q3",
         question: "The three angles of a triangle are 50&deg;, 60&deg;, and x&deg;. What is x?",
-        type: "multiple-choice",
-        options: ["60", "70", "80", "90"],
-        correct: 1,
+        type: "type-answer",
+        answer: "70",
+        accept: ["70", "70°"],
         explanation: "Triangle angles sum to 180&deg;. x = 180 &minus; 50 &minus; 60 = 70.",
         difficulty: "easy",
         category: "topic"
@@ -852,6 +890,7 @@ export const DAYS_21_25 = {
         options: ["55&deg;", "125&deg;", "135&deg;", "180&deg;"],
         correct: 1,
         explanation: "Co-interior (same-side interior) angles are supplementary: 180&deg; &minus; 55&deg; = 125&deg;.",
+        hints: ["Co-interior angles (same-side interior) always add up to 180°.", "Subtract the given angle from 180°: 180° − 55° = ?"],
         difficulty: "medium",
         category: "topic"
       },
@@ -862,6 +901,7 @@ export const DAYS_21_25 = {
         options: ["360&deg;", "450&deg;", "540&deg;", "720&deg;"],
         correct: 2,
         explanation: "(n &minus; 2) &times; 180&deg; = (5 &minus; 2) &times; 180&deg; = 3 &times; 180&deg; = 540&deg;.",
+        hints: ["There's a formula for the angle sum of any polygon: (n − 2) × 180°.", "Plug in n = 5: (5 − 2) × 180° = ?"],
         difficulty: "medium",
         category: "topic"
       },
@@ -872,6 +912,7 @@ export const DAYS_21_25 = {
         options: ["43&deg;", "47&deg;", "133&deg;", "137&deg;"],
         correct: 1,
         explanation: "Vertical angles are equal. The vertical angle is also 47&deg;.",
+        hints: ["Vertical angles are the angles across from each other when two lines cross.", "Vertical angles are always equal — no math needed!"],
         difficulty: "medium",
         category: "topic"
       },
@@ -882,6 +923,7 @@ export const DAYS_21_25 = {
         options: ["60&deg;", "120&deg;", "150&deg;", "180&deg;"],
         correct: 1,
         explanation: "The third interior angle = 180 &minus; 35 &minus; 85 = 60&deg;. The exterior angle adjacent to 60&deg; is 180 &minus; 60 = 120&deg;. (Or by the Exterior Angle Theorem: 35 + 85 = 120&deg;.)",
+        hints: ["The Exterior Angle Theorem says an exterior angle equals the sum of the two non-adjacent interior angles.", "Add the two given interior angles: 35° + 85° = ?"],
         difficulty: "medium",
         category: "topic"
       },
@@ -892,6 +934,7 @@ export const DAYS_21_25 = {
         options: ["5", "6", "8", "10"],
         correct: 1,
         explanation: "Interior angle sum = n &times; 120. Also equals (n &minus; 2) &times; 180. So 120n = 180n &minus; 360 &rarr; 60n = 360 &rarr; n = 6. It is a hexagon.",
+        hints: ["For a regular polygon, every angle is the same. Set up an equation using the angle sum formula.", "The total angle sum is n × 120, and also equals (n − 2) × 180. Set those equal and solve for n."],
         difficulty: "hard",
         category: "topic"
       },
@@ -902,6 +945,7 @@ export const DAYS_21_25 = {
         options: ["10", "15", "20", "25"],
         correct: 2,
         explanation: "Alternate interior angles are equal: 3x + 10 = 5x &minus; 30. Solving: 40 = 2x, so x = 20. (Using equation-solving from Days 15&ndash;16.)",
+        hints: ["Alternate interior angles are equal when lines are parallel — set the two expressions equal.", "Write the equation 3x + 10 = 5x − 30, then solve for x."],
         difficulty: "hard",
         category: "review"
       },
@@ -912,6 +956,7 @@ export const DAYS_21_25 = {
         options: ["20&deg;", "26.7&deg;", "30&deg;", "40&deg;"],
         correct: 1,
         explanation: "Let the smallest = x. Then the angles are x, 2x, and 3x + 20. Sum: x + 2x + 3x + 20 = 180 &rarr; 6x = 160 &rarr; x = 26.̄6&deg; &approx; 26.7&deg;. (Uses equation-solving from Days 15&ndash;16.)",
+        hints: ["Let the smallest angle be x, then write the other two angles in terms of x.", "The three angles are x, 2x, and 3x + 20. They must add up to 180° — set up that equation."],
         difficulty: "hard",
         category: "review"
       }

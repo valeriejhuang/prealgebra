@@ -160,7 +160,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "C = 2&pi;r = 2&pi;(7) = 14&pi; cm.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Remember the circumference formula uses the radius and π.", "Plug your radius into C = 2πr and simplify."]
       },
       {
         id: "d26q5",
@@ -170,7 +171,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "A = b &times; h = 11 &times; 6 = 66 m&sup2;.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A parallelogram's area formula is just like a rectangle's — base times height.", "Multiply the base (11) by the perpendicular height (6)."]
       },
       {
         id: "d26q6",
@@ -180,7 +182,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "The radius is 10 &divide; 2 = 5 ft. A = &pi;r<sup>2</sup> = &pi;(5)<sup>2</sup> = 25&pi; ft&sup2;.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["The area formula uses the radius, but you're given the diameter — convert first!", "Divide the diameter by 2 to get the radius, then use A = πr²."]
       },
       {
         id: "d26q7",
@@ -190,7 +193,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "A regular hexagon has 6 equal sides. P = 6 &times; 9 = 54 cm.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A 'regular' polygon means all sides are the same length.", "Count how many sides a hexagon has, then multiply by the side length."]
       },
       {
         id: "d26q8",
@@ -200,7 +204,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "&pi;r<sup>2</sup> = 64&pi;, so r<sup>2</sup> = 64 and r = 8 cm.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["You know the area formula A = πr² — work backwards to find r.", "Set πr² = 64π, then divide both sides by π to isolate r²."]
       },
       {
         id: "d26q9",
@@ -210,7 +215,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "A = &frac12;bh &rarr; 42 = &frac12;(12)h &rarr; 42 = 6h &rarr; h = 7 cm. This uses equation-solving from Day 15.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Use the triangle area formula A = ½ × b × h and solve for the missing height.", "Plug in A = 42 and b = 12 to get 42 = ½(12)h, then simplify ½(12) first."]
       },
       {
         id: "d26q10",
@@ -220,7 +226,8 @@ export const DAYS_26_30 = {
         correct: 0,
         explanation: "2l + 2w = 50 &rarr; 2(16) + 2w = 50 &rarr; 32 + 2w = 50 &rarr; 2w = 18 &rarr; w = 9 m. Equation-solving review from Day 15.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Write the perimeter formula 2l + 2w = P and plug in what you know.", "Substitute l = 16 and P = 50, then solve the equation for w step by step."]
       }
     ]
   },
@@ -372,9 +379,9 @@ export const DAYS_26_30 = {
       {
         id: "d27q1",
         question: "A right triangle has legs of 5 and 12. What is the hypotenuse?",
-        type: "multiple-choice",
-        options: ["13", "17", "14", "15"],
-        correct: 0,
+        type: "type-answer",
+        answer: "13",
+        accept: ["13"],
         explanation: "5<sup>2</sup> + 12<sup>2</sup> = 25 + 144 = 169 = 13<sup>2</sup>. This is the classic 5-12-13 triple.",
         difficulty: "easy",
         category: "topic"
@@ -407,7 +414,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "In a 45-45-90 triangle, the hypotenuse = leg &times; &radic;2 = 9&radic;2.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A 45-45-90 triangle has a special ratio between its sides — recall the 1 : 1 : √2 pattern.", "Multiply the leg length by √2 to find the hypotenuse."]
       },
       {
         id: "d27q5",
@@ -417,7 +425,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "b = &radic;(15<sup>2</sup> &minus; 9<sup>2</sup>) = &radic;(225 &minus; 81) = &radic;144 = 12. This is a multiple of the 3-4-5 triple: 9-12-15.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Rearrange the Pythagorean Theorem to solve for the missing leg.", "Use b = √(c² − a²) — square the hypotenuse and subtract the square of the known leg."]
       },
       {
         id: "d27q6",
@@ -427,7 +436,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "A square has four right angles (making it a rectangle) and four equal sides (making it a rhombus).",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Think about what defines a rectangle (angles) and what defines a rhombus (sides).", "Which shape has all four right angles AND all four sides equal?"]
       },
       {
         id: "d27q7",
@@ -437,7 +447,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "In a 30-60-90 triangle, the hypotenuse = 2 &times; shortest side. So the shortest side = 20 &divide; 2 = 10.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Recall the 30-60-90 side ratio: 1 : √3 : 2. The hypotenuse is the '2' part.", "The hypotenuse is always twice the shortest side — so divide it by 2."]
       },
       {
         id: "d27q8",
@@ -447,7 +458,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "c = &radic;(16 + 36) = &radic;52 = &radic;(4 &times; 13) = 2&radic;13.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["First use a² + b² = c² to find c², then simplify the square root.", "After you get √52, look for a perfect square factor of 52 to simplify."]
       },
       {
         id: "d27q9",
@@ -457,7 +469,8 @@ export const DAYS_26_30 = {
         correct: 0,
         explanation: "Check: 7<sup>2</sup> + 24<sup>2</sup> = 49 + 576 = 625 = 25<sup>2</sup>. Yes, it is a right triangle.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["To check if it's a right triangle, test whether a² + b² = c² using the longest side as c.", "Square each number: 7² = 49, 24² = 576, 25² = 625. Does the sum of the two smaller equal the largest?"]
       },
       {
         id: "d27q10",
@@ -467,7 +480,8 @@ export const DAYS_26_30 = {
         correct: 0,
         explanation: "&radic;200 = &radic;(100 &times; 2) = 10&radic;2. This reviews radical simplification from Days 23&ndash;24.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Find the largest perfect square that divides 200.", "200 = 100 × 2, and √100 = 10 — pull that out of the radical."]
       }
     ]
   },
@@ -483,6 +497,11 @@ export const DAYS_26_30 = {
             "When you have a set of data, you often want a single number that represents the &ldquo;center&rdquo; or typical value. The three most common measures of center are the <strong>mean</strong>, <strong>median</strong>, and <strong>mode</strong>.",
             "The <strong>mean</strong> (also called the <em>average</em>) is found by adding all the values and dividing by how many there are: <strong>mean = sum &divide; count</strong>. For example, the mean of {4, 7, 10, 3, 6} is (4 + 7 + 10 + 3 + 6) &divide; 5 = 30 &divide; 5 = 6.",
             "The <strong>median</strong> is the middle value when you arrange the data in order. If there is an <em>even</em> number of values, the median is the mean of the two middle values. The <strong>mode</strong> is the value that appears most often. A data set can have no mode, one mode, or several modes."
+          ],
+          practice: [
+            { type: "type-answer", prompt: "Find the mean of {2, 8, 6, 4, 10}.", answer: "6", accept: ["6"], explanation: "(2 + 8 + 6 + 4 + 10) &divide; 5 = 30 &divide; 5 = 6." },
+            { type: "type-answer", prompt: "Find the median of {12, 3, 7, 9, 1}.", answer: "7", accept: ["7"], explanation: "Sort: {1, 3, 7, 9, 12}. The middle value is 7." },
+            { type: "multiple-quick", prompt: "What is the mode of {4, 7, 4, 9, 7, 4}?", options: ["4", "7", "9", "No mode"], correct: 0, explanation: "4 appears 3 times (more than any other value), so the mode is 4." }
           ],
           example: {
             title: "Worked Example: Finding Mean, Median & Mode",
@@ -575,9 +594,9 @@ export const DAYS_26_30 = {
       {
         id: "d28q1",
         question: "What is the mean of {4, 8, 6, 10, 2}?",
-        type: "multiple-choice",
-        options: ["4", "6", "8", "10"],
-        correct: 1,
+        type: "type-answer",
+        answer: "6",
+        accept: ["6"],
         explanation: "Mean = (4 + 8 + 6 + 10 + 2) &divide; 5 = 30 &divide; 5 = 6.",
         difficulty: "easy",
         category: "topic"
@@ -610,7 +629,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "The value 3 appears three times, more than any other value. Mode = 3.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["The mode is the value that shows up the most often in the data set.", "Count how many times each number appears — which one wins?"]
       },
       {
         id: "d28q5",
@@ -620,7 +640,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "With an even number of values, the median is the mean of the two middle values: (4 + 7) &divide; 2 = 5.5.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When there's an even number of values, the median is the average of the two middle ones.", "The data is already sorted — find the 2nd and 3rd values and average them."]
       },
       {
         id: "d28q6",
@@ -630,7 +651,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Mean = sum &divide; count, so sum = mean &times; count = 15 &times; 6 = 90.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Remember, mean = sum ÷ count. You can rearrange this to find the sum!", "Multiply the mean by the number of values to get the total sum."]
       },
       {
         id: "d28q7",
@@ -640,7 +662,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "The mean includes every value in its calculation, so one extreme outlier can pull it significantly higher or lower. The median is resistant to outliers.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Think about which measure uses every single data value in its formula.", "The mean adds up ALL values — so one super-big or super-small number drags it away from the center."]
       },
       {
         id: "d28q8",
@@ -650,7 +673,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Sum must be 80 &times; 5 = 400. Current sum = 72 + 85 + 90 + 68 = 315. So x = 400 &minus; 315 = 85.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["If you know the mean and the count, you can figure out what the total sum must be.", "Find the required total (mean × count = 80 × 5), then subtract the known scores to find x."]
       },
       {
         id: "d28q9",
@@ -660,7 +684,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "14 &divide; 40 = 0.35 = 35%. This uses percent conversion from Days 21&ndash;22.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["To find a percent, divide the part by the whole, then multiply by 100.", "Set up the fraction 14/40 and convert it to a decimal first."]
       },
       {
         id: "d28q10",
@@ -670,7 +695,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "25% of $8,000 = 0.25 &times; 8,000 = $2,000. New revenue = $8,000 + $2,000 = $10,000. This reviews percent increase from Day 22.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["A percent increase means you add a percentage of the original to itself.", "First find 25% of $8,000 (multiply by 0.25), then add that amount to $8,000."]
       }
     ]
   },
@@ -775,7 +801,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Each of the 3 positions has 5 choices: 5 &times; 5 &times; 5 = 125.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Use the multiplication principle — how many choices do you have for each digit position?", "Since repetition is allowed, each of the 3 positions has 5 choices. Multiply them together."]
       },
       {
         id: "d29q5",
@@ -785,7 +812,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "First letter: 26 choices. Second letter: 25 choices (can&rsquo;t repeat). Total = 26 &times; 25 = 650.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["No repeating letters means the second letter has fewer choices than the first.", "Pick the first letter (26 options), then the second letter can be anything except the first (25 options)."]
       },
       {
         id: "d29q6",
@@ -795,7 +823,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Each of 5 people shakes hands with 4 others = 20, but each handshake is counted twice. So 20 &divide; 2 = 10.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A handshake involves two people, so be careful not to double-count!", "Count total one-way connections (5 × 4), then divide by 2 because each handshake was counted from both sides."]
       },
       {
         id: "d29q7",
@@ -805,7 +834,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Each flip has 2 outcomes: 2 &times; 2 &times; 2 &times; 2 = 2<sup>4</sup> = 16.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Each coin flip is independent and has 2 possible outcomes (heads or tails).", "Multiply the number of outcomes per flip: 2 × 2 × 2 × 2."]
       },
       {
         id: "d29q8",
@@ -815,7 +845,8 @@ export const DAYS_26_30 = {
         correct: 3,
         explanation: "26 &times; 26 &times; 10 &times; 10 &times; 10 = 676,000.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Break the plate into stages: how many choices for each letter position and each digit position?", "Letters have 26 options each and digits have 10 options each — multiply all five positions together."]
       },
       {
         id: "d29q9",
@@ -825,7 +856,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "List by tens digit: 17, 26, 35, 44, 53, 62, 71, 80. That&rsquo;s 8 numbers. (The tens digit ranges from 1 to 8.)",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Organize your list by the tens digit — what can it be if both digits must sum to 8?", "The tens digit can be 1 through 8 (it can't be 0 in a two-digit number). For each, find the ones digit that makes the sum 8."]
       },
       {
         id: "d29q10",
@@ -835,7 +867,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Original sum = 8 &times; 12 = 96. New sum = 7 &times; 11 = 77. Removed value = 96 &minus; 77 = 19. This reviews statistics from Day 28.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Use mean × count to figure out the total sum before and after the value was removed.", "Original sum = 8 × 12 = 96 and new sum = 7 × 11 = 77. The difference is the removed value."]
       }
     ]
   },
@@ -924,10 +957,10 @@ export const DAYS_26_30 = {
       },
       {
         id: "d30q2",
-        question: "A bag has 4 red and 6 blue marbles. What is the probability of drawing a red marble?",
-        type: "multiple-choice",
-        options: ["2/3", "2/5", "4/6", "1/4"],
-        correct: 1,
+        question: "A bag has 4 red and 6 blue marbles. What is the probability of drawing a red marble? Write as a fraction.",
+        type: "type-answer",
+        answer: "2/5",
+        accept: ["2/5", "4/10", "0.4", "40%"],
         explanation: "Total marbles = 10. P(red) = 4/10 = 2/5.",
         difficulty: "easy",
         category: "topic"
@@ -950,7 +983,8 @@ export const DAYS_26_30 = {
         correct: 2,
         explanation: "Total outcomes = 2<sup>3</sup> = 8. Only 1 outcome is HHH. P = 1/8.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["First count the total number of outcomes for 3 coin flips using the multiplication principle.", "There are 2 × 2 × 2 = 8 total outcomes. How many of those are all heads?"]
       },
       {
         id: "d30q5",
@@ -960,7 +994,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "There are 4 kings in a deck of 52 cards. P(king) = 4/52 = 1/13.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Remember: P(event) = favorable outcomes ÷ total outcomes. A standard deck has 52 cards.", "Count how many kings are in the deck (one per suit), then divide by 52."]
       },
       {
         id: "d30q6",
@@ -970,7 +1005,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "Total outcomes = 36. Pairs summing to 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes. P = 6/36 = 1/6.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Two dice give 6 × 6 = 36 total outcomes. Now list all the pairs that add up to 7.", "Start listing: (1,6), (2,5), (3,4)… don't forget (4,3), (5,2), (6,1) — order matters with two dice!"]
       },
       {
         id: "d30q7",
@@ -980,7 +1016,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "Primes from 1 to 8: {2, 3, 5, 7} = 4 primes. P = 4/8 = 1/2.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["First identify which numbers from 1 to 8 are prime.", "Remember: 1 is NOT prime. List the primes (2, 3, 5, 7) and count them out of 8 total sections."]
       },
       {
         id: "d30q8",
@@ -990,7 +1027,8 @@ export const DAYS_26_30 = {
         correct: 3,
         explanation: "P(green) = 2/10 = 1/5. P(not green) = 1 &minus; 1/5 = 4/5.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["'Not green' is the complement — use the rule P(not A) = 1 − P(A).", "First find P(green) = 2/10, then subtract from 1 to get P(not green)."]
       },
       {
         id: "d30q9",
@@ -1000,7 +1038,8 @@ export const DAYS_26_30 = {
         correct: 1,
         explanation: "Total 2-digit passwords = 10 &times; 10 = 100. Passwords with both digits the same: 00, 11, 22, &hellip;, 99 = 10. P = 10/100 = 1/10. This uses counting from Day 29.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Count the total number of 2-digit passwords, then count how many have matching digits.", "Total passwords = 10 × 10 = 100. For matching digits, think: 00, 11, 22, … — how many are there?"]
       },
       {
         id: "d30q10",
@@ -1010,7 +1049,8 @@ export const DAYS_26_30 = {
         correct: 0,
         explanation: "Total codes = 5<sup>4</sup> = 625. Codes with NO 3&rsquo;s: each position has 4 choices, so 4<sup>4</sup> = 256. At least one 3 = 625 &minus; 256 = 369. This uses complementary counting from Day 29.",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Counting 'at least one' directly is tricky — try complementary counting: total minus none.", "Total codes = 5⁴ = 625. Codes with NO 3's use only digits {1,2,4,5}, so that's 4⁴. Subtract to find codes with at least one 3."]
       }
     ]
   }

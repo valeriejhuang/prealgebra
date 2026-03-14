@@ -34,6 +34,11 @@ export const DAYS_1_5 = {
             "<strong>P</strong> &ndash; Parentheses first<br><strong>E</strong> &ndash; Exponents (powers) next<br><strong>M / D</strong> &ndash; Multiplication and Division, left to right<br><strong>A / S</strong> &ndash; Addition and Subtraction, left to right<br><br><em>Important:</em> Multiplication and division are done at the <em>same level</em> &mdash; just work left to right. The same goes for addition and subtraction. A common mistake is thinking multiplication always comes before division; it doesn&rsquo;t! Whichever appears first from left to right goes first.",
             "Think of PEMDAS like traffic rules. Without them, two people could look at the same problem and get different answers. With the rules, everyone agrees. For example, 3 + 4 &times; 2 equals <strong>11</strong> (multiply first), <em>not</em> 14 (if you wrongly add first)."
           ],
+          practice: [
+            { type: "type-answer", prompt: "Evaluate: 5 + 3 &times; 2", answer: "11", accept: ["11"], explanation: "Multiply first: 3 &times; 2 = 6. Then add: 5 + 6 = 11." },
+            { type: "type-answer", prompt: "Evaluate: 12 &divide; 4 + 7", answer: "10", accept: ["10"], explanation: "Divide first: 12 &divide; 4 = 3. Then add: 3 + 7 = 10." },
+            { type: "multiple-quick", prompt: "Which operation do you do first in: 8 &minus; 2 &times; 3?", options: ["Subtraction", "Multiplication", "Addition"], correct: 1, explanation: "Multiplication comes before subtraction in PEMDAS." }
+          ],
           example: {
             title: "Worked Example: Applying PEMDAS",
             problem: "Evaluate: 18 &divide; 3 &times; 2 + 5",
@@ -121,12 +126,13 @@ export const DAYS_1_5 = {
       {
         id: "d1q4",
         question: "What is (5 + 3) &times; (10 &minus; 4)?",
-        type: "multiple-choice",
-        options: ["32", "48", "44", "54"],
-        correct: 1,
+        type: "type-answer",
+        answer: "48",
+        accept: ["48"],
         explanation: "Parentheses first: 5 + 3 = 8 and 10 &minus; 4 = 6. Then multiply: 8 &times; 6 = 48.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Remember, parentheses always go first! Solve each set of parentheses separately.", "Figure out what 5 + 3 equals and what 10 − 4 equals, then multiply those two results together."]
       },
       {
         id: "d1q5",
@@ -136,7 +142,8 @@ export const DAYS_1_5 = {
         correct: 2,
         explanation: "The hundred-thousands digit is 2. The digit to its right is 7 (which is &ge; 5), so round up: 3,274,508 rounds to 3,300,000.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Find the hundred-thousands place first — it's the 6th digit from the right.", "The hundred-thousands digit is 2. Now look at the digit right next to it (the ten-thousands place) — is it 5 or more?"]
       },
       {
         id: "d1q6",
@@ -146,7 +153,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Do division and multiplication left to right: 36 &divide; 6 = 6, and 2 &times; 5 = 10. Then add: 6 + 10 = 16.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["With PEMDAS, multiplication and division happen before addition and subtraction.", "Handle 36 ÷ 6 and 2 × 5 separately first, then combine with addition."]
       },
       {
         id: "d1q7",
@@ -156,7 +164,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Swapping the order of factors is the <strong>commutative property</strong> of multiplication: a &times; b = b &times; a.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["This is about the order of numbers — does swapping, regrouping, or distributing change the result?", "The two numbers switched places but the operation stayed the same. Which property lets you swap the order?"]
       },
       {
         id: "d1q8",
@@ -166,7 +175,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Parentheses first: 2 &times; 3 = 6 and 9 &minus; 7 = 2. Then: 48 &divide; 6 = 8 and 5 &times; 2 = 10. Finally: 8 + 10 = 18.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Start with PEMDAS — handle both sets of parentheses before doing anything else.", "After solving the parentheses, you'll have division and multiplication to do before the final addition."]
       },
       {
         id: "d1q9",
@@ -176,7 +186,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Follow PEMDAS &mdash; multiply first: 3 &times; 4 = 12, and 2 &times; 2 = 4. Then add: 12 + 4 = $16.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Translate the story into math: how much does each type of item cost in total?", "Multiply first to get each item's total (3 × 4 for notebooks, 2 × 2 for pens), then add the results."]
       },
       {
         id: "d1q10",
@@ -191,7 +202,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Total seats = 12 &times; 15 = 180. Remove broken seats: 180 &minus; 8 = 172. The correct expression is 12 &times; 15 &minus; 8 = 172.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Think about what 'total seats' means — rows times seats per row. Then what do you do with the broken ones?", "First calculate all the seats (12 × 15), then subtract the 8 broken ones. Which expression matches that?"]
       }
     ]
   },
@@ -362,7 +374,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "On the number line, from left to right (least to greatest): &minus;5, &minus;1, 0, 3, 4.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Picture each number on a number line — the further left a number is, the smaller it is.", "Negative numbers with bigger absolute values are actually smaller. Start by finding which number is furthest left."]
       },
       {
         id: "d2q5",
@@ -372,7 +385,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "The absolute value of &minus;9 is the distance from 0, which is 9.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Absolute value means the distance from zero — it's always positive (or zero).", "How many units away from 0 is −9 on the number line? That distance is your answer."]
       },
       {
         id: "d2q6",
@@ -387,7 +401,8 @@ export const DAYS_1_5 = {
         correct: 3,
         explanation: "&minus;6 is further left than &minus;3 on the number line, so &minus;6 &lt; &minus;3 is the true statement.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["For negative numbers, the one closer to zero is the greater one.", "Try placing each pair on a number line — whichever is further left is the smaller number."]
       },
       {
         id: "d2q7",
@@ -397,7 +412,8 @@ export const DAYS_1_5 = {
         correct: 2,
         explanation: "|&minus;4| = 4, |7| = 7, |&minus;10| = 10, |3| = 3. The greatest absolute value is 10.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Absolute value strips away the sign — just look at the size of each number.", "Calculate each one: |−4| = ?, |7| = ?, |−10| = ?, |3| = ?. Which result is the biggest?"]
       },
       {
         id: "d2q8",
@@ -407,7 +423,8 @@ export const DAYS_1_5 = {
         correct: 2,
         explanation: "Start at &minus;4 on the number line and move 11 units to the right: &minus;4 + 11 = 7 &deg;C.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Rising temperature means moving to the right on the number line.", "Start at −4 and count 11 units to the right. Where do you land?"]
       },
       {
         id: "d2q9",
@@ -417,7 +434,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Absolute value measures distance from 0. Both 5 and &minus;5 are exactly 5 units from 0, so x can be 5 or &minus;5 &mdash; two possible values.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Absolute value asks 'how far from zero?' — and distance can never be negative.", "Think about it: both 5 and −5 are exactly 5 units from zero. Are there any other numbers that are 5 units from zero?"]
       },
       {
         id: "d2q10",
@@ -427,7 +445,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Parentheses first: 8 &minus; 3 = 5. Then multiply: 2 &times; 5 = 10. Then add: 5 + 10 = 15. (PEMDAS review from Day 1)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["PEMDAS! Parentheses come before multiplication, and multiplication comes before addition.", "Solve (8 − 3) first, then multiply that result by 2, and finally add 5."]
       }
     ]
   },
@@ -506,6 +525,11 @@ export const DAYS_1_5 = {
             "Why does this work? Subtracting a number is mathematically identical to adding its <em>opposite</em>. The opposite of 5 is &minus;5, and the opposite of &minus;3 is 3. So a &minus; b = a + (&minus;b), always. For example, 7 &minus; (&minus;3) becomes 7 + 3 = <strong>10</strong>.",
             "This trick is especially helpful when you see a &ldquo;double negative&rdquo;: &minus;4 &minus; (&minus;6) becomes &minus;4 + 6 = <strong>2</strong>. Subtracting a negative is the same as adding a positive!"
           ],
+          practice: [
+            { type: "type-answer", prompt: "Calculate: 5 &minus; (&minus;3)", answer: "8", accept: ["8"], explanation: "Keep-Change-Change: 5 + 3 = 8." },
+            { type: "type-answer", prompt: "Calculate: &minus;7 &minus; 4", answer: "-11", accept: ["-11", "&minus;11"], explanation: "KCC: &minus;7 + (&minus;4) = &minus;11 (same sign, add magnitudes)." },
+            { type: "multiple-quick", prompt: "What is &minus;2 &minus; (&minus;9)?", options: ["&minus;11", "7", "&minus;7", "11"], correct: 1, explanation: "KCC: &minus;2 + 9 = 7 (different signs, subtract magnitudes, take sign of larger)." }
+          ],
           example: {
             title: "Worked Example: Subtracting Integers",
             problem: "Calculate 3 &minus; (&minus;8)",
@@ -579,17 +603,19 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Keep-Change-Change: &minus;5 + 12. Different signs: 12 &minus; 5 = 7, the larger absolute value is positive. Answer: 7.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Use Keep-Change-Change: keep the first number, change subtraction to addition, and flip the sign of the second number.", "After KCC, the problem becomes −5 + 12. Now use the different-signs rule!"]
       },
       {
         id: "d3q5",
         question: "What is (&minus;14) + 14?",
-        type: "multiple-choice",
-        options: ["28", "&minus;28", "0", "14"],
-        correct: 2,
+        type: "type-answer",
+        answer: "0",
+        accept: ["0"],
         explanation: "A number plus its opposite always equals zero. &minus;14 + 14 = 0. These are called <strong>additive inverses</strong>.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["What happens when you add a number to its exact opposite? Think about what 'opposite' means on a number line.", "\u221214 and 14 are the same distance from zero but on opposite sides. They cancel each other out!"]
       },
       {
         id: "d3q6",
@@ -599,7 +625,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Rewrite: 8 + 5 + (&minus;3) = 13 + (&minus;3) = 10.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Convert all subtractions to additions of opposites first, then combine.", "Rewrite as 8 + 5 + (−3). Now add the positives together, then combine with the negative."]
       },
       {
         id: "d3q7",
@@ -609,7 +636,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Start at &minus;15. Rise 8: &minus;15 + 8 = &minus;7. Descend 5: &minus;7 + (&minus;5) = &minus;12 meters.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["Translate the story into math: rising means adding, descending means adding a negative.", "Start at −15, then add +8 for rising, then add −5 for descending. Work it step by step."]
       },
       {
         id: "d3q8",
@@ -619,7 +647,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Rewrite: &minus;20 + 6 + 9 + (&minus;1). Positives: 6 + 9 = 15. Negatives: &minus;20 + (&minus;1) = &minus;21. Combine: 15 + (&minus;21) = &minus;6.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Convert all subtractions to addition of opposites, then group the positives and negatives separately.", "Rewrite as −20 + 6 + 9 + (−1). Add the positives (6 + 9) and the negatives (−20 + (−1)) separately, then combine."]
       },
       {
         id: "d3q9",
@@ -629,7 +658,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Start: &minus;7. Drop 4: &minus;7 + (&minus;4) = &minus;11. Rise 15: &minus;11 + 15 = 4 &deg;F.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Break it into three time periods: midnight → 8 AM (drops), then 8 AM → noon (rises).", "Start at −7, subtract 4 for the drop (−7 + (−4) = ?), then add 15 for the rise."]
       },
       {
         id: "d3q10",
@@ -639,7 +669,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Parentheses: 4 &minus; 1 = 3. Multiply: 6 &times; 3 = 18. Add: 3 + 18 = 21. (PEMDAS review from Day 1)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["PEMDAS says parentheses first, then multiplication, then addition.", "Solve (4 − 1) first to get 3, then multiply 6 × 3, and finally add the 3 out front."]
       }
     ]
   },
@@ -745,7 +776,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Multiply absolute values: 3 &times; 2 &times; 4 = 24. Count negatives: 3 (odd) &rarr; negative result. Answer: &minus;24.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When multiplying more than two integers, count the total number of negative signs.", "There are 3 negative signs (odd number). Multiply the absolute values (3 × 2 × 4), then decide: odd negatives → negative, even negatives → positive."]
       },
       {
         id: "d4q5",
@@ -755,7 +787,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Different signs (positive &divide; negative) &rarr; negative. 56 &divide; 8 = 7. Answer: &minus;7.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["The sign rules for division are the same as for multiplication: same signs → positive, different signs → negative.", "One number is positive and the other is negative — that means different signs. Now just divide 56 ÷ 8."]
       },
       {
         id: "d4q6",
@@ -765,7 +798,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "(&minus;3)<sup>2</sup> = (&minus;3) &times; (&minus;3). Same signs &rarr; positive. 3 &times; 3 = 9. Answer: 9.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["The parentheses matter! (−3)² means the entire −3 gets squared.", "(−3)² means (−3) × (−3). What's a negative times a negative?"]
       },
       {
         id: "d4q7",
@@ -775,7 +809,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Without parentheses, &minus;5<sup>2</sup> = &minus;(5<sup>2</sup>) = &minus;25. The exponent applies only to 5, not to the negative sign.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Watch out! There are no parentheses around the negative sign, so −5² means −(5²), not (−5)².", "The exponent only applies to the 5. Square the 5 first to get 25, then apply the negative sign."]
       },
       {
         id: "d4q8",
@@ -785,7 +820,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Losses: (&minus;8) &times; 5 = &minus;40. Earnings: 15 &times; 3 = 45. Net: &minus;40 + 45 = $5.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["Turn the word problem into math: losses are negative, earnings are positive.", "Calculate losses: (−8) × 5. Calculate earnings: 15 × 3. Then add both results to find the net change."]
       },
       {
         id: "d4q9",
@@ -795,7 +831,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Multiply: (&minus;4) &times; 3 = &minus;12. Divide: 18 &divide; (&minus;6) = &minus;3. Add: &minus;12 + (&minus;3) = &minus;15.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["PEMDAS says do multiplication and division before addition. Handle each operation separately.", "First: (−4) × 3 = ? and 18 ÷ (−6) = ?. Then add those two results together."]
       },
       {
         id: "d4q10",
@@ -805,7 +842,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "Rewrite: &minus;8 + 3 + (&minus;2). Positives: 3. Negatives: &minus;8 + (&minus;2) = &minus;10. Combine: 3 + (&minus;10) = &minus;7. (Review: adding &amp; subtracting integers from Day 3)",
         difficulty: "medium",
-        category: "review"
+        category: "review",
+        hints: ["Use Keep-Change-Change on the subtraction, then convert everything to addition of positives and negatives.", "Rewrite as −8 + 3 + (−2). Now group the positives and negatives and combine!"]
       }
     ]
   },
@@ -860,6 +898,11 @@ export const DAYS_1_5 = {
             "The second rule is the <strong>Power Rule</strong>: when raising a power to another power, multiply the exponents. In symbols: (a<sup>m</sup>)<sup>n</sup> = a<sup>m&times;n</sup>. For example, (5<sup>2</sup>)<sup>3</sup> = 5<sup>2&times;3</sup> = 5<sup>6</sup> = 15,625. Think of it as writing 5<sup>2</sup> three times and then applying the Product Rule: 5<sup>2</sup> &times; 5<sup>2</sup> &times; 5<sup>2</sup> = 5<sup>2+2+2</sup> = 5<sup>6</sup>.",
             "The third rule is the <strong>Distributive Rule for Exponents</strong>: when a product is raised to a power, you can distribute the exponent to each factor. In symbols: (ab)<sup>n</sup> = a<sup>n</sup> &times; b<sup>n</sup>. For example, (3 &times; 4)<sup>2</sup> = 3<sup>2</sup> &times; 4<sup>2</sup> = 9 &times; 16 = 144. You can verify: (3 &times; 4)<sup>2</sup> = 12<sup>2</sup> = 144. Same answer! <em>Important:</em> this rule works for products, <strong>not</strong> for sums. (a + b)<sup>2</sup> is <em>not</em> equal to a<sup>2</sup> + b<sup>2</sup>."
           ],
+          practice: [
+            { type: "type-answer", prompt: "Simplify using the Product Rule: 5<sup>3</sup> &times; 5<sup>4</sup> = 5<sup>?</sup> (type the exponent)", answer: "7", accept: ["7"], explanation: "Product Rule: add exponents 3 + 4 = 7. So 5&sup3; &times; 5&sup4; = 5&sup7;." },
+            { type: "type-answer", prompt: "Simplify using the Power Rule: (4<sup>2</sup>)<sup>3</sup> = 4<sup>?</sup> (type the exponent)", answer: "6", accept: ["6"], explanation: "Power Rule: multiply exponents 2 &times; 3 = 6. So (4&sup2;)&sup3; = 4&sup6;." },
+            { type: "multiple-quick", prompt: "Which exponent rule applies to (2 &times; 7)<sup>5</sup>?", options: ["Product Rule", "Power Rule", "Distributive Rule"], correct: 2, explanation: "A product raised to a power uses the Distributive Rule: (2 &times; 7)&sup5; = 2&sup5; &times; 7&sup5;." }
+          ],
           example: {
             title: "Worked Example: Applying Exponent Rules",
             problem: "Simplify 3<sup>2</sup> &times; 3<sup>5</sup> and (2<sup>3</sup>)<sup>4</sup>",
@@ -876,9 +919,9 @@ export const DAYS_1_5 = {
       {
         id: "d5q1",
         question: "What is 2<sup>5</sup>?",
-        type: "multiple-choice",
-        options: ["10", "25", "32", "64"],
-        correct: 2,
+        type: "type-answer",
+        answer: "32",
+        accept: ["32"],
         explanation: "2<sup>5</sup> = 2 &times; 2 &times; 2 &times; 2 &times; 2 = 32.",
         difficulty: "easy",
         category: "topic"
@@ -911,7 +954,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Product Rule: when multiplying powers with the same base, add the exponents. 5<sup>3</sup> &times; 5<sup>2</sup> = 5<sup>3+2</sup> = 5<sup>5</sup>.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When multiplying powers with the same base, you don't multiply the bases — you add the exponents!", "Same base (both are 5). Use the Product Rule: add the exponents 3 + 2."]
       },
       {
         id: "d5q5",
@@ -921,7 +965,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Power Rule: raise a power to a power by multiplying the exponents. (2<sup>3</sup>)<sup>2</sup> = 2<sup>3&times;2</sup> = 2<sup>6</sup> = 64.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["When you raise a power to another power, you use the Power Rule — multiply the exponents.", "The base is 2, and the exponents are 3 and 2. Multiply them: 3 × 2 = ?"]
       },
       {
         id: "d5q6",
@@ -931,7 +976,8 @@ export const DAYS_1_5 = {
         correct: 2,
         explanation: "64 = 8<sup>2</sup> (perfect square) and 64 = 4<sup>3</sup> (perfect cube). 36 = 6<sup>2</sup> but is not a perfect cube. 27 = 3<sup>3</sup> but is not a perfect square. 100 = 10<sup>2</sup> but is not a perfect cube.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["A number needs to be both a perfect square (n²) and a perfect cube (n³). Check each option against your memorized lists!", "Test 64: is it a perfect square? (8² = 64 ✓) Is it a perfect cube? (4³ = 64 ✓). Check the other options the same way."]
       },
       {
         id: "d5q7",
@@ -941,7 +987,8 @@ export const DAYS_1_5 = {
         correct: 2,
         explanation: "Using the distributive rule: (3 &times; 2)<sup>3</sup> = 3<sup>3</sup> &times; 2<sup>3</sup> = 27 &times; 8 = 216. Or: (6)<sup>3</sup> = 216.",
         difficulty: "medium",
-        category: "topic"
+        category: "topic",
+        hints: ["You can either use the distributive rule for exponents, or simplify inside the parentheses first.", "Inside the parentheses: 3 × 2 = 6. Now raise 6 to the third power: 6³ = ?"]
       },
       {
         id: "d5q8",
@@ -951,7 +998,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "(&minus;2)<sup>4</sup> = (&minus;2) &times; (&minus;2) &times; (&minus;2) &times; (&minus;2). Four negatives (even count) gives a positive result. 2<sup>4</sup> = 16. Answer: 16.",
         difficulty: "hard",
-        category: "topic"
+        category: "topic",
+        hints: ["The parentheses mean the whole −2 is being raised to the 4th power, not just the 2.", "Count the negatives: (−2) × (−2) × (−2) × (−2) has 4 negative signs. Is 4 even or odd?"]
       },
       {
         id: "d5q9",
@@ -961,7 +1009,8 @@ export const DAYS_1_5 = {
         correct: 1,
         explanation: "Multiply: (&minus;5) &times; 4 = &minus;20. Divide: (&minus;18) &divide; (&minus;3) = 6. Add: &minus;20 + 6 = &minus;14. (Review: integer multiplication &amp; division from Day 4)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["Follow PEMDAS: handle multiplication and division before addition.", "First: (−5) × 4 = ? and (−18) ÷ (−3) = ?. Then add those two results."]
       },
       {
         id: "d5q10",
@@ -971,7 +1020,8 @@ export const DAYS_1_5 = {
         correct: 0,
         explanation: "&minus;3<sup>2</sup> = &minus;(3<sup>2</sup>) = &minus;9 (exponent applies to 3 only). (&minus;3)<sup>2</sup> = (&minus;3)(&minus;3) = 9 (parentheses mean the whole &minus;3 is squared). Sum: &minus;9 + 9 = 0. (Reviews Day 4&rsquo;s exponent-sign pitfall)",
         difficulty: "hard",
-        category: "review"
+        category: "review",
+        hints: ["This is a classic trick question! −3² and (−3)² look similar but mean very different things.", "−3² = −(3²) = −9 (exponent applies to 3 only). (−3)² = (−3)(−3) = 9 (the whole −3 is squared). Now add them."]
       }
     ]
   }

@@ -136,6 +136,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "Subtract 2x from both sides: 2x + 3 = 11. Subtract 3: 2x = 8. Divide by 2: x = 4.",
         difficulty: "medium",
+        hints: ["When variables are on both sides, move them to the same side first.", "Try subtracting 2x from both sides to get all the x's together."],
         category: "topic"
       },
       {
@@ -146,6 +147,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Let n be the number. 2n + 7 = 25 &rarr; 2n = 18 &rarr; n = 9.",
         difficulty: "medium",
+        hints: ["Translate the words into an equation: 'doubled' means multiply by 2, 'increased by' means add.", "Write 2n + 7 = 25 and solve for n by undoing the operations."],
         category: "topic"
       },
       {
@@ -156,6 +158,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Divide both sides by &minus;2 and flip the sign: x &lt; &minus;5.",
         difficulty: "medium",
+        hints: ["Remember the special rule: when you divide or multiply an inequality by a negative number, something happens to the sign.", "Divide both sides by −2, but don't forget to flip the inequality symbol!"],
         category: "topic"
       },
       {
@@ -166,6 +169,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "19 = 2e + 3 &rarr; 16 = 2e &rarr; e = 8. Ella is 8 years old.",
         difficulty: "medium",
+        hints: ["Turn the words into an equation: 'Sam is 3 years older than twice Ella's age' tells you Sam = 2e + 3.", "Plug in Sam's age (19) for the left side and solve for e."],
         category: "topic"
       },
       {
@@ -176,6 +180,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Distribute: 5x &minus; 5 = 3x + 7. Subtract 3x: 2x &minus; 5 = 7. Add 5: 2x = 12. Divide by 2: x = 6.",
         difficulty: "hard",
+        hints: ["When you see parentheses, use the distributive property first to clear them.", "Distribute the 5: 5(x − 1) becomes 5x − 5, then move the x-terms to one side."],
         category: "topic"
       },
       {
@@ -191,6 +196,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "x &ge; 2 includes 2 (closed circle) and all numbers greater than 2 (shade right).",
         difficulty: "hard",
+        hints: ["Think about what the ≥ symbol means — does it include the endpoint or not?", "≥ means 'or equal to,' so the circle at 2 should be filled in (closed), and shade toward bigger numbers."],
         category: "topic"
       },
       {
@@ -201,6 +207,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "Add 7 to both sides: 3x = 21. Divide by 3: x = 7.",
         difficulty: "hard",
+        hints: ["This is a two-step equation — undo addition/subtraction first, then multiplication.", "Add 7 to both sides first to isolate the term with x."],
         category: "review"
       }
     ]
@@ -327,6 +334,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Rewrite as 10.20 &minus; 4.75. Subtract column by column (borrowing as needed): 5.45.",
         difficulty: "medium",
+        hints: ["Line up the decimal points and add a trailing zero so both numbers have the same number of decimal places.", "Rewrite as 10.20 − 4.75, then subtract column by column — you'll need to borrow!"],
         category: "topic"
       },
       {
@@ -337,16 +345,18 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Multiply 4 &times; 5 = 20. Total decimal places = 1 + 2 = 3. Place the decimal: 0.020 = 0.02.",
         difficulty: "medium",
+        hints: ["Ignore the decimals and multiply the digits as whole numbers, then count total decimal places.", "Multiply 4 × 5 = 20, then count: 0.4 has 1 decimal place and 0.05 has 2, so you need 3 total."],
         category: "topic"
       },
       {
         id: "d17q6",
         question: "What is 15.6 &divide; 0.3?",
-        type: "multiple-choice",
-        options: ["5.2", "52", "0.52", "520"],
-        correct: 1,
+        type: "type-answer",
+        answer: "52",
+        accept: ["52"],
         explanation: "Move the decimal one place in both: 156 &divide; 3 = 52.",
         difficulty: "medium",
+        hints: ["To divide by a decimal, make the divisor a whole number by moving its decimal point to the right.", "Move the decimal one place right in 0.3 to get 3, then do the same to 15.6 to get 156. Now divide!"],
         category: "topic"
       },
       {
@@ -357,6 +367,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Hundredths digit is 4. The next digit is 5. Since 5 &ge; 5, round up: 4 becomes 5. Answer: 8.25.",
         difficulty: "medium",
+        hints: ["Find the hundredths digit, then look at the digit right after it to decide: round up or stay?", "The hundredths digit is 4 and the next digit is 5. Since 5 ≥ 5, you round up."],
         category: "topic"
       },
       {
@@ -367,6 +378,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Multiply 25 &times; 314 = 7850. Total decimal places = 1 + 2 = 3. Place the decimal: 7.850 = 7.85.",
         difficulty: "hard",
+        hints: ["Treat both numbers as whole numbers first, multiply, then put the decimal point back.", "Multiply 25 × 314 = 7850. Count decimal places: 2.5 has 1 and 3.14 has 2, so place the decimal 3 spots from the right."],
         category: "topic"
       },
       {
@@ -377,6 +389,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Move the decimal 3 places in both: 144 &divide; 12 = 12.",
         difficulty: "hard",
+        hints: ["Make the divisor a whole number by moving the decimal point to the right — do the same to the dividend.", "Move the decimal 3 places right in both: 0.012 becomes 12 and 0.144 becomes 144. Now divide 144 ÷ 12."],
         category: "topic"
       },
       {
@@ -387,6 +400,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Subtract 5 from both sides: x &lt; 7. No sign flip needed since we only subtracted.",
         difficulty: "hard",
+        hints: ["Solve this like a regular equation, but keep the inequality sign. Do you need to flip it here?", "Subtract 5 from both sides. Since you're not multiplying or dividing by a negative, the sign stays the same."],
         category: "review"
       }
     ]
@@ -493,6 +507,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "5 &divide; 6 = 0.8333&hellip; The 3 repeats forever.",
         difficulty: "medium",
+        hints: ["To convert a fraction to a decimal, divide the numerator by the denominator.", "Divide 5 by 6 using long division — watch for a repeating pattern in the decimal."],
         category: "topic"
       },
       {
@@ -503,6 +518,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "0.125 = 125/1000. GCD(125, 1000) = 125. So 125/1000 = 1/8.",
         difficulty: "medium",
+        hints: ["Read the place value: 0.125 is 'one hundred twenty-five thousandths,' so write it over 1000.", "Write 125/1000, then simplify by finding the GCD of 125 and 1000."],
         category: "topic"
       },
       {
@@ -513,6 +529,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "10x = 4.444&hellip; and x = 0.444&hellip; so 10x &minus; x = 4.444&hellip; &minus; 0.444&hellip; = 4.",
         difficulty: "medium",
+        hints: ["This is the algebraic trick for repeating decimals — multiply x by 10, then subtract the original x.", "Calculate 10x = 4.444... and x = 0.444..., then subtract them to cancel the repeating part."],
         category: "topic"
       },
       {
@@ -523,6 +540,7 @@ export const DAYS_16_20 = {
         correct: 3,
         explanation: "Let x = 0.2727&hellip; Then 100x = 27.2727&hellip; so 99x = 27, giving x = 27/99 = 3/11. Both are correct.",
         difficulty: "hard",
+        hints: ["Use the repeating-decimal-to-fraction trick: let x = the decimal, multiply by a power of 10 that shifts the repeating block, then subtract.", "Since '27' is a 2-digit repeating block, multiply by 100: 100x = 27.2727... Then subtract x from 100x."],
         category: "topic"
       },
       {
@@ -533,6 +551,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "0.1666&hellip; = 1/6 is repeating (the 6 repeats). The others terminate.",
         difficulty: "hard",
+        hints: ["A repeating decimal has digits that go on forever in a pattern. Look for the '...' that signals this.", "Check each option: does it end neatly, or does a digit keep repeating? The one with '...' is the repeating decimal."],
         category: "topic"
       },
       {
@@ -543,6 +562,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Multiply 35 &times; 4 = 140. Total decimal places = 1 + 1 = 2. Answer: 1.40 = 1.4.",
         difficulty: "hard",
+        hints: ["Multiply the digits as whole numbers, then count the total decimal places from both factors.", "35 × 4 = 140. Both 3.5 and 0.4 have 1 decimal place each, so place the decimal 2 spots from the right."],
         category: "review"
       },
       {
@@ -553,6 +573,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Rewrite as 8.10 &minus; 3.65. Subtract: 10 &minus; 5 = 5, 0 &minus; 6 (borrow) &rarr; 10 &minus; 6 = 4, 7 &minus; 3 = 4. Answer: 4.45.",
         difficulty: "medium",
+        hints: ["Line up the decimal points and pad with zeros so both numbers have the same length.", "Rewrite 8.1 as 8.10, then subtract 3.65 column by column — you'll need to borrow."],
         category: "review"
       }
     ]
@@ -658,6 +679,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "The b values already match (both 5), so combine directly: a : b : c = 4 : 5 : 3.",
         difficulty: "medium",
+        hints: ["Look at the shared quantity (b) in both ratios — if it's the same number, you can combine them directly.", "Both ratios have b = 5, so just line them up: a : b : c = 4 : 5 : 3."],
         category: "topic"
       },
       {
@@ -668,6 +690,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Cross-multiply: 6 &times; 21 = 126 and 9 &times; 14 = 126. Since 126 = 126, they form a proportion. (Both equal 2/3.)",
         difficulty: "medium",
+        hints: ["To check if two ratios form a proportion, use cross-multiplication and see if the products are equal.", "Compute 6 × 21 and 9 × 14 — if those two products match, the ratios are proportional."],
         category: "topic"
       },
       {
@@ -678,6 +701,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Set up the proportion 3/5 = 24/d. Cross-multiply: 3d = 120, so d = 40.",
         difficulty: "medium",
+        hints: ["Set up a proportion using the ratio and the known quantity, then solve for the unknown.", "Write 3/5 = 24/d, then cross-multiply to find d."],
         category: "topic"
       },
       {
@@ -688,6 +712,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "LCM(3, 4) = 12. Scale first ratio by 4: 8 : 12. Scale second by 3: 12 : 21. Combine: 8 : 12 : 21.",
         difficulty: "hard",
+        hints: ["When the shared quantity (b) doesn't match in both ratios, find the LCM so you can scale them to match.", "LCM of 3 and 4 is 12. Scale the first ratio by 4 and the second by 3 so both have b = 12."],
         category: "topic"
       },
       {
@@ -698,6 +723,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Cross-multiply: 3(y + 2) = 30 &rarr; 3y + 6 = 30 &rarr; 3y = 24 &rarr; y = 8.",
         difficulty: "hard",
+        hints: ["Use cross-multiplication to clear the fractions, then solve the resulting equation.", "Cross-multiply: 3 × (y + 2) = 6 × 5. Distribute the 3, then solve for y."],
         category: "topic"
       },
       {
@@ -708,6 +734,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Let x = 0.666&hellip;, then 10x = 6.666&hellip;, so 9x = 6, x = 6/9 = 2/3.",
         difficulty: "hard",
+        hints: ["Use the repeating decimal trick: let x = the decimal, multiply by 10, and subtract.", "Let x = 0.666..., then 10x = 6.666.... Subtract x from 10x to cancel the repeating part."],
         category: "review"
       },
       {
@@ -718,6 +745,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "0.72 = 72/100. GCD(72, 100) = 4. Divide both by 4: 18/25.",
         difficulty: "medium",
+        hints: ["Write the decimal as a fraction over a power of 10, then simplify.", "0.72 = 72/100. Now find the GCD of 72 and 100 to reduce it."],
         category: "review"
       }
     ]
@@ -771,6 +799,11 @@ export const DAYS_16_20 = {
             "For example, if a car travels at 60 mph for 2.5 hours, the distance is d = 60 &times; 2.5 = 150 miles. If you know the distance (200 miles) and speed (50 mph), the time is t = 200 &divide; 50 = 4 hours.",
             "For <strong>multi-step rate problems</strong>, you might need to combine two trips. If you drive 120 miles at 60 mph and then 80 miles at 40 mph, find each time separately: t<sub>1</sub> = 120 &divide; 60 = 2 hr and t<sub>2</sub> = 80 &divide; 40 = 2 hr. Total time = 4 hr, total distance = 200 miles, average speed = 200 &divide; 4 = <strong>50 mph</strong> (not the average of 60 and 40!)."
           ],
+          practice: [
+            { type: "type-answer", prompt: "A car drives at 50 mph for 3 hours. How many miles does it travel?", answer: "150", accept: ["150"], explanation: "d = r &times; t = 50 &times; 3 = 150 miles." },
+            { type: "type-answer", prompt: "A bike covers 24 miles in 4 hours. What is its speed in mph?", answer: "6", accept: ["6"], explanation: "r = d &divide; t = 24 &divide; 4 = 6 mph." },
+            { type: "multiple-quick", prompt: "Which formula finds how long a trip takes?", options: ["d = r &times; t", "t = d &divide; r", "r = d &divide; t"], correct: 1, explanation: "To find time, rearrange d = rt to get t = d &divide; r." }
+          ],
           example: {
             title: "Worked Example: Solving for Time",
             problem: "A train travels 360 miles at a speed of 90 miles per hour. How long does the trip take?",
@@ -787,10 +820,10 @@ export const DAYS_16_20 = {
     quiz: [
       {
         id: "d20q1",
-        question: "A car travels 240 miles in 4 hours. What is its speed?",
-        type: "multiple-choice",
-        options: ["40 mph", "50 mph", "60 mph", "80 mph"],
-        correct: 2,
+        question: "A car travels 240 miles in 4 hours. What is its speed in mph?",
+        type: "type-answer",
+        answer: "60",
+        accept: ["60", "60 mph", "60mph"],
         explanation: "Speed = distance &divide; time = 240 &divide; 4 = 60 mph.",
         difficulty: "easy",
         category: "topic"
@@ -823,6 +856,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "40 minutes = 40/60 = 2/3 hour. Speed = 5 &divide; (2/3) = 5 &times; 3/2 = 7.5 mph.",
         difficulty: "medium",
+        hints: ["Speed is in miles per hour, but the time is in minutes — you'll need to convert first!", "Convert 40 minutes to hours: 40/60 = 2/3 hour. Then use speed = distance ÷ time."],
         category: "topic"
       },
       {
@@ -833,6 +867,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "2.5 gallons &times; 4 quarts/gallon = 10 quarts.",
         difficulty: "medium",
+        hints: ["Use the conversion factor: there are 4 quarts in every gallon.", "Multiply 2.5 by 4 to convert gallons to quarts."],
         category: "topic"
       },
       {
@@ -843,6 +878,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "d = 12 &times; 3.5 = 42 miles.",
         difficulty: "medium",
+        hints: ["Use the formula d = r × t. You already have the rate and the time!", "Plug in: d = 12 × 3.5. Multiply the whole number part and the decimal part separately if it helps."],
         category: "topic"
       },
       {
@@ -853,6 +889,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "2 hours &times; 60 min/hr &times; 60 sec/min = 7,200 seconds.",
         difficulty: "medium",
+        hints: ["Convert step by step: hours to minutes first, then minutes to seconds.", "2 hours × 60 = 120 minutes. Now multiply 120 by 60 to get seconds."],
         category: "topic"
       },
       {
@@ -863,6 +900,7 @@ export const DAYS_16_20 = {
         correct: 0,
         explanation: "Time 1 = 600 &divide; 300 = 2 hr. Time 2 = 400 &divide; 200 = 2 hr. Total: 1000 miles in 4 hours. Average speed = 1000 &divide; 4 = 250 mph.",
         difficulty: "hard",
+        hints: ["Average speed is NOT just the average of the two speeds — it's total distance ÷ total time.", "Find each leg's time separately (t = d ÷ r), add up total distance and total time, then divide."],
         category: "topic"
       },
       {
@@ -873,6 +911,7 @@ export const DAYS_16_20 = {
         correct: 2,
         explanation: "Time = total &divide; rate = 2400 &divide; 150 = 16 hours.",
         difficulty: "hard",
+        hints: ["This is a rate problem: time = total amount ÷ rate.", "Divide 2,400 widgets by the rate of 150 widgets per hour to find the number of hours."],
         category: "topic"
       },
       {
@@ -883,6 +922,7 @@ export const DAYS_16_20 = {
         correct: 1,
         explanation: "Cross-multiply: 9x = 6 &times; 15 = 90. Divide by 9: x = 10.",
         difficulty: "hard",
+        hints: ["Use cross-multiplication to solve a proportion: multiply diagonally and set the products equal.", "Cross-multiply: 9 × x = 6 × 15. Compute the right side, then divide to find x."],
         category: "review"
       }
     ]
