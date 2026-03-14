@@ -519,6 +519,22 @@ export const DAYS_26_30 = {
             "A <strong>bar graph</strong> uses bars to compare quantities across categories. A <strong>line graph</strong> shows how a quantity changes over time by connecting data points with lines. To find a specific value, locate the category on one axis and trace across to read the corresponding value on the other axis.",
             "Watch out for <strong>misleading graphs</strong>! Tricks include starting the y-axis at a high number (making small differences look huge), using inconsistent scales, or choosing axis ranges that hide important trends. Always look at the actual numbers, not just the visual impression."
           ],
+          graphs: [
+            { type: "row", items: [
+              { type: "barGraph", width: 340, height: 220,
+                categories: ["Jan", "Feb", "Mar", "Apr"],
+                values: [40, 55, 45, 60],
+                barColor: "#667eea",
+                yLabel: "Books Sold", xLabel: "Month",
+                caption: "Bar graph: Monthly Book Sales" },
+              { type: "lineGraph", width: 340, height: 220,
+                categories: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+                values: [62, 68, 65, 72, 70],
+                lineColor: "#059669", pointColor: "#059669",
+                yLabel: "Temperature (\u00b0F)", xLabel: "Day of Week",
+                caption: "Line graph: Daily High Temperatures" }
+            ]}
+          ],
           example: {
             title: "Worked Example: Interpreting a Bar Graph",
             problem: "A bar graph shows monthly book sales: Jan = 40, Feb = 55, Mar = 45, Apr = 60. What is the mean monthly sales?",
@@ -526,6 +542,14 @@ export const DAYS_26_30 = {
               "Read each bar's value: 40, 55, 45, 60.",
               "Find the sum: 40 + 55 + 45 + 60 = 200.",
               "Divide by the number of months: 200 &divide; 4 = <strong>50 books per month</strong>."
+            ],
+            graphs: [
+              { type: "barGraph", width: 360, height: 220,
+                categories: ["Jan", "Feb", "Mar", "Apr"],
+                values: [40, 55, 45, 60],
+                barColor: "#667eea",
+                yLabel: "Books Sold", xLabel: "Month",
+                caption: "The bar graph from the example above" }
             ]
           }
         },
@@ -845,6 +869,12 @@ export const DAYS_26_30 = {
             "When flipping 2 coins, the total outcomes are 2 &times; 2 = 4: {HH, HT, TH, TT}. The probability of getting exactly one head is 2/4 = 1/2 (the outcomes HT and TH). For a standard deck of 52 cards, P(drawing a heart) = 13/52 = 1/4.",
             "For <strong>compound events</strong>, think carefully about whether events are independent. When rolling two dice, the total outcomes are 6 &times; 6 = 36. The probability of rolling a sum of 7 is 6/36 = 1/6, because exactly 6 pairs sum to 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1)."
           ],
+          graphs: [
+            { type: "diceGrid", width: 280, height: 280, size: 6,
+              highlightColor: "#667eea",
+              highlight: [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1]],
+              caption: "Two-dice sum table: highlighted cells show the 6 pairs that sum to 7" }
+          ],
           example: {
             title: "Worked Example: Probability with Two Dice",
             problem: "Two fair dice are rolled. What is the probability that the sum is 9?",
@@ -852,6 +882,12 @@ export const DAYS_26_30 = {
               "Total outcomes = 6 &times; 6 = 36.",
               "List pairs that sum to 9: (3,6), (4,5), (5,4), (6,3). That&rsquo;s 4 favorable outcomes.",
               "P(sum = 9) = 4/36 = <strong>1/9</strong>."
+            ],
+            graphs: [
+              { type: "diceGrid", width: 280, height: 280, size: 6,
+                highlightColor: "#e53e3e",
+                highlight: [[3,6],[4,5],[5,4],[6,3]],
+                caption: "Highlighted: the 4 pairs that sum to 9" }
             ]
           }
         },

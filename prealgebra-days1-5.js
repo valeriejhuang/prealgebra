@@ -447,6 +447,17 @@ export const DAYS_1_5 = {
             "For example, (&minus;3) + (&minus;5): both are negative, so add the absolute values 3 + 5 = 8, and keep the negative sign. The answer is <strong>&minus;8</strong>. Think of it on the number line: starting at &minus;3 and moving 5 more units to the left lands you at &minus;8.",
             "Here&rsquo;s a real-world way to think about it: if you owe $3 and then borrow $5 more, you now owe $8 total. Two debts combine into a bigger debt!"
           ],
+          graphs: [
+            { type: "numberLine", min: -10, max: 2, step: 1, width: 500, height: 80,
+              points: [
+                { x: -3, color: "#667eea", label: "start: \u22123" },
+                { x: -8, color: "#e53e3e", label: "\u22128" }
+              ],
+              intervals: [
+                { from: -3, to: -8, fromOpen: true, toOpen: true, color: "#667eea" }
+              ],
+              caption: "(\u22123) + (\u22125) = \u22128 : start at \u22123, move 5 units left" }
+          ],
           example: {
             title: "Worked Example: Adding Two Negatives",
             problem: "Calculate (&minus;12) + (&minus;7)",
@@ -464,6 +475,17 @@ export const DAYS_1_5 = {
             "When you add two numbers with <strong>different signs</strong> (one positive and one negative), use this rule: <em>subtract the smaller absolute value from the larger absolute value, then take the sign of the number with the larger absolute value</em>.",
             "For example, (&minus;7) + 4: the absolute values are 7 and 4. Subtract: 7 &minus; 4 = 3. Since 7 &gt; 4 and &minus;7 is negative, the answer is <strong>&minus;3</strong>. On the number line, you start at &minus;7 and move 4 units to the right, landing at &minus;3.",
             "Another way to think about it: you owe $7 and someone gives you $4. You pay off part of the debt, but you still owe $3. The &ldquo;bigger force&rdquo; wins. When the positive part is bigger, the answer is positive; when the negative part is bigger, the answer is negative."
+          ],
+          graphs: [
+            { type: "numberLine", min: -9, max: 2, step: 1, width: 500, height: 80,
+              points: [
+                { x: -7, color: "#667eea", label: "start: \u22127" },
+                { x: -3, color: "#059669", label: "\u22123" }
+              ],
+              intervals: [
+                { from: -7, to: -3, fromOpen: true, toOpen: true, color: "#059669" }
+              ],
+              caption: "(\u22127) + 4 = \u22123 : start at \u22127, move 4 units right" }
           ],
           example: {
             title: "Worked Example: Adding with Different Signs",

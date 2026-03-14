@@ -699,6 +699,14 @@ export const DAYS_6_10 = {
             "Fractions also live on the <strong>number line</strong>. To place 3/4, split the segment from 0 to 1 into 4 equal parts and count 3 of them to the right. Fractions greater than 1 (like 7/4) extend past 1 on the number line. Any whole number can be written as a fraction too: 5 = 5/1, because you have 5 whole pieces each of size 1.",
             "The denominator can <em>never</em> be zero. Think about it &mdash; you can&rsquo;t divide something into zero equal parts! So expressions like 4/0 are <strong>undefined</strong>. The numerator, however, can be zero: 0/5 = 0 (zero parts of anything is still nothing)."
           ],
+          graphs: [
+            { type: "numberLine", min: 0, max: 2, step: 0.25, width: 500, height: 80,
+              points: [
+                { x: 0.75, color: "#667eea", label: "\u00be" },
+                { x: 1, color: "#718096", label: "1" }
+              ],
+              caption: "Placing \u00be on the number line: split 0 to 1 into 4 parts, count 3" }
+          ],
           example: {
             title: "Worked Example: Fractions on a Number Line",
             problem: "Place 5/3 on a number line.",
@@ -708,6 +716,17 @@ export const DAYS_6_10 = {
               "After 3 parts you reach 1 (since 3/3 = 1). After 2 more parts you reach 5/3.",
               "5/3 is between <strong>1</strong> and <strong>2</strong>, one-third of the way from 1 to 2.",
               "As a mixed number: 5/3 = <strong>1 2/3</strong>."
+            ],
+            graphs: [
+              { type: "numberLine", min: 0, max: 2, step: 0.333333, width: 500, height: 80,
+                points: [
+                  { x: 0.333333, color: "#a0aec0", label: "\u2153" },
+                  { x: 0.666667, color: "#a0aec0", label: "\u2154" },
+                  { x: 1, color: "#718096", label: "1" },
+                  { x: 1.333333, color: "#a0aec0", label: "\u2074\u2044\u2083" },
+                  { x: 1.666667, color: "#e53e3e", label: "\u2075\u2044\u2083" }
+                ],
+                caption: "\u2075\u2044\u2083 on the number line: between 1 and 2, one-third past 1" }
             ]
           }
         },

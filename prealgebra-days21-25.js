@@ -367,6 +367,18 @@ export const DAYS_21_25 = {
             "To <strong>estimate</strong> a non-perfect square root, find the two consecutive perfect squares it falls between. For &radic;50: since 7<sup>2</sup> = 49 and 8<sup>2</sup> = 64, we know 7 &lt; &radic;50 &lt; 8. Because 50 is much closer to 49 than to 64, &radic;50 is closer to 7 &mdash; roughly 7.07.",
             "This &ldquo;squeeze&rdquo; technique works for any square root. For &radic;30: 5<sup>2</sup> = 25 and 6<sup>2</sup> = 36, so 5 &lt; &radic;30 &lt; 6. Since 30 is about halfway between 25 and 36, &radic;30 &approx; 5.5 (actual value &approx; 5.477)."
           ],
+          graphs: [
+            { type: "numberLine", min: 4, max: 9, step: 1, width: 500, height: 80,
+              points: [
+                { x: 4, color: "#718096", label: "4\u00b2=16" },
+                { x: 5, color: "#718096", label: "5\u00b2=25" },
+                { x: 6, color: "#718096", label: "6\u00b2=36" },
+                { x: 7, color: "#718096", label: "7\u00b2=49" },
+                { x: 7.07, color: "#e53e3e", label: "\u221a50\u22487.07" },
+                { x: 5.48, color: "#667eea", label: "\u221a30\u22485.5" }
+              ],
+              caption: "Squeeze technique: \u221a50 is between 7 and 8; \u221a30 is between 5 and 6" }
+          ],
           example: {
             title: "Worked Example: Estimating &radic;20",
             problem: "Between which two whole numbers does &radic;20 lie? Estimate its value.",
@@ -376,6 +388,15 @@ export const DAYS_21_25 = {
               "20 is 4 away from 16 and 5 away from 25, so it is closer to 16.",
               "Estimate: &radic;20 &approx; 4.5 (actual &approx; 4.472).",
               "Answer: &radic;20 is between <strong>4 and 5</strong>, approximately <strong>4.5</strong>."
+            ],
+            graphs: [
+              { type: "numberLine", min: 3, max: 6, step: 0.5, width: 500, height: 80,
+                points: [
+                  { x: 4, color: "#718096", label: "4 (4\u00b2=16)" },
+                  { x: 5, color: "#718096", label: "5 (5\u00b2=25)" },
+                  { x: 4.47, color: "#e53e3e", label: "\u221a20\u22484.47" }
+                ],
+                caption: "\u221a20 lies between 4 and 5, closer to 4" }
             ]
           }
         },
