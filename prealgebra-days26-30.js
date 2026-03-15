@@ -18,7 +18,12 @@ export const DAYS_26_30 = {
               "Use the rectangle perimeter formula: P = 2l + 2w.",
               "Substitute: P = 2(12) + 2(7) = 24 + 14.",
               "Answer: P = <strong>38 cm</strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'rectangle', width: 220, height: 160, rectWidth: 140, rectHeight: 80, color: '#667eea', rightAngle: true,
+              labels: [{ text: '12 cm', x: 110, y: 30 }, { text: '7 cm', x: 178, y: 70 }],
+              caption: "Rectangle: l = 12 cm, w = 7 cm → P = 2(12 + 7) = 38 cm"
+            }]
           }
         },
         {
@@ -80,8 +85,21 @@ export const DAYS_26_30 = {
               "Use the triangle area formula: A = &frac12; &times; b &times; h.",
               "Substitute: A = &frac12; &times; 10 &times; 6 = &frac12; &times; 60.",
               "Answer: A = <strong>30 in&sup2;</strong>."
-            ]
-          }
+            ],
+            graphs: [{
+              type: 'triangle', width: 220, height: 180,
+              vertices: [[20,160],[200,160],[110,30]],
+              labels: [{ text: 'A', dx: -14, dy: 4 }, { text: 'B', dx: 14, dy: 4 }, { text: 'h', dx: 0, dy: -8 }],
+              sides: [{ label: 'b = 10', dx: 0, dy: 16 }, { label: '', dx: 14, dy: 0 }, { label: '', dx: -14, dy: 0 }],
+              color: '#667eea',
+              caption: "Triangle: base = 10, height = 6 → A = ½ × 10 × 6 = 30"
+            }]
+          },
+          practice: [
+            { type: "type-answer", prompt: "A rectangle is 9 m long and 4 m wide. What is its area?", answer: "36", accept: ["36","36 m²","36 m^2","36 sq m"], explanation: "A = l × w = 9 × 4 = 36 m²." },
+            { type: "type-answer", prompt: "A triangle has base 12 cm and height 5 cm. What is its area?", answer: "30", accept: ["30","30 cm²","30 cm^2","30 sq cm"], explanation: "A = ½ × b × h = ½ × 12 × 5 = 30 cm²." },
+            { type: "multiple-quick", prompt: "A rectangle has a perimeter of 26 m and length 8 m. What is its width?", options: ["5 m", "9 m", "10 m"], correct: 0, explanation: "2(8) + 2w = 26 → 16 + 2w = 26 → 2w = 10 → w = 5 m." }
+          ]
         },
         {
           heading: "Circles — Circumference & Area",
@@ -97,7 +115,13 @@ export const DAYS_26_30 = {
               "Circumference: C = 2&pi;r = 2&pi;(5) = <strong>10&pi; cm</strong>.",
               "Area: A = &pi;r<sup>2</sup> = &pi;(5)<sup>2</sup> = <strong>25&pi; cm<sup>2</sup></strong>.",
               "If approximating: C &approx; 31.42 cm and A &approx; 78.54 cm<sup>2</sup>."
-            ]
+            ],
+            graphs: [{
+              type: 'circle', width: 200, height: 200, radius: 70, color: '#667eea',
+              showRadius: true, radiusLabel: 'r = 5',
+              labels: [{ text: 'O', x: 100, y: 104 }],
+              caption: "Circle: r = 5 → C = 10π ≈ 31.42, A = 25π ≈ 78.54"
+            }]
           }
         },
         {
@@ -116,7 +140,12 @@ export const DAYS_26_30 = {
               "Subtract 10 from both sides: 2l = 24.",
               "Divide by 2: l = 12.",
               "Answer: The length is <strong>12 cm</strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'rectangle', width: 220, height: 160, rectWidth: 140, rectHeight: 80, color: '#667eea', rightAngle: true,
+              labels: [{ text: '9 m', x: 110, y: 30 }, { text: 'w = ?', x: 178, y: 70 }],
+              caption: "Rectangle: A = 54, l = 9 → w = 54 ÷ 9 = 6 m"
+            }]
           }
         }
       ]
@@ -272,7 +301,12 @@ export const DAYS_26_30 = {
                 caption: "6\u00b2 + 8\u00b2 = 36 + 64 = 100 = 10\u00b2"
               }
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "A right triangle has legs 3 and 4. What is the hypotenuse?", answer: "5", accept: ["5"], explanation: "3² + 4² = 9 + 16 = 25. √25 = 5. This is the 3-4-5 triple." },
+            { type: "type-answer", prompt: "A right triangle has a hypotenuse of 13 and one leg of 5. What is the other leg?", answer: "12", accept: ["12"], explanation: "b = √(13² − 5²) = √(169 − 25) = √144 = 12." },
+            { type: "multiple-quick", prompt: "Do the sides 5, 7, 9 form a right triangle?", options: ["Yes", "No"], correct: 1, explanation: "Check: 5² + 7² = 25 + 49 = 74. But 9² = 81. Since 74 ≠ 81, it is NOT a right triangle." }
+          ]
         },
         {
           heading: "Common Pythagorean Triples & Special Triangles",
@@ -352,7 +386,12 @@ export const DAYS_26_30 = {
               "Use the trapezoid area formula: A = &frac12;(b<sub>1</sub> + b<sub>2</sub>)h.",
               "Substitute: A = &frac12;(8 + 14)(5) = &frac12;(22)(5).",
               "Calculate: A = &frac12; &times; 110 = <strong>55 cm<sup>2</sup></strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'rectangle', width: 220, height: 160, rectWidth: 140, rectHeight: 80, color: '#667eea',
+              labels: [{ text: 'b₁ = 10', x: 110, y: 30 }, { text: 'b₂ = 6', x: 110, y: 145 }, { text: 'h = 4', x: 178, y: 75 }],
+              caption: "Trapezoid: A = ½(b₁ + b₂) × h = ½(10 + 6) × 4 = 32"
+            }]
           }
         },
         {
@@ -370,7 +409,15 @@ export const DAYS_26_30 = {
               "Calculate: 9 + 49 = 58, so c = &radic;58.",
               "Check if 58 can be simplified: 58 = 2 &times; 29. Neither factor is a perfect square.",
               "Answer: c = <strong>&radic;58</strong> (already in simplest form)."
-            ]
+            ],
+            graphs: [{
+              type: 'triangle', width: 200, height: 180,
+              vertices: [[20,160],[160,160],[160,30]],
+              labels: [{ text: 'A', dx: -14, dy: 4 }, { text: 'B', dx: 14, dy: 4 }, { text: 'C', dx: 14, dy: -10 }],
+              sides: [{ label: '7', dx: 0, dy: 16 }, { label: '3', dx: 16, dy: 0 }, { label: '√58', dx: -20, dy: -5 }],
+              rightAngle: 1, color: '#667eea',
+              caption: "Right triangle: 3² + 7² = 9 + 49 = 58 → c = √58"
+            }]
           }
         }
       ]
@@ -741,7 +788,12 @@ export const DAYS_26_30 = {
               "Stage 4 (digit): 10 choices.",
               "Total = 26 &times; 10 &times; 10 &times; 10 = <strong>26,000 passwords</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "You have 5 shirts and 3 pants. How many outfit combinations can you make?", answer: "15", accept: ["15"], explanation: "By the multiplication principle: 5 × 3 = 15 outfits." },
+            { type: "type-answer", prompt: "How many 2-digit codes can be made from digits 1–4 if repetition is allowed?", answer: "16", accept: ["16"], explanation: "Each digit has 4 choices: 4 × 4 = 16." },
+            { type: "multiple-quick", prompt: "A club has 6 members. Each shakes hands with every other exactly once. How many handshakes?", options: ["12", "15", "30"], correct: 1, explanation: "6 × 5 = 30 one-way connections, but each handshake is counted twice: 30 ÷ 2 = 15." }
+          ]
         },
         {
           heading: "Organized Counting & Casework",
@@ -893,7 +945,12 @@ export const DAYS_26_30 = {
               "Favorable outcomes (blue) = 5.",
               "P(blue) = 5/10 = <strong>1/2</strong> (or 0.5 or 50%)."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "A jar has 3 red, 4 green, and 5 yellow marbles. What is P(green)? Write as a fraction.", answer: "1/3", accept: ["1/3","4/12","0.333","0.33","33%"], explanation: "Total = 12. P(green) = 4/12 = 1/3." },
+            { type: "type-answer", prompt: "If P(event) = 0.7, what is P(not event)?", answer: "0.3", accept: ["0.3","0.30","3/10","30%"], explanation: "P(not event) = 1 − 0.7 = 0.3 (complement rule)." },
+            { type: "multiple-quick", prompt: "A fair die is rolled. What is the probability of rolling a number greater than 4?", options: ["1/6", "1/3", "1/2"], correct: 1, explanation: "Numbers > 4: {5, 6} = 2 outcomes out of 6. P = 2/6 = 1/3." }
+          ]
         },
         {
           heading: "Computing Probabilities",
@@ -939,7 +996,18 @@ export const DAYS_26_30 = {
               "The inscribed circle has a diameter equal to the side of the square, so d = 12 m, meaning r = 6 m.",
               "Area of the circle: A = &pi;r<sup>2</sup> = &pi;(6)<sup>2</sup> = <strong>36&pi; m<sup>2</sup></strong>.",
               "This problem used perimeter (Day 26), equations (Day 15), and circle area (Day 26) &mdash; all in one!"
-            ]
+            ],
+            graphs: [{
+              type: 'row',
+              items: [
+                { type: 'rectangle', width: 180, height: 180, rectWidth: 130, rectHeight: 130, color: '#667eea',
+                  labels: [{ text: '10', x: 90, y: 20 }, { text: '10', x: 165, y: 90 }],
+                  caption: "Square: side = 10" },
+                { type: 'circle', width: 180, height: 180, radius: 65, color: '#764ba2',
+                  showRadius: true, radiusLabel: 'r = 5',
+                  caption: "Inscribed circle: r = 5" }
+              ]
+            }]
           }
         }
       ]

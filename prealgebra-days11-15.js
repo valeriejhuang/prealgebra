@@ -20,7 +20,17 @@ export const DAYS_11_15 = {
               "Since 25 &gt; 24, we have 5/8 &gt; 3/5.",
               "Check with common denominator: 5/8 = 25/40 and 3/5 = 24/40. Indeed 25/40 &gt; 24/40. &#10003;",
               "Answer: <strong>5/8</strong> is greater."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1, step: 0.1, width: 480, height: 70,
+              points: [
+                { x: 0.6, color: '#e53e3e', label: '3/5 = 0.6' },
+                { x: 0.625, color: '#7c3aed', label: '5/8 = 0.625' },
+                { x: 0, color: '#667eea', label: '0' },
+                { x: 1, color: '#667eea', label: '1' }
+              ],
+              caption: "5/8 > 3/5 — the cross-multiplication confirms it"
+            }]
           }
         },
         {
@@ -38,8 +48,21 @@ export const DAYS_11_15 = {
               "For 23/6: divide 23 &divide; 6 = 3 remainder 5.",
               "The whole part is 3, the remainder is 5, the denominator stays 6.",
               "Answer: 3 2/7 = <strong>23/7</strong> and 23/6 = <strong>3 5/6</strong>."
-            ]
-          }
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 5, step: 1, width: 480, height: 70,
+              points: [
+                { x: 3.286, color: '#7c3aed', label: '3 2/7 = 23/7' },
+                { x: 0, color: '#667eea', label: '0' }
+              ],
+              caption: "3 2/7 = 23/7 ≈ 3.29 — between 3 and 4 on the number line"
+            }]
+          },
+          practice: [
+            { type: "type-answer", prompt: "Convert 5 2/3 to an improper fraction.", answer: "17/3", accept: ["17/3","17 / 3"], explanation: "Multiply 5 × 3 = 15, then add 2: 15 + 2 = 17. So 5 2/3 = 17/3." },
+            { type: "type-answer", prompt: "Convert 22/5 to a mixed number.", answer: "4 2/5", accept: ["4 2/5","4-2/5","4 and 2/5"], explanation: "22 ÷ 5 = 4 remainder 2. So 22/5 = 4 2/5." },
+            { type: "multiple-quick", prompt: "Which is greater: 3/7 or 2/5?", options: ["3/7", "2/5", "They are equal"], correct: 0, explanation: "Cross-multiply: 3 × 5 = 15 and 7 × 2 = 14. Since 15 > 14, 3/7 > 2/5." }
+          ]
         },
         {
           heading: "Ordering Fractions & Mixed Numbers",
@@ -56,7 +79,18 @@ export const DAYS_11_15 = {
               "Rewrite: 3/4 = 9/12, 2/3 = 8/12, 7/12 = 7/12.",
               "Compare numerators: 7 &lt; 8 &lt; 9.",
               "Answer: <strong>7/12 &lt; 2/3 &lt; 3/4</strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1, step: 0.1, width: 480, height: 70,
+              points: [
+                { x: 0.583, color: '#e53e3e', label: '7/12' },
+                { x: 0.667, color: '#7c3aed', label: '2/3' },
+                { x: 0.75, color: '#764ba2', label: '3/4' },
+                { x: 0, color: '#667eea', label: '0' },
+                { x: 1, color: '#667eea', label: '1' }
+              ],
+              caption: "7/12 < 2/3 < 3/4 — plotted in order on the number line"
+            }]
           }
         }
       ]
@@ -202,7 +236,16 @@ export const DAYS_11_15 = {
               "Keep the denominator: 8/12.",
               "Simplify: GCD(8, 12) = 4. Divide both by 4: 8/12 = 2/3.",
               "Answer: <strong>2/3</strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1, step: 0.1, width: 480, height: 70,
+              points: [
+                { x: 0.417, color: '#7c3aed', label: '5/12' },
+                { x: 0.667, color: '#e53e3e', label: '8/12 = 2/3' }
+              ],
+              intervals: [{ from: 0.417, to: 0.667, color: '#667eea', label: '+3/12' }],
+              caption: "5/12 + 3/12 = 8/12 = 2/3"
+            }]
           }
         },
         {
@@ -222,8 +265,23 @@ export const DAYS_11_15 = {
               "Keep the denominator: 7/20.",
               "Check: GCD(7, 20) = 1, so it&rsquo;s already simplified.",
               "Answer: <strong>7/20</strong>."
-            ]
-          }
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1.5, step: 0.25, width: 480, height: 70,
+              points: [
+                { x: 0.75, color: '#7c3aed', label: '3/4' },
+                { x: 0.4, color: '#764ba2', label: '2/5' },
+                { x: 1.15, color: '#e53e3e', label: '23/20' }
+              ],
+              intervals: [{ from: 0.75, to: 1.15, color: '#667eea', label: '+2/5' }],
+              caption: "3/4 + 2/5 = 15/20 + 8/20 = 23/20 = 1 3/20"
+            }]
+          },
+          practice: [
+            { type: "type-answer", prompt: "Compute: 1/3 + 1/6 (simplify)", answer: "1/2", accept: ["1/2","3/6"], explanation: "LCD = 6. Rewrite: 1/3 = 2/6. Add: 2/6 + 1/6 = 3/6 = 1/2." },
+            { type: "type-answer", prompt: "Compute: 5/8 − 1/4 (simplify)", answer: "3/8", accept: ["3/8"], explanation: "LCD = 8. Rewrite: 1/4 = 2/8. Subtract: 5/8 − 2/8 = 3/8." },
+            { type: "multiple-quick", prompt: "What is 2/5 + 1/3?", options: ["3/8", "11/15", "7/15"], correct: 1, explanation: "LCD = 15. Rewrite: 2/5 = 6/15, 1/3 = 5/15. Add: 6/15 + 5/15 = 11/15." }
+          ]
         },
         {
           heading: "Adding & Subtracting Mixed Numbers",
@@ -398,7 +456,12 @@ export const DAYS_11_15 = {
               "Convert to a mixed number: 7/6 = 1 1/6.",
               "Answer: <strong>1 1/6</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Compute: 3/4 × 2/5 (simplify)", answer: "3/10", accept: ["3/10"], explanation: "Multiply: 3 × 2 = 6 and 4 × 5 = 20. Simplify: 6/20 = 3/10." },
+            { type: "type-answer", prompt: "Compute: 5/6 ÷ 2/3 (simplify)", answer: "5/4", accept: ["5/4","1 1/4","1-1/4"], explanation: "Keep-Change-Flip: 5/6 × 3/2. Cross-cancel 3 and 6: 5/2 × 1/2 = 5/4 = 1 1/4." },
+            { type: "multiple-quick", prompt: "What is the reciprocal of 7?", options: ["−7", "1/7", "7/1"], correct: 1, explanation: "7 = 7/1, so its reciprocal is 1/7." }
+          ]
         },
         {
           heading: "Mixed Number Operations & Raising Fractions to Powers",

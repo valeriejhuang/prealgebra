@@ -20,7 +20,12 @@ export const DAYS_16_20 = {
               "Divide both sides by 3: x = 4.",
               "Check: 5(4) &minus; 3 = 17 and 2(4) + 9 = 17. &#10003; Both sides match!"
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Solve: 3x + 7 = 2x + 15", answer: "8", accept: ["8","x=8","x = 8"], explanation: "Subtract 2x from both sides: x + 7 = 15. Subtract 7: x = 8." },
+            { type: "type-answer", prompt: "Solve: 2(x − 4) = 10", answer: "9", accept: ["9","x=9","x = 9"], explanation: "Distribute: 2x − 8 = 10. Add 8: 2x = 18. Divide by 2: x = 9." },
+            { type: "multiple-quick", prompt: "What is the first step to solve 4(x + 1) = 20?", options: ["Divide by 4", "Distribute the 4", "Subtract 1"], correct: 1, explanation: "Use the distributive property first: 4x + 4 = 20, then solve the two-step equation." }
+          ]
         },
         {
           heading: "Translating Word Problems into Equations",
@@ -233,7 +238,15 @@ export const DAYS_16_20 = {
               "The ones digits are both 2. Compare tenths: 0 vs. 1.",
               "Since 1 &gt; 0 in the tenths place, 2.10 &gt; 2.08.",
               "Answer: <strong>2.1</strong> is greater."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 2.0, max: 2.2, step: 0.02, width: 480, height: 70,
+              points: [
+                { x: 2.08, color: '#7c3aed', label: '2.08' },
+                { x: 2.1, color: '#e53e3e', label: '2.10' }
+              ],
+              caption: "2.08 < 2.10 — 2.10 is further right on the number line"
+            }]
           }
         },
         {
@@ -272,7 +285,12 @@ export const DAYS_16_20 = {
               "Now divide: 630 &divide; 9 = 70.",
               "Answer: <strong>70</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Calculate: 1.5 × 0.4", answer: "0.6", accept: ["0.6","0.60",".6"], explanation: "Multiply 15 × 4 = 60. Total decimal places = 1 + 1 = 2. Answer: 0.60 = 0.6." },
+            { type: "type-answer", prompt: "Calculate: 7.2 ÷ 0.08", answer: "90", accept: ["90","90.0"], explanation: "Move decimal 2 places in both: 720 ÷ 8 = 90." },
+            { type: "multiple-quick", prompt: "What is 12.5 − 4.83?", options: ["7.67", "8.33", "7.77"], correct: 0, explanation: "Rewrite as 12.50 − 4.83 = 7.67." }
+          ]
         },
         {
           heading: "Rounding Decimals",
@@ -445,7 +463,12 @@ export const DAYS_16_20 = {
               "Divide both by 125: 375 &divide; 125 = 3 and 1000 &divide; 125 = 8.",
               "Answer: 0.375 = <strong>3/8</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Convert 0.45 to a fraction in simplest form.", answer: "9/20", accept: ["9/20","9 / 20"], explanation: "0.45 = 45/100. GCD(45,100) = 5. So 45/100 = 9/20." },
+            { type: "type-answer", prompt: "Convert 5/8 to a decimal.", answer: "0.625", accept: ["0.625",".625"], explanation: "5 ÷ 8 = 0.625. Since 8 = 2³, the decimal terminates." },
+            { type: "multiple-quick", prompt: "Which decimal is equivalent to 3/4?", options: ["0.34", "0.75", "0.43"], correct: 1, explanation: "3 ÷ 4 = 0.75. This is a key conversion to memorize." }
+          ]
         },
         {
           heading: "Repeating Decimals",
@@ -636,7 +659,12 @@ export const DAYS_16_20 = {
               "Divide both sides by 8: n = 15.",
               "Check: 5/8 = 0.625 and 15/24 = 0.625. &#10003; Answer: <strong>n = 15</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Solve for x: 3/5 = x/20", answer: "12", accept: ["12","x=12","x = 12"], explanation: "Cross-multiply: 3 × 20 = 5 × x → 60 = 5x → x = 12." },
+            { type: "type-answer", prompt: "Simplify the ratio 24 : 36.", answer: "2 : 3", accept: ["2:3","2 : 3","2 to 3"], explanation: "GCD(24, 36) = 12. Divide both by 12: 24 ÷ 12 = 2, 36 ÷ 12 = 3. Ratio = 2 : 3." },
+            { type: "multiple-quick", prompt: "Do 4/10 and 6/15 form a proportion?", options: ["Yes", "No", "Cannot tell"], correct: 0, explanation: "Cross-multiply: 4 × 15 = 60 and 10 × 6 = 60. Since 60 = 60, yes — they are proportional (both equal 2/5)." }
+          ]
         }
       ]
     },

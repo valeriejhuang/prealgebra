@@ -41,7 +41,12 @@ export const DAYS_6_10 = {
               "Calculate the denominator: 5<sup>2</sup> = 25.",
               "Answer: 5<sup>&minus;2</sup> = <strong>1/25</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Evaluate: 4⁻²  (write as a fraction)", answer: "1/16", accept: ["1/16","1 / 16"], explanation: "4⁻² = 1/4² = 1/16. A negative exponent means 'take the reciprocal.'" },
+            { type: "type-answer", prompt: "What is 10⁰ + 10⁻¹? (write as a decimal)", answer: "1.1", accept: ["1.1","1.10","11/10"], explanation: "10⁰ = 1 and 10⁻¹ = 1/10 = 0.1. So 1 + 0.1 = 1.1." },
+            { type: "multiple-quick", prompt: "Which equals 1/49?", options: ["7⁻¹", "7⁻²", "49⁻²"], correct: 1, explanation: "7⁻² = 1/7² = 1/49." }
+          ]
         },
         {
           heading: "The Quotient Rule & Putting It All Together",
@@ -221,7 +226,12 @@ export const DAYS_6_10 = {
               "<strong>By 9?</strong> Digit sum is 12. Is 12 divisible by 9? No. <strong>No.</strong>",
               "<strong>By 10?</strong> Last digit is 0. <strong>Yes.</strong>"
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Is 8,145 divisible by 3? (yes or no)", answer: "yes", accept: ["yes","Yes","YES","y","Y"], explanation: "Digit sum: 8+1+4+5 = 18. Since 18 is divisible by 3, so is 8,145." },
+            { type: "type-answer", prompt: "List all factors of 20 in order, separated by commas.", answer: "1, 2, 4, 5, 10, 20", accept: ["1, 2, 4, 5, 10, 20","1,2,4,5,10,20","1 2 4 5 10 20"], explanation: "Factor pairs: 1×20, 2×10, 4×5. Factors: 1, 2, 4, 5, 10, 20." },
+            { type: "multiple-quick", prompt: "Which number is divisible by 9?", options: ["451", "738", "812"], correct: 1, explanation: "Digit sum of 738: 7+3+8 = 18, and 18 ÷ 9 = 2. So 738 is divisible by 9." }
+          ]
         },
         {
           heading: "Prime Numbers",
@@ -400,7 +410,12 @@ export const DAYS_6_10 = {
               "Multiply: 8 &times; 9 &times; 5 = <strong>360</strong>.",
               "Check: 360 &divide; 24 = 15 &#10003; and 360 &divide; 90 = 4 &#10003;."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "What is the prime factorization of 72? (use ^ for exponents, e.g. 2^3 × 3^2)", answer: "2^3 × 3^2", accept: ["2^3 × 3^2","2^3 x 3^2","2^3*3^2","2³×3²","2³ × 3²","8 × 9"], explanation: "72 = 8 × 9 = 2³ × 3²." },
+            { type: "type-answer", prompt: "What is the LCM of 4 and 10?", answer: "20", accept: ["20"], explanation: "4 = 2² and 10 = 2 × 5. Highest powers: 2² × 5 = 20." },
+            { type: "multiple-quick", prompt: "What is the LCM of 9 and 12?", options: ["36", "72", "108"], correct: 0, explanation: "9 = 3² and 12 = 2² × 3. Highest powers: 2² × 3² = 4 × 9 = 36." }
+          ]
         },
         {
           heading: "LCM Applications",
@@ -578,7 +593,12 @@ export const DAYS_6_10 = {
               "Take the <strong>lowest</strong> power of each shared prime: 2<sup>2</sup> and 3<sup>1</sup>.",
               "GCD = 4 &times; 3 = <strong>12</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "What is the GCD of 24 and 36?", answer: "12", accept: ["12"], explanation: "24 = 2³ × 3 and 36 = 2² × 3². Lowest shared powers: 2² × 3 = 4 × 3 = 12." },
+            { type: "type-answer", prompt: "How many divisors does 45 have? (45 = 3² × 5)", answer: "6", accept: ["6"], explanation: "Divisor-counting formula: (2+1)(1+1) = 3 × 2 = 6 divisors." },
+            { type: "multiple-quick", prompt: "What is the GCD of 18 and 27?", options: ["3", "6", "9"], correct: 2, explanation: "18 = 2 × 3² and 27 = 3³. Only shared prime is 3; lowest power is 3² = 9." }
+          ]
         },
         {
           heading: "GCD Applications",
@@ -773,7 +793,16 @@ export const DAYS_6_10 = {
               "Multiply the numerator by the same number: 2 &times; 5 = 10.",
               "Answer: 2/7 = <strong>10/35</strong>.",
               "Check: both numerator and denominator were multiplied by 5, so the fraction&rsquo;s value didn&rsquo;t change."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1, step: 0.1, width: 480, height: 70,
+              points: [
+                { x: 0.286, color: '#7c3aed', label: '2/7 = 10/35' },
+                { x: 0, color: '#667eea', label: '0' },
+                { x: 1, color: '#667eea', label: '1' }
+              ],
+              caption: "2/7 and 10/35 land at the same point — they are equivalent"
+            }]
           }
         },
         {
@@ -797,7 +826,16 @@ export const DAYS_6_10 = {
               "GCD = 2 &times; 3 &times; 7 = <strong>42</strong>.",
               "Divide both by 42: 84 &divide; 42 = 2 and 126 &divide; 42 = 3.",
               "84/126 = <strong>2/3</strong>."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 1, step: 0.1, width: 480, height: 70,
+              points: [
+                { x: 0.667, color: '#7c3aed', label: '84/126 = 2/3' },
+                { x: 0, color: '#667eea', label: '0' },
+                { x: 1, color: '#667eea', label: '1' }
+              ],
+              caption: "84/126 simplifies to 2/3 — same position on the number line"
+            }]
           }
         }
       ]

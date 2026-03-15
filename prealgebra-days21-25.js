@@ -59,7 +59,12 @@ export const DAYS_21_25 = {
               "36 &divide; 0.45 = 80.",
               "Answer: 36 is 45% of <strong>80</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "What is 20% of 150?", answer: "30", accept: ["30","30.0"], explanation: "20% = 0.20. 0.20 × 150 = 30." },
+            { type: "type-answer", prompt: "Convert 3/5 to a percent.", answer: "60%", accept: ["60%","60","60.0%"], explanation: "3 ÷ 5 = 0.6. Multiply by 100: 0.6 × 100 = 60%." },
+            { type: "multiple-quick", prompt: "45 is what percent of 180?", options: ["20%", "25%", "30%"], correct: 1, explanation: "Percent = 45 ÷ 180 = 0.25 = 25%." }
+          ]
         }
       ]
     },
@@ -215,7 +220,12 @@ export const DAYS_21_25 = {
               "Apply 5% tax: $56 &times; 1.05 = $58.80.",
               "Answer: The final price is <strong>$58.80</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "A $40 item is 15% off. What is the sale price?", answer: "$34", accept: ["$34","34","$34.00","34.00"], explanation: "Discount = 0.15 × $40 = $6. Sale price = $40 − $6 = $34." },
+            { type: "type-answer", prompt: "A price rises from $50 to $60. What is the percent increase?", answer: "20%", accept: ["20%","20","20.0%"], explanation: "Change = $10. Percent increase = 10 ÷ 50 × 100% = 20%." },
+            { type: "multiple-quick", prompt: "What multiplier represents a 40% decrease?", options: ["1.40", "0.40", "0.60"], correct: 2, explanation: "A 40% decrease means you keep 100% − 40% = 60% of the original. Multiplier = 0.60." }
+          ]
         },
         {
           heading: "Successive Percent Changes",
@@ -580,7 +590,12 @@ export const DAYS_21_25 = {
               "&radic;49 = 7.",
               "Answer: &radic;98 = <strong>7&radic;2</strong>."
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Simplify √75.", answer: "5√3", accept: ["5√3","5*sqrt(3)","5root3","5 sqrt 3","5sqrt3"], explanation: "75 = 25 × 3. √75 = √25 × √3 = 5√3." },
+            { type: "type-answer", prompt: "Simplify √200.", answer: "10√2", accept: ["10√2","10*sqrt(2)","10root2","10 sqrt 2","10sqrt2"], explanation: "200 = 100 × 2. √200 = √100 × √2 = 10√2." },
+            { type: "multiple-quick", prompt: "Which is the simplest form of √48?", options: ["4√3", "2√12", "6√2"], correct: 0, explanation: "48 = 16 × 3. √48 = √16 × √3 = 4√3." }
+          ]
         },
         {
           heading: "Adding & Subtracting Radicals",
@@ -803,6 +818,13 @@ export const DAYS_21_25 = {
             "<strong>Corresponding angles</strong> are in the same position at each intersection &mdash; they are <em>equal</em>. <strong>Alternate interior angles</strong> are on opposite sides of the transversal, between the parallel lines &mdash; they are also <em>equal</em>. <strong>Co-interior angles</strong> (also called same-side interior or consecutive interior angles) are on the same side of the transversal, between the parallel lines &mdash; they are <em>supplementary</em> (sum to 180&deg;).",
             "Knowing just <strong>one</strong> angle at an intersection is enough to find all eight. If one angle is 70&deg;, its vertical angle is also 70&deg;, and its supplement is 110&deg;. Then use corresponding and alternate interior relationships to fill in the rest."
           ],
+           graphs: [{
+            type: 'row',
+            items: [
+              { type: 'angle', width: 200, height: 150, vertex: [30, 75], rays: [[190, 75], [130, 15]], arc: { radius: 35, startAngle: 0, endAngle: 65, color: '#667eea', label: '115°' }, labels: [{ text: 'Corresponding', x: 120, y: 12, fontSize: 10, color: '#667eea' }], caption: 'Corresponding = 115°' },
+              { type: 'angle', width: 200, height: 150, vertex: [170, 75], rays: [[10, 75], [70, 135]], arc: { radius: 35, startAngle: 180, endAngle: 245, color: '#e53e3e', label: '115°' }, labels: [{ text: 'Alternate int.', x: 80, y: 140, fontSize: 10, color: '#e53e3e' }], caption: 'Alternate interior = 115°' }
+            ]
+          }],
           example: {
             title: "Worked Example: Finding Angles with Parallel Lines",
             problem: "Two parallel lines are cut by a transversal. One angle is 115&deg;. Find its alternate interior angle and its co-interior angle.",

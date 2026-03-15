@@ -276,7 +276,12 @@ export const DAYS_1_5 = {
                 caption: "-4 is further left (smaller) than -1"
               }
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Put the correct symbol (<, >, or =): −7 ___ −2", answer: "<", accept: ["<","−7 < −2","−7<−2","-7 < -2","-7<-2"], explanation: "−7 is further left on the number line than −2, so −7 < −2." },
+            { type: "type-answer", prompt: "What is |−15|?", answer: "15", accept: ["15"], explanation: "Absolute value is the distance from 0. |−15| = 15." },
+            { type: "multiple-quick", prompt: "Which integer is greatest: −3, 0, −8, 5?", options: ["−3", "0", "5"], correct: 2, explanation: "5 is the furthest right on the number line, so it is the greatest." }
+          ]
         },
         {
           heading: "Absolute Value",
@@ -325,7 +330,13 @@ export const DAYS_1_5 = {
               "|7| = 7 (distance from 0 is 7 units).",
               "Compare: 12 &gt; 7.",
               "Answer: <strong>|&minus;12| is greater than |7|</strong>, because 12 is farther from zero than 7."
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: -15, max: 15, step: 5, width: 480, height: 70,
+              points: [{ x: -12, color: '#7c3aed', label: '−12' }, { x: 7, color: '#e53e3e', label: '7' }, { x: 0, color: '#667eea', label: '0' }],
+              intervals: [{ from: 0, to: -12, color: '#7c3aed', label: '|−12| = 12' }, { from: 0, to: 7, color: '#e53e3e', label: '|7| = 7' }],
+              caption: "|−12| = 12 > |7| = 7 — distance from zero"
+            }]
           }
         }
       ]
@@ -485,7 +496,13 @@ export const DAYS_1_5 = {
               "Add the absolute values: 12 + 7 = <strong>19</strong>.",
               "Keep the shared sign (negative).",
               "Answer: <strong>&minus;19</strong>"
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: -22, max: -8, step: 2, width: 480, height: 70,
+              points: [{ x: -12, color: '#7c3aed', label: 'start: −12' }, { x: -19, color: '#e53e3e', label: 'end: −19' }],
+              intervals: [{ from: -12, to: -19, color: '#667eea', label: 'move 7 left' }],
+              caption: "(−12) + (−7): start at −12, move 7 left → −19"
+            }]
           }
         },
         {
@@ -515,7 +532,13 @@ export const DAYS_1_5 = {
               "Subtract the smaller from the larger: 15 &minus; 9 = <strong>6</strong>.",
               "The number with the larger absolute value is 15 (positive), so the result is <strong>positive</strong>.",
               "Answer: <strong>6</strong>"
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: -12, max: 10, step: 2, width: 480, height: 70,
+              points: [{ x: -9, color: '#7c3aed', label: 'start: −9' }, { x: 6, color: '#e53e3e', label: 'end: 6' }],
+              intervals: [{ from: -9, to: 6, color: '#667eea', label: 'move 15 right' }],
+              caption: "(−9) + 15: start at −9, move 15 right → 6"
+            }]
           }
         },
         {
@@ -525,6 +548,12 @@ export const DAYS_1_5 = {
             "Why does this work? Subtracting a number is mathematically identical to adding its <em>opposite</em>. The opposite of 5 is &minus;5, and the opposite of &minus;3 is 3. So a &minus; b = a + (&minus;b), always. For example, 7 &minus; (&minus;3) becomes 7 + 3 = <strong>10</strong>.",
             "This trick is especially helpful when you see a &ldquo;double negative&rdquo;: &minus;4 &minus; (&minus;6) becomes &minus;4 + 6 = <strong>2</strong>. Subtracting a negative is the same as adding a positive!"
           ],
+          graphs: [{
+            type: 'numberLine', min: 0, max: 14, step: 2, width: 480, height: 70,
+            points: [{ x: 3, color: '#7c3aed', label: 'start: 3' }, { x: 11, color: '#e53e3e', label: 'end: 11' }],
+            intervals: [{ from: 3, to: 11, color: '#667eea', label: 'add 8' }],
+            caption: "3 − (−8) = 3 + 8: start at 3, move 8 right → 11"
+          }],
           practice: [
             { type: "type-answer", prompt: "Calculate: 5 &minus; (&minus;3)", answer: "8", accept: ["8"], explanation: "Keep-Change-Change: 5 + 3 = 8." },
             { type: "type-answer", prompt: "Calculate: &minus;7 &minus; 4", answer: "-11", accept: ["-11", "&minus;11"], explanation: "KCC: &minus;7 + (&minus;4) = &minus;11 (same sign, add magnitudes)." },
@@ -540,7 +569,13 @@ export const DAYS_1_5 = {
               "The problem becomes: 3 + 8.",
               "Same signs (both positive): 3 + 8 = <strong>11</strong>.",
               "Answer: <strong>11</strong>"
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: 0, max: 14, step: 2, width: 480, height: 70,
+              points: [{ x: 3, color: '#7c3aed', label: 'start: 3' }, { x: 11, color: '#e53e3e', label: 'end: 11' }],
+              intervals: [{ from: 3, to: 11, color: '#667eea', label: 'add 8' }],
+              caption: "3 − (−8) = 3 + 8: start at 3, move 8 right → 11"
+            }]
           }
         },
         {
@@ -559,7 +594,13 @@ export const DAYS_1_5 = {
               "Group the negatives: &minus;6 + (&minus;3) = <strong>&minus;9</strong>.",
               "Combine: 14 + (&minus;9) = 14 &minus; 9 = <strong>5</strong>.",
               "Answer: <strong>5</strong>"
-            ]
+            ],
+            graphs: [{
+              type: 'numberLine', min: -8, max: 8, step: 2, width: 480, height: 70,
+              points: [{ x: -6, color: '#7c3aed', label: '−6' }, { x: 4, color: '#667eea', label: '4' }, { x: 1, color: '#764ba2', label: '1' }, { x: 5, color: '#e53e3e', label: '5' }],
+              intervals: [{ from: -6, to: 4, color: '#667eea', label: '+10' }, { from: 4, to: 1, color: '#764ba2', label: '−3' }, { from: 1, to: 5, color: '#e53e3e', label: '+4' }],
+              caption: "−6 + 10 − 3 + 4 = 5: follow the jumps"
+            }]
           }
         }
       ]
@@ -699,7 +740,12 @@ export const DAYS_1_5 = {
               "Even number of negatives &rarr; the result is <strong>positive</strong>.",
               "Answer: <strong>30</strong>"
             ]
-          }
+          },
+          practice: [
+            { type: "type-answer", prompt: "Calculate: (−6) × (−4)", answer: "24", accept: ["24","+24"], explanation: "Same signs (both negative) → positive. 6 × 4 = 24." },
+            { type: "type-answer", prompt: "Calculate: (−5) × 3 × (−2)", answer: "30", accept: ["30","+30"], explanation: "Count negatives: 2 (even) → positive. 5 × 3 × 2 = 30." },
+            { type: "multiple-quick", prompt: "What is (−48) ÷ 8?", options: ["6", "−6", "−8"], correct: 1, explanation: "Different signs (negative ÷ positive) → negative. 48 ÷ 8 = 6. Answer: −6." }
+          ]
         },
         {
           heading: "Dividing Integers",
